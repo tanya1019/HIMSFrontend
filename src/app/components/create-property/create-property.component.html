@@ -1,21 +1,35 @@
-<p>create-property works!</p>
 <div class="container">
-    <h1 class="title">Add Property</h1>
-</div>
-<form>
-    Address : <input type="text" [(ngModel)]="property.address" name = "address">
-    City : <input type="text" [(ngModel)]="property.city" name = "propertyPassword">
-    Country : <input type="text" [(ngModel)]="property.country" name = "propertyPassword">
-    Pincode : <input type="number" [(ngModel)]="property.pincode" name = "propertyPassword">
-    Area (in sq.ft) : <input type="number" [(ngModel)]="property.areaInSquareFeet" name = "propertyPassword">
-    Property cost : <input type="number" [(ngModel)]="property.costOfProperty" name = "propertyPassword">
-    Property age : <input type="number" [(ngModel)]="property.ageOfBuilding" name = "propertyPassword">
-   
-    
-    <button (click)="addProperty()">
-        Add property
-    </button>
-</form>
-
-
-
+    <h1 class="title">Add property</h1>
+    <div class="input-form">
+      Address :
+      <input type="text" [(ngModel)]="property.address" name="address" /> City :
+      <input type="text" [(ngModel)]="property.city" name="propertyPassword" />
+      Country :
+      <input type="text" [(ngModel)]="property.country" name="propertyPassword" />
+      Pincode :
+      <input
+        type="number"
+        [(ngModel)]="property.pincode"
+        name="propertyPassword"
+      />
+      Area (in sq.ft) :
+      <input
+        type="number"
+        [(ngModel)]="property.areaInSquareFeet"
+        name="propertyPassword"
+      />
+      Property cost :
+      <input
+        type="number"
+        [(ngModel)]="property.costOfProperty"
+        name="propertyPassword"
+      />
+      Property age :
+      <input
+        type="number"
+        [(ngModel)]="property.ageOfBuilding"
+        name="propertyPassword"
+      />
+      <button class="submit" (click)="addProperty(property.custId)">Add property</button>
+    </div>
+  </div>
