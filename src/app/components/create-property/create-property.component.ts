@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
+import { BackendPropertyService } from '../../services/backend-property.service';
 
 @Component({
   selector: 'app-create-property',
@@ -19,11 +20,17 @@ export class CreatePropertyComponent implements OnInit {
     country: '',
     address: '',
   };
-  constructor(private router: Router) {}
+  constructor(private router: Router, private backendPropertyService: BackendPropertyService) {}
 
   ngOnInit(): void {}
 
-  addProperty(){
-    console.log(this.property)
+  addProperty(custId: number){
+    this.backendPropertyService.postPropertyByCustid(this.property, custId)
+    .subscribe({
+      next:(data)=>{console.log(data)},
+      error:(err)=>{console.log(err)}
+      
+    })
+    this.property = new Property( 0,0,0,0,0,"","",0,"")
   }
 }
