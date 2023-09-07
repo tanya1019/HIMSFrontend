@@ -36,7 +36,7 @@ export class MyPropertiesComponent implements OnInit {
           console.log(err)
         },
         complete: ()=>{
-          console.log("loadeed the data")
+          console.log("loaded the data")
         }
       }
     );
