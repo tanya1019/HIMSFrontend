@@ -8,13 +8,25 @@ import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+
+import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatePropertyComponent,
     MyPropertiesComponent,
-    CreateAdminPolicyComponent
+    CreateAdminPolicyComponent,
+    AdminLoginComponent,
+    UserLoginComponent,
+    CreateUserComponent,
+  
+    DisplayAllAdminPoliciesComponent,
+   
   ],
   imports: [
     BrowserModule,
