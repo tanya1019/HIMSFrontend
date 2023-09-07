@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="title">Add Feature</h1>
+    <div class="input-form">
+        Feature name:
+        <input type="text" [(ngModel)]="feature.featureName" name="name"/> 
+        Percent:
+        <input type="number" [(ngModel)]="feature.percent" name="percent"/> 
+        <button class="submit" (click)="addFeature()">Add Feature</button>
+
+    </div>
+
+
+</div>

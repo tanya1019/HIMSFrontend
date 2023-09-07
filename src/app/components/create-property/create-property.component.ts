@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
-import { BackendPropertyService } from '../../services/backend-property.service';
+import { BackendPropertyService } from '../../services/backend-property';
 
 @Component({
   selector: 'app-create-property',
@@ -11,7 +11,7 @@ import { BackendPropertyService } from '../../services/backend-property.service'
 export class CreatePropertyComponent implements OnInit {
   property: Property = {
     propId: 0,
-    custId: 0,
+    custId: 5,
     areaInSquareFeet: 0,
     costOfProperty: 0,
     ageOfBuilding: 0,

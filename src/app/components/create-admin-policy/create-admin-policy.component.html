@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="title">Add Policy</h1>
+    <div class="input-form">
+      Policy name : 
+      <input type="text" [(ngModel)]="adminPolicy.policyName" name="name" /> 
+      Policy Description :
+      <input type="text" [(ngModel)]="adminPolicy.policyDescription" name="description" />
+      Policy Duration (in years) :
+      <input type="text" [(ngModel)]="adminPolicy.policyDuration" name="propertyPassword" />
+      Policy Premiun Amount
+      <input
+        type="number"
+        [(ngModel)]="adminPolicy.premiumAmount"
+        name="propertyPassword"
+      />
+      Property Amount
+      <input
+        type="number"
+        [(ngModel)]="adminPolicy.propertyAmount"
+        name="propertyPassword"
+      />
+     
+      <button class="submit" (click)="addAdminPolicy()">Add Policy</button>
+    </div>
+  </div>
