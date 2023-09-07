@@ -15,7 +15,7 @@ export class MyPropertiesComponent implements OnInit {
   message : string = ""
   errorMessage : string = ""
   isLoaded : Boolean = false;
-  customerId:number=0; // get from log in user
+  customerId:number=5; // get from log in user
 
   ngOnInit(): void {
 

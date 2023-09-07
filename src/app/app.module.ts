@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
+import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
@@ -20,6 +21,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
     AppComponent,
     CreatePropertyComponent,
     MyPropertiesComponent,
+<<<<<<< HEAD
     CreateAdminPolicyComponent,
     AdminLoginComponent,
     UserLoginComponent,
@@ -27,6 +29,10 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
   
     DisplayAllAdminPoliciesComponent,
    
+=======
+    CreateFeatureComponent,
+    CreateAdminPolicyComponent
+>>>>>>> 10ac43bac989d0e0e49fadd0ef6d27c60f8729db
   ],
   imports: [
     BrowserModule,
