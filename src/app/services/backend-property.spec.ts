@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BackendPropertyService } from './backend-property.service';
+import { BackendPropertyService } from './backend-property';
 
 describe('BackendPropertyService', () => {
   let service: BackendPropertyService;
