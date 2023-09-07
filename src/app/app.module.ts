@@ -12,7 +12,6 @@ import { CreateAdminPolicyComponent } from './components/create-admin-policy/cre
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
-
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 
 
@@ -21,7 +20,6 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
     AppComponent,
     CreatePropertyComponent,
     MyPropertiesComponent,
-<<<<<<< HEAD
     CreateAdminPolicyComponent,
     AdminLoginComponent,
     UserLoginComponent,
@@ -29,10 +27,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
   
     DisplayAllAdminPoliciesComponent,
    
-=======
-    CreateFeatureComponent,
-    CreateAdminPolicyComponent
->>>>>>> 10ac43bac989d0e0e49fadd0ef6d27c60f8729db
+    CreateFeatureComponent
   ],
   imports: [
     BrowserModule,
