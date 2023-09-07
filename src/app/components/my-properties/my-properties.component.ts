@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Property } from 'src/app/class/Property';
-import { BackendPropertyService } from 'src/app/services/backend-property.service';
+import { BackendPropertyService } from 'src/app/services/backend-property';
 
 @Component({
   selector: 'app-my-properties',
