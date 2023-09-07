@@ -10,6 +10,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
+import { DisplayAllFeaturesComponent } from './components/display-all-features/display-all-features.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
@@ -22,6 +23,9 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
     CreatePropertyComponent,
     HomePageComponent,
     MyPropertiesComponent,
+    CreateFeatureComponent,
+    CreateAdminPolicyComponent,
+    DisplayAllFeaturesComponent,
     CreateAdminPolicyComponent,
     AdminLoginComponent,
     UserLoginComponent,

@@ -5,6 +5,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
+import { DisplayAllFeaturesComponent } from './components/display-all-features/display-all-features.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
@@ -12,7 +13,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
 
  
 const routes: Routes = [
-  {path : '', component:CreatePropertyComponent},
+  {path : 'addproperty', component:CreatePropertyComponent},
   {path : 'myProperty', component:MyPropertiesComponent},
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path : 'admin/login', component:AdminLoginComponent},
@@ -20,7 +21,11 @@ const routes: Routes = [
   {path : 'register', component:CreateUserComponent},
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
-  {path:'home',component:HomePageComponent},
+  {path : 'features', component:DisplayAllFeaturesComponent},
+
+
+  {path : 'admin/policy', component:CreateAdminPolicyComponent},
+  {path:'',component:HomePageComponent},
 ];
 
 @NgModule({

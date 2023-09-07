@@ -12,6 +12,16 @@ export class BackendFeatureService {
 
   postFeature(newFeature : Feature) : Observable<any> {
     return this.httpClient.post("http://localhost:8090/feature" ,  newFeature,{responseType:"json"})
-  }//http://localhost:8090/feature
+  }
+
+  getAllFeatures() : Observable<any> {
+    return this.httpClient.get("http://localhost:8090/getAllFeature",{responseType:"json"})
+  }
+
+  deleteFeaturetById(id: number): Observable<any> {
+    // console.log("Inside product service deleteby id:" + id);
+    
+    return this.httpClient.delete("http://localhost:8090/delete/feature/" + id, { responseType: "json" });
+  }
 
 }
