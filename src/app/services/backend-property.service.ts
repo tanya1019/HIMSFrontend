@@ -14,4 +14,8 @@ export class BackendPropertyService {
     return this.httpClient.post("http://localhost:8090/createProperty/" + custId, newProperty )
   }
 
+  getPropertyById(custId: number) : Observable<any>{
+    return this.httpClient.get("http://localhost:8090/getAllProperties/" + custId, { responseType:"json"} )
+  }
+
 }

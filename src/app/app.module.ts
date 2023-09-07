@@ -6,11 +6,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
+import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatePropertyComponent
+    CreatePropertyComponent,
+    MyPropertiesComponent
   ],
   imports: [
     BrowserModule,
