@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
@@ -9,6 +10,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 
+ 
 const routes: Routes = [
   {path : '', component:CreatePropertyComponent},
   {path : 'myProperty', component:MyPropertiesComponent},
@@ -18,7 +20,7 @@ const routes: Routes = [
   {path : 'register', component:CreateUserComponent},
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
-
+  {path:'home',component:HomePageComponent},
 ];
 
 @NgModule({

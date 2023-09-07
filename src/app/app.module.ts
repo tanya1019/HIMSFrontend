@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
@@ -19,6 +20,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
   declarations: [
     AppComponent,
     CreatePropertyComponent,
+    HomePageComponent,
     MyPropertiesComponent,
     CreateAdminPolicyComponent,
     AdminLoginComponent,
