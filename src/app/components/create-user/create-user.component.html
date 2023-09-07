@@ -1,0 +1,43 @@
+<div id="page" class="card" style="width: 18rem;">
+    <h2>User Registration</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe">
+      </div>
+  
+      <div class="mb-3">
+        <label for="contactNumber" class="form-label">Contact Number</label>
+        <input type="number" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" id="contactNumber" placeholder="91------00">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="John@gmail.com" aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="Password" [(ngModel)]="user.password" class="form-control" name="Password" id="Password" placeholder="****">
+      </div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+           Owner
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Rental
+        </label>
+      </div>
+
+  
+      <button (click)="userRegistration()" id="RegistrationBtn" class="btn btn-primary">Register</button>
+
+    </form>
+
+
+  </div>

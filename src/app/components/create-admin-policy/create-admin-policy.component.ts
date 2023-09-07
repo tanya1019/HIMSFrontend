@@ -30,6 +30,7 @@ export class CreateAdminPolicyComponent implements OnInit {
       next:(data)=>{console.log(data)},
       error:(err)=>{console.log(err)}
     })
-  }
 
+    this.adminPolicy = new AdminPolicy(0,"","",0,0,false,0)
+  }
 }
