@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
 import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
+import { CreateAdminPolicyComponent } from './components/create-admin-policy/create-admin-policy.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CreateFeatureComponent } from './components/create-feature/create-featu
     CreatePropertyComponent,
     MyPropertiesComponent,
     CreateFeatureComponent,
+    CreateAdminPolicyComponent
   ],
   imports: [
     BrowserModule,
