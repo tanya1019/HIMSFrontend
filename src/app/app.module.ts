@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePropertyComponent } from './components/create-property/create-property.component';
 import { MyPropertiesComponent } from './components/my-properties/my-properties.component';
+import { CreateFeatureComponent } from './components/create-feature/create-feature.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatePropertyComponent,
-    MyPropertiesComponent
+    MyPropertiesComponent,
+    CreateFeatureComponent,
   ],
   imports: [
     BrowserModule,
