@@ -1,0 +1,13 @@
+.nav{
+    background-color:rgb(16, 67, 162);
+    height: 80px;
+}
+.nav-item{
+    color: #ffffff;
+    align-items: center;
+    margin: 15px;
+   
+}
+.container-fluid{
+    size: 1px;
+}
