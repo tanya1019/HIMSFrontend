@@ -11,7 +11,7 @@ import { BackendPropertyService } from '../../services/backend-property';
 export class CreatePropertyComponent implements OnInit {
   property: Property = {
     propId: 0,
-    custId: 5,
+    custId: 1,
     areaInSquareFeet: 0,
     costOfProperty: 0,
     ageOfBuilding: 0,
@@ -20,6 +20,10 @@ export class CreatePropertyComponent implements OnInit {
     country: '',
     address: '',
   };
+
+  message : string = "";
+  errorMessage :string = "";
+
   constructor(private router: Router, private backendPropertyService: BackendPropertyService) {}
 
   ngOnInit(): void {}
@@ -27,8 +31,16 @@ export class CreatePropertyComponent implements OnInit {
   addProperty(custId: number){
     this.backendPropertyService.postPropertyByCustid(this.property, custId)
     .subscribe({
-      next:(data)=>{console.log(data)},
-      error:(err)=>{console.log(err)}
+      next:(data)=>{
+        console.log(data)
+        this.message = "Property created successfully"
+        this.errorMessage = ""
+      },
+      error:(err)=>{
+        console.log(err)
+        this.errorMessage = "Failed to create Property"
+        this.message = ""
+      }
       
     })
     this.property = new Property( 0,0,0,0,0,"","",0,"")
