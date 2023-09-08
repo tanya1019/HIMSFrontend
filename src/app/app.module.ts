@@ -34,6 +34,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
     DisplayAllAdminPoliciesComponent,
    
     CreateFeatureComponent
+        
   ],
   imports: [
     BrowserModule,

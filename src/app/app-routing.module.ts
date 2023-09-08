@@ -22,10 +22,8 @@ const routes: Routes = [
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
-
-
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
-  {path:'',component:HomePageComponent},
+  {path:'',component:HomePageComponent}
 ];
 
 @NgModule({

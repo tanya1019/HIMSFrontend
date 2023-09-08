@@ -1,13 +1,28 @@
 <div class="container">
     <h1 class="title">Add Feature</h1>
-    <div class="input-form">
-        Feature name:
-        <input type="text" [(ngModel)]="feature.featureName" name="name"/> 
-        Percent:
-        <input type="number" [(ngModel)]="feature.percent" name="percent"/> 
-        <button class="submit" (click)="addFeature()">Add Feature</button>
+    <form #featureForm="ngForm" >
+         <div class="input-form">
+            Feature name:
+            <input type="text" [(ngModel)]="feature.featureName" name="name" #name="ngModel" required/> 
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors?.['required']" class ="alert alert-danger">
+                    Feature Name Required
+                </div>
+            </div>
+            Percent:
+            <input type="number" [(ngModel)]="feature.percent" name="percent" #percent="ngModel" required/> 
+            <div *ngIf="percent.invalid && (percent.dirty || percent.touched)">
+                <div *ngIf="percent.errors?.['required']" class ="alert alert-danger">
+                    Feature Percent Required
+                </div>
+            </div>
 
-    </div>
-
+            <button class="submit" [disabled]="!featureForm.form.valid" (click)="addFeature(featureForm)  ">Add Feature</button>
+    
+        </div>
+    
+    </form>
+    
+    
 
 </div>

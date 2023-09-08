@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Feature } from 'src/app/class/Feature';
 import { BackendFeatureService } from 'src/app/services/backend-feature.service';
@@ -22,10 +23,13 @@ export class CreateFeatureComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addFeature(){
+  addFeature(featureForm:NgForm){
+    featureForm.form.reset();
     this.backendFeatureService.postFeature(this.feature)
     .subscribe({
-      next:(data)=>{console.log(data)},
+      next:(data)=>{
+        console.log(data)
+      },
       error:(err)=>{console.log(err)}
       
     })
