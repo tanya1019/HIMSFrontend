@@ -16,9 +16,14 @@
     </div>
 
     <div class="input-form" >
-      Address :
-      <input type="text" [(ngModel)]="property.address" name="address" required /> 
-      City :
+      Address*:
+      <input type="text" [(ngModel)]="property.address" name="address" #address="ngModel" required />
+      <div *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div *ngIf="address.errors?.['required']" class="alert alert-danger ">
+          Enter a valid address!!
+        </div>
+      </div>
+      City*:
       <input type="text" [(ngModel)]="property.city" name="propertyPassword" />
       Country :
       <input type="text" [(ngModel)]="property.country" name="propertyPassword" />
