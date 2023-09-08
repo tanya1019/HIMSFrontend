@@ -1,11 +1,19 @@
-<p>my-properties works!</p>
-<div *ngFor="let property of properties">
-    <h3>{{property.address}}</h3>
-    <h3>{{property.city}}</h3>
-    <h3>{{property.country}}</h3>
-    <h3>{{property.pincode}}</h3>
-    <h3>{{property.ageOfBuilding}}</h3>
-    <h3>{{property.areaInSquareFeet}}</h3>
-    <h3>{{property.costOfProperty}}</h3>
-    <p>-----------------------------------</p>
+<app-navbar></app-navbar>
+<h1 class="title">Property Details</h1>
+<div *ngFor="let property of properties" class = "card" >
+
+
+
+   <p >Address : {{property.address}}</p>
+   <p>City : {{property.city}}</p>
+   <p>Country : {{property.country}}</p>
+   <p>Pincode : {{property.pincode}}</p>
+   <p>Age of Building : {{property.ageOfBuilding}}  years</p>
+   <p>Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
+   <p>Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
+   
+        
+       
+      
 </div>
+

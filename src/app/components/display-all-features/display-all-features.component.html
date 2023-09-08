@@ -1,23 +1,21 @@
-
-<div *ngIf="!isUpdate">
-
-    <div *ngIf="features.length >0">
-        <h3>Display all Features.</h3>
-        <table class="table">
-         <tr>
-             <th>Id</th>
-             <th>Name</th>
-             <th>Percent</th>
-         </tr>
-         <tr *ngFor="let feature of features">
-             <td>{{feature.id}}</td>
-             <td>{{feature.featureName}}</td>
-             <td>{{feature.percent}}</td>
-             <td><button  (click)=deleteFeatureById(feature.id) class="btn btn-danger">Delete</button></td>
-             <td><button  (click)="updateFeature(feature)" class="btn btn-primary">Update</button></td>
-         </tr>
-        </table>
-     </div>
+<app-navbar></app-navbar>
+<p>display-all-features works!</p>
+<div >
+   <h3>Display all Features.</h3>
+   <table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Percent</th>
+    </tr>
+    <tr *ngFor="let feature of features">
+        <td>{{feature.id}}</td>
+        <td>{{feature.featureName}}</td>
+        <td>{{feature.percent}}</td>
+        <td><button  (click)=deleteFeatureById(feature.id) class="btn btn-danger">Delete</button></td>
+        <td><button  class="btn btn-primary">Update</button></td>
+    </tr>
+   </table>
 </div>
 
 

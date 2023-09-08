@@ -1,11 +1,12 @@
-<div *ngFor="let adminPolicy of adminPolicies">
-    <h3>{{adminPolicy.policyName}}</h3>
-    <h3>{{adminPolicy.policyDescription}}</h3>
-    <h3>{{adminPolicy.policyDuration}}</h3>
-    <h3>{{adminPolicy.premiumAmount}}</h3>
-    <h3>{{adminPolicy.customPolicy}}</h3>
-    <h3>{{adminPolicy.propertyAmount}}</h3>
-    
-    <p>-----------------------------------</p>
+<app-navbar></app-navbar>
+<h1 class="title">All Policies</h1>
+<div *ngFor="let adminPolicy of adminPolicies" class = "card" >
+    <p>Policy Name : {{adminPolicy.policyName}}</p>
+    <p>Policy Description : {{adminPolicy.policyDescription}}</p>
+    <p>Policy Duration : {{adminPolicy.policyDuration}}</p>
+    <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
+    <p>Customised Policy ? {{adminPolicy.customPolicy}}</p>
+    <p>Property Amount{{adminPolicy.propertyAmount}}</p>
+ 
 </div>
 

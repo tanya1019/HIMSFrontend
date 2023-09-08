@@ -1,8 +1,25 @@
+<app-navbar></app-navbar>
 <div class="container">
     <h1 class="title">Add property</h1>
-    <div class="input-form">
+
+    <div class="alert alert-success alert-dismissible" *ngIf="message" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>{{message}}</strong>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>{{errorMessage}}</strong>
+    </div>
+
+    <div class="input-form" >
       Address :
-      <input type="text" [(ngModel)]="property.address" name="address" /> City :
+      <input type="text" [(ngModel)]="property.address" name="address" required /> 
+      City :
       <input type="text" [(ngModel)]="property.city" name="propertyPassword" />
       Country :
       <input type="text" [(ngModel)]="property.country" name="propertyPassword" />

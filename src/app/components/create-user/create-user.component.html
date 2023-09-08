@@ -1,4 +1,17 @@
-<div id="page" class="card" style="width: 18rem;">
+<div class="alert alert-success alert-dismissible" *ngIf="message" >
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{message}}</strong>
+</div>
+
+<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{errorMessage}}</strong>
+</div>
+<div id="page" class="card" style=" border: none; width: 40rem;">
     <h2>User Registration</h2>
     <form>
       <div class="mb-3">
@@ -35,7 +48,8 @@
       </div>
 
   
-      <button (click)="userRegistration()" id="RegistrationBtn" class="btn btn-primary">Register</button>
+      <button (click)="userRegistration()" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
+      <p style="margin-left: 5%;"> Already have an account  ? <a routerLink=""><b>Login</b></a></p>
 
     </form>
 
