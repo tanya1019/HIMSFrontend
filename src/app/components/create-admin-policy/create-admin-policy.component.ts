@@ -19,6 +19,9 @@ export class CreateAdminPolicyComponent implements OnInit {
   customPolicy: false,
   propertyAmount: 0,
   }
+
+  message : string = "";
+  errorMessage :string = "";
   constructor(private backendPolicyService : BackendPolicyService) { }
 
 
@@ -27,8 +30,16 @@ export class CreateAdminPolicyComponent implements OnInit {
   addAdminPolicy(){
     this.backendPolicyService.postAdminPolicy(this.adminPolicy)
     .subscribe({
-      next:(data)=>{console.log(data)},
-      error:(err)=>{console.log(err)}
+      next:(data)=>{
+        console.log(data)
+        this.message = "Policy added successfully"
+        this.errorMessage = ""
+      },
+      error:(err)=>{
+        console.log(err)
+        this.errorMessage = "Failed to add the policy"
+        this.message = ""
+      }
     })
 
     this.adminPolicy = new AdminPolicy(0,"","",0,0,false,0)
