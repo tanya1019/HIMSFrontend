@@ -18,7 +18,7 @@ const routes: Routes = [
   {path : 'myProperty', component:MyPropertiesComponent},
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path : 'admin/login', component:AdminLoginComponent},
-  {path : 'login', component:UserLoginComponent},
+  {path : '', component:UserLoginComponent},
   {path : 'register', component:CreateUserComponent},
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},

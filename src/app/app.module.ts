@@ -15,6 +15,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -35,6 +36,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
     DisplayAllAdminPoliciesComponent,
    
     CreateFeatureComponent,
+        NavbarComponent,
   ],
   imports: [
     BrowserModule,
