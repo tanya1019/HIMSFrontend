@@ -1,22 +1,38 @@
-#page{
-    margin-inline: 40%;
-    margin-top: 10%;
-    padding: 2%;
+.outerMostDiv{
+    display: flex;
+    padding-top: 5vw;
 }
 
-.card{
-    align-items: center;
+#innerDivLeft{
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
+    border: none;
+
 }
 
-.mb-3{
-    align-content: center;
+.stepsChild{
+    border: none;
 }
 
-button{
-    margin-inline: 35%;
+.stepsTitle{
+    margin-inline: 11vw;
+}
+
+.title{
+    margin-inline: 25vw;
+    color: blue;
+}
+
+#innerDivRight{
     margin-top: 5%;
 }
 
-h2{
-    padding-bottom: 25%;
+#loginbtn{
+    margin-inline-start: 8vw;
+    margin-top: 2vw;
 }
+
+#page{
+    border: none;
+}
+

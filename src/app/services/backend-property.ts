@@ -11,11 +11,11 @@ export class BackendPropertyService {
   constructor(private httpClient : HttpClient) { }
 
   postPropertyByCustid(newProperty : Property , custId:number) : Observable<any> {
-    return this.httpClient.post("http://localhost:8090/createProperty/" + custId, newProperty )
+    return this.httpClient.post("http://localhost:8090/property/" + custId, newProperty )
   }
 
   getPropertyById(custId: number) : Observable<any>{
-    return this.httpClient.get("http://localhost:8090/getAllProperties/" + custId, { responseType:"json"} )
+    return this.httpClient.get("http://localhost:8090/properties/" + custId, { responseType:"json"} )
   }
 
 }

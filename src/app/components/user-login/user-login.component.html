@@ -1,20 +1,110 @@
-<div id="page" class="card" style="width: 18rem;">
-    <h2>User Login</h2>
-    <form>
-      <div class="mb-3">
-        <label for="email" class="form-label">UserName/Email</label>
-        <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="abc@gmail.com" aria-describedby="emailHelp">
-      </div>
-  
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" [(ngModel)]="user.password" class="form-control" name="password" id="password" placeholder="**password**">
-      </div>
-  
-      <button (click)="userLogin()" id="loginbtn" class="btn btn-primary">Login</button>
-    </form>
+<div class="alert alert-success alert-dismissible" *ngIf="message" >
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{message}}</strong>
+</div>
 
+<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{errorMessage}}</strong>
+</div>
+
+<div class="outerMostDiv" >
+
+  <div id="innerDivLeft" class="card stepsCard" style="width: 60vw; height: 49vw; padding: 2%;">
+
+    <div class="card stepsChild">
+      <h2 class="card-title stepsTitle">
+        Protect Your Home in Just 4 Steps
+      </h2>
+    </div>
+
+    <div class="card stepsChild">
+      <h4 style="padding-top: 2%" class="card-title title">Step1</h4>
+      <div class="card-body">
+        <h6 class="card-text" style="margin-inline-start: 21vw;">Add Property Details</h6>
+      </div>
+    </div>
+
+    <div class="card stepsChild">
+      <h4 style="padding-top: 2%" class="card-title title">Step 2</h4>
+      <div class="card-body">
+        <h6 class="card-text" style="margin-inline-start: 19vw;">
+          Choose/Customize Insurance Policy
+        </h6>
+      </div>
+    </div>
+
+    <div class="card stepsChild">
+      <h4 style="padding-top: 2%" class="card-title title">Step 3</h4>
+      <div class="card-body">
+        <h6 class="card-text" style="margin-inline-start: 20vw;">Upload Required Documents</h6>
+      </div>
+    </div>
+
+    <div class="card stepsChild">
+      <h4 style="padding-top: 2%" class="card-title title">Step 4</h4>
+      <div class="card-body">
+        <h6 class="card-text" style="margin-inline-start: 22vw;">
+          Make a Payment
+        </h6>
+      </div>
+    </div>
+
+    <div class="card stepsChild" style="padding-top: 5%;">
+      <h2 class="card-title stepsTitle ">
+        Done...Your House is Secured Now!
+      </h2>
+    </div>
 
   </div>
-  
-  
+
+
+
+  <div id="innerDivRight" style=" width: 40vw; height: 49vw; padding: 2%;">
+
+    <div id="page" class="card login">
+      <h2 style="padding-bottom:3vw; margin-inline-start: 5vw;">User Login</h2>
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="user.email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="abc@gmail.com"
+            aria-describedby="emailHelp"
+            style="width: 20vw;"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            [(ngModel)]="user.password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="**password**"
+            style="width: 20vw;"
+          />
+        </div>
+
+        <button (click)="userLogin()" id="loginbtn" style="margin-bottom: 5%;" class="btn btn-primary">
+          Login
+        </button>
+        <p style="margin-left:5% ;"> Dont have an account ? <a routerLink="/register"><b>Register</b></a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- *ngIf="message"  -->

@@ -12,6 +12,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+
  
 const routes: Routes = [
   {path:'home', component: HomePageComponent},
@@ -19,16 +20,15 @@ const routes: Routes = [
   {path : 'myProperty', component:MyPropertiesComponent},
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path : 'admin/login', component:AdminLoginComponent},
-  {path : 'login', component:UserLoginComponent},
+  {path : '', component:UserLoginComponent},
   {path : 'register', component:CreateUserComponent},
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
   {path : 'profile', component:ProfileComponent},
 
-
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
-  {path:'',component:HomePageComponent},
+  {path:'home',component:HomePageComponent},
 ];
 
 @NgModule({
