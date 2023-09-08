@@ -11,6 +11,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 
+
  
 const routes: Routes = [
   {path : 'addproperty', component:CreatePropertyComponent},
@@ -23,9 +24,8 @@ const routes: Routes = [
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
 
-
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
-  {path:'',component:HomePageComponent},
+  {path:'home',component:HomePageComponent},
 ];
 
 @NgModule({
