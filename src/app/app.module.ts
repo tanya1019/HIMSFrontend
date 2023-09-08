@@ -17,6 +17,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
   
     DisplayAllAdminPoliciesComponent,
    
-    CreateFeatureComponent
+    CreateFeatureComponent,
   ],
   imports: [
     BrowserModule,

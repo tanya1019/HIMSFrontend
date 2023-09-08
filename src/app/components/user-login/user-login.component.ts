@@ -11,6 +11,8 @@ export class UserLoginComponent implements OnInit {
   user: User = new User("","",0,"","");
   constructor(private loginUserService: BackendUserLoginService) { }
 
+  imgSrc5="../assets/loginImg.avif";
+
   ngOnInit(): void {
   }
   userLogin(){
@@ -21,5 +23,7 @@ export class UserLoginComponent implements OnInit {
       error: (err)=> {alert(err.error.text)}
 
     })
+
+    
 }
 }
