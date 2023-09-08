@@ -1,5 +1,6 @@
 .outerMostDiv{
     display: flex;
+    padding-top: 5vw;
 }
 
 #innerDivLeft{
