@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
 import { BackendPropertyService } from '../../services/backend-property';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-property',
@@ -28,7 +29,8 @@ export class CreatePropertyComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addProperty(custId: number){
+  addProperty(custId: number, propertyForm:NgForm){
+    propertyForm.form.reset();
     this.backendPropertyService.postPropertyByCustid(this.property, custId)
     .subscribe({
       next:(data)=>{
