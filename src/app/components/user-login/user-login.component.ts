@@ -21,7 +21,8 @@ export class UserLoginComponent implements OnInit {
     this.loginUserService.loginUser(this.user).subscribe({
       next:(data)=> {
 
-        console.log("Login Successful"+data);
+        console.log("Login Successful" + JSON.stringify(data));
+        localStorage.setItem("user" , JSON.stringify(data))
         this.message= "login Successful";
         this.router.navigate(["/home"])
         this.errorMessage= "";

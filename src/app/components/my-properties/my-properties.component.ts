@@ -15,19 +15,25 @@ export class MyPropertiesComponent implements OnInit {
   message : string = ""
   errorMessage : string = ""
   isLoaded : Boolean = false;
-  customerId:number=1; // get from log in user
+  customerId: number = JSON.parse(String(localStorage.getItem("user"))).id
+
 
   ngOnInit(): void {
 
     this.loadPropertiesToComponent(this.customerId);
   }
 
+
+
   loadPropertiesToComponent(custId: number){
+   
     this.isLoaded = false;
     this.backendPropertyService.getPropertyById(custId).subscribe(
       {
           next: (data)=>{
           console.log(data)
+          // console.log(user.data.id)
+          // console.log("------->" + JSON.parse(localStorage.getItem("user")))
           this.isLoaded = true;
           this.properties = data
 
