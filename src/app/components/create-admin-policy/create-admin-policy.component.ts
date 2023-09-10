@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { BackendPolicyService } from '../../services/backend-policy.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-admin-policy',
@@ -27,7 +28,8 @@ export class CreateAdminPolicyComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addAdminPolicy(){
+  addAdminPolicy(policyForm: NgForm){
+    policyForm.form.reset();
     this.backendPolicyService.postAdminPolicy(this.adminPolicy)
     .subscribe({
       next:(data)=>{
