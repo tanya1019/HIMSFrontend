@@ -12,6 +12,6 @@ export class BackendLoginService {
 
   loginUser(admin:Admin):Observable<any>{
     console.log(admin);
-    return this.httpClient.post("http://localhost:8090/adminLogin",admin);
+    return this.httpClient.post("http://localhost:8090/adminlogin",admin);
   }
 }

@@ -14,7 +14,7 @@
 
 <div class="outerMostDiv" >
 
-  <div id="innerDivLeft" class="card stepsCard" style="width: 60vw; height: 49vw; padding: 2%;">
+  <div id="innerDivLeft" class="card stepsCard" style="background: transparent; width: 60vw; height: 49vw; padding: 2%;">
 
     <div class="card stepsChild">
       <h2 class="card-title stepsTitle">
@@ -25,32 +25,32 @@
     <div class="card stepsChild">
       <h4 style="padding-top: 2%" class="card-title title">Step1</h4>
       <div class="card-body">
-        <h6 class="card-text" style="margin-inline-start: 21vw;">Add Property Details</h6>
+        <h5 class="card-text" style=" margin-inline-start: 15vw;">Add Property Details</h5>
       </div>
     </div>
 
     <div class="card stepsChild">
       <h4 style="padding-top: 2%" class="card-title title">Step 2</h4>
       <div class="card-body">
-        <h6 class="card-text" style="margin-inline-start: 19vw;">
+        <h5 class="card-text" style="margin-inline-start: 11vw;">
           Choose/Customize Insurance Policy
-        </h6>
+        </h5>
       </div>
     </div>
 
     <div class="card stepsChild">
       <h4 style="padding-top: 2%" class="card-title title">Step 3</h4>
       <div class="card-body">
-        <h6 class="card-text" style="margin-inline-start: 20vw;">Upload Required Documents</h6>
+        <h5 class="card-text" style="margin-inline-start: 14vw;">Upload Required Documents</h5>
       </div>
     </div>
 
     <div class="card stepsChild">
       <h4 style="padding-top: 2%" class="card-title title">Step 4</h4>
       <div class="card-body">
-        <h6 class="card-text" style="margin-inline-start: 22vw;">
+        <h5 class="card-text" style="margin-inline-start: 18vw;">
           Make a Payment
-        </h6>
+        </h5>
       </div>
     </div>
 
@@ -64,9 +64,8 @@
 
 
 
-  <div id="innerDivRight" style=" width: 40vw; height: 49vw; padding: 2%;">
-
-    <div id="page" class="card login">
+  <div id="innerDivRight" style="width: 40vw; height: 49vw; padding: 2%;">
+    <div id="page" class="card login" style="background: transparent;">
       <h2 style="padding-bottom:3vw; margin-inline-start: 5vw;">User Login</h2>
       <form>
         <div class="mb-3">
@@ -96,12 +95,13 @@
           />
         </div>
 
-        <button (click)="userLogin()" id="loginbtn" style="margin-bottom: 5%;" class="btn btn-primary">
+        <button (click)="userLogin()" id="loginbtn" style="margin-bottom: 7%;" class="btn btn-lg btn-primary">
           Login
         </button>
-        <p style="margin-left:5% ;"> Dont have an account ? <a routerLink="/register"><b>Register</b></a></p>
+        <h5> Dont have an account ? <a routerLink="/register"><b>Register</b></a></h5>
       </form>
     </div>
+    <div style="margin-top: 8vw; margin-inline-start: 30vw;"><button routerLink="/admin/login" type="button" class="btn btn-lg btn-outline-warning">Admin</button></div>
   </div>
 </div>
 

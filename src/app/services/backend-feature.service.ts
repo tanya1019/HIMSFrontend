@@ -15,7 +15,7 @@ export class BackendFeatureService {
   }
 
   getAllFeatures() : Observable<any> {
-    return this.httpClient.get("http://localhost:8090/getAllFeature",{responseType:"json"})
+    return this.httpClient.get("http://localhost:8090/features",{responseType:"json"})
   }
 
   deleteFeaturetById(id: number): Observable<any> {

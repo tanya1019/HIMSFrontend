@@ -17,6 +17,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 
 
 
@@ -39,6 +40,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
+        CreateOwnedPolicyComponent,
   ],
   imports: [
     BrowserModule,

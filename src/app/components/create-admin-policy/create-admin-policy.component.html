@@ -17,14 +17,13 @@
     <h1 class="title">Add Policy</h1>
     <div class="input-form">
       <form #policyForm="ngForm"  >
-      Policy name*: 
+     Policy name*: 
       <input type="text" [(ngModel)]="adminPolicy.policyName" name="name" #name="ngModel" required /> 
-      <div *ngIf="name.invalid  && (name.dirty || name.touched)"  >
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"  >
         <div *ngIf="name.errors?.['required']" class="alert alert-danger">
           Name required!!
-        </div> 
+        </div>
       </div><br>
- 
       Policy Descriptio*:
       <input type="text" [(ngModel)]="adminPolicy.policyDescription" name="description" #description="ngModel" required />
       <div *ngIf="description.invalid && (description.dirty || description.touched)"  >

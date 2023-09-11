@@ -1,57 +1,106 @@
-<div class="alert alert-success alert-dismissible" *ngIf="message" >
+<div class="alert alert-success alert-dismissible" *ngIf="message">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>{{message}}</strong>
+  <strong>{{ message }}</strong>
 </div>
 
-<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>{{errorMessage}}</strong>
+  <strong>{{ errorMessage }}</strong>
 </div>
-<div id="page" class="card" style=" border: none; width: 40rem;">
+<div class="outerDiv">
+  <div id="page" class="card" style="border: none; width: 40rem">
     <h2>User Registration</h2>
     <form>
       <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe">
-      </div>
-  
-      <div class="mb-3">
-        <label for="contactNumber" class="form-label">Contact Number</label>
-        <input type="number" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" id="contactNumber" placeholder="91------00">
-      </div>
-
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="John@gmail.com" aria-describedby="emailHelp">
+        <label for="name" class="form-label">*Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.name"
+          class="form-control"
+          name="name"
+          id="name"
+          placeholder="John Doe"
+        />
       </div>
 
       <div class="mb-3">
-        <label for="Password" class="form-label">Password</label>
-        <input type="Password" [(ngModel)]="user.password" class="form-control" name="Password" id="Password" placeholder="****">
-      </div>
-    
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-           Owner
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2">
-          Rental
-        </label>
+        <label for="contactNumber" class="form-label">*Contact Number</label>
+        <input
+          type="number"
+          [(ngModel)]="user.contactNumber"
+          class="form-control"
+          name="contactNumber"
+          id="contactNumber"
+          placeholder="91------00"
+        />
       </div>
 
-  
-      <button (click)="userRegistration()" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
-      <p style="margin-left: 5%;"> Already have an account  ? <a routerLink=""><b>Login</b></a></p>
+      <div class="mb-3">
+        <label for="email" class="form-label">*Email</label>
+        <input
+          type="email"
+          [(ngModel)]="user.email"
+          class="form-control"
+          name="email"
+          id="email"
+          placeholder="John@gmail.com"
+          aria-describedby="emailHelp"
+        />
+      </div>
 
+      <div class="mb-3">
+        <label for="Password" class="form-label">*Password</label>
+        <input
+          type="Password"
+          [(ngModel)]="user.password"
+          class="form-control"
+          name="Password"
+          id="Password"
+          placeholder="****"
+        />
+      </div>
+
+      <div>
+        <label for="checkbox" class="form-label">*Select Property Type</label>
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Owner
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Rental
+          </label>
+        </div>
+      </div>
+
+      <button
+        (click)="userRegistration()"
+        id="RegistrationBtn"
+        style="margin-bottom: 5%"
+        class="btn btn-lg btn-primary"
+      >
+        Register
+      </button>
+      <h6 style="margin-left: 5vw; padding-bottom: 5vw">
+        Already have an account ? <a routerLink=""><b>Login</b></a>
+      </h6>
     </form>
-
-
   </div>
+</div>
