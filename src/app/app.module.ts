@@ -40,7 +40,7 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
-        UserClaimComponent,
+        UserClaimComponent
   ],
   imports: [
     BrowserModule,
