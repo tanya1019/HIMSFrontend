@@ -6,8 +6,8 @@
 }
 
 #innerDivLeft{
-    font-family: 'Courier New', monospace;
-    color: rgb(69, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
     border: none;
 
 }
@@ -38,9 +38,5 @@
 
 #page{
     border: none;
-}
-
-.form-label{
-    font-weight: bold;
 }
 

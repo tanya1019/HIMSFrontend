@@ -17,41 +17,62 @@
     </div>
 
     <div class="input-form" >
-      Address*:
+      <form #propertyForm="ngForm" >
+      Address* :
       <input type="text" [(ngModel)]="property.address" name="address" #address="ngModel" required />
       <div *ngIf="address.invalid && (address.dirty || address.touched)">
         <div *ngIf="address.errors?.['required']" class="alert alert-danger ">
-          Enter a valid address!!
+          Enter a valid address!
         </div>
+      </div><br>
+      City* :
+      <input type="text" [(ngModel)]="property.city" name="propertyPassword" #city="ngModel" required  />
+      <div *ngIf="city.invalid && (city.dirty || city.touched)">
+        <div *ngIf="city.errors?.['required']" class="alert alert-danger">
+          City is required!
+        </div>
+      </div><br>
+      Country* :
+      <input type="text" [(ngModel)]="property.country" name="country"  #country="ngModel" required/>
+      <div *ngIf="country.invalid && (country.dirty || country.touched)" >
+        <div *ngIf="country.errors?.['required']" class="alert alert-danger">
+          Country is required!
+        </div>
+      </div><br>
+      Pincode* :
+      <input type="number" [(ngModel)]="property.pincode"    name="pincode"    #pin="ngModel" required  />
+      <div  *ngIf="pin.invalid && (pin.dirty || pin.touched)">
+      <div *ngIf="pin.errors?.['required']" class="alert alert-danger">
+        please enter valid pincode!
+    </div>
+  </div><br>
+      Area (in sq.ft)* :
+      <input type="number"  [(ngModel)]="property.areaInSquareFeet"   name="Area"  #area="ngModel" required />
+      <div  *ngIf="area.invalid && (area.dirty || area.touched)">
+        <div *ngIf="area.errors?.['required']" class="alert alert-danger">
+        Please enter valid  Area (in sq.ft)!
       </div>
-      City*:
-      <input type="text" [(ngModel)]="property.city" name="propertyPassword" />
-      Country :
-      <input type="text" [(ngModel)]="property.country" name="propertyPassword" />
-      Pincode :
-      <input
-        type="number"
-        [(ngModel)]="property.pincode"
-        name="propertyPassword"
-      />
-      Area (in sq.ft) :
-      <input
-        type="number"
-        [(ngModel)]="property.areaInSquareFeet"
-        name="propertyPassword"
-      />
-      Property cost :
-      <input
-        type="number"
-        [(ngModel)]="property.costOfProperty"
-        name="propertyPassword"
-      />
-      Property age :
-      <input
-        type="number"
-        [(ngModel)]="property.ageOfBuilding"
-        name="propertyPassword"
-      />
-      <button class="submit" (click)="addProperty(property.custId)">Add property</button>
+    </div><br>
+      
+      Property cost* :
+      <input type="number"  [(ngModel)]="property.costOfProperty"  name="propertyCost" #cost="ngModel" required  />
+      <div  *ngIf="cost.invalid && (cost.dirty || cost.touched)">
+        <div *ngIf="cost.errors?.['required']" class="alert alert-danger">
+      Property cost is required!
+          </div>
+    </div><br>
+      Property age* :
+      <input  type="number"  [(ngModel)]="property.ageOfBuilding"   name="propertyAge"  #age="ngModel" required   />
+      <div  *ngIf="age.invalid && (age.dirty || age.touched)">
+        <div *ngIf="age.errors?.['required']" class="alert alert-danger">
+      Property age is required!
+      </div>
+    </div><br>
+        
+  
+      
+    
+      <button  class="submit" [disabled]="!propertyForm.form.valid" (click)="addProperty(property.custId, propertyForm)">Add property</button>
+    </form>
     </div>
   </div>

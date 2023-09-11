@@ -24,4 +24,9 @@ export class BackendFeatureService {
     return this.httpClient.delete("http://localhost:8090/delete/feature/" + id, { responseType: "json" });
   }
 
+  updateFeature(feature: Feature): Observable<any> {
+
+    return this.httpClient.put("http://localhost:8090/feature/{id}" , feature, { responseType: "json" });
+ 
+  }
 }

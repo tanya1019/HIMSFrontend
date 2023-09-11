@@ -18,6 +18,8 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
+import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
+import { UserClaimComponent } from './components/user-claim/user-claim.component';
 
 
 
@@ -34,13 +36,15 @@ import { CreateOwnedPolicyComponent } from './components/create-owned-policy/cre
     AdminLoginComponent,
     UserLoginComponent,
     CreateUserComponent,
+    CreateOwnedPolicyComponent,
   
     DisplayAllAdminPoliciesComponent,
    
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
-        CreateOwnedPolicyComponent,
+        PremiumCalculatorComponent,
+        UserClaimComponent
   ],
   imports: [
     BrowserModule,

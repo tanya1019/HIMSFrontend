@@ -1,3 +1,4 @@
+
 <div class="alert alert-success alert-dismissible" *ngIf="message" >
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -67,19 +68,16 @@
   <div id="innerDivRight" style="width: 40vw; height: 49vw; padding: 2%;">
     <div id="page" class="card login" style="background: transparent;">
       <h2 style="padding-bottom:3vw; margin-inline-start: 5vw;">User Login</h2>
-      <form>
+      <form >
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            [(ngModel)]="user.email"
-            class="form-control"
-            name="email"
-            id="email"
-            placeholder="abc@gmail.com"
-            aria-describedby="emailHelp"
-            style="width: 20vw;"
-          />
+          <input  type="email" [(ngModel)]="user.email" class="form-control"  name="email" id="email" placeholder="abc@gmail.com"   aria-describedby="emailHelp"    style="width: 20vw;"  #email="ngModel" required   />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']" class="alert alert-danger ">
+              Enter a valid Email Address!
+            </div>
+          </div><br>
+
         </div>
 
         <div class="mb-3">
@@ -92,19 +90,23 @@
             id="password"
             placeholder="**password**"
             style="width: 20vw;"
+            #password="ngModel" required
           />
         </div>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.errors?.['required']" class="alert alert-danger ">
+            Password is required !
+          </div>
+        </div><br>
 
         <button (click)="userLogin()" id="loginbtn" style="margin-bottom: 7%;" class="btn btn-lg btn-primary">
           Login
         </button>
-        <h5> Dont have an account ? <a routerLink="/register"><b>Register</b></a></h5>
+        <p style="margin-left:5% ;"> Dont have an account ? <a routerLink="/register"><b>Register</b></a></p>
       </form>
     </div>
     <div style="margin-top: 8vw; margin-inline-start: 30vw;"><button routerLink="/admin/login" type="button" class="btn btn-lg btn-outline-warning">Admin</button></div>
   </div>
 </div>
-
-
 
 <!-- *ngIf="message"  -->
