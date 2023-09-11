@@ -1,17 +1,18 @@
-<div class="alert alert-success alert-dismissible" *ngIf="message" >
+<div class="alert alert-success alert-dismissible" *ngIf="message">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>{{message}}</strong>
+  <strong>{{ message }}</strong>
 </div>
 
-<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+<div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>{{errorMessage}}</strong>
+  <strong>{{ errorMessage }}</strong>
 </div>
-<div id="page" class="card" style=" border: none; width: 40rem;">
+<div class="outerDiv">
+  <div id="page" class="card" style="border: none; width: 40rem">
     <h2>User Registration</h2>
     <form #userregistrationform="ngForm" >
       <div class="mb-3">
@@ -55,20 +56,6 @@
       </div><br>
       </div>
       </div>
-    
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-           Owner
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2">
-          Rental
-        </label>
-      </div>
-
   
       <button [disabled]="!userregistrationform.form.valid" (click)="userRegistration(userregistrationform)" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
       <p style="margin-left: 5%;"> Already have an account  ? <a routerLink=""><b>Login</b></a></p>

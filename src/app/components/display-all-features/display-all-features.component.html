@@ -19,3 +19,18 @@
 </div>
 
 
+<div *ngIf=isUpdate>
+    <h3>Update Feature:</h3>   
+    <form (ngSubmit)="updateFeatureSubmit()">
+        id:<input type="number" [(ngModel)]="featureUpdate.id" name="fId" disabled>
+        Name:<input type="text" [(ngModel)]="featureUpdate.featureName" name="fName" required>
+        Price:<input type="number" [(ngModel)]="featureUpdate.percent" name="percent" required>
+        <input type="submit" value="Update Feature">
+    </form>
+    
+    
+</div>
+
+
+
+
