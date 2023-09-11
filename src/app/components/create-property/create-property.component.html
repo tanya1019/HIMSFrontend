@@ -1,3 +1,4 @@
+<div class="outerMostDiv">
 <app-navbar></app-navbar>
 <div class="container">
     <h1 class="title">Add property</h1>
@@ -188,17 +189,19 @@
 
   </div>
 
-  <button class="submit" (click)="getPremium()">Get Premium </button>
+  <button class="submit" (click)="getPremium()" style="margin-bottom: 10%; margin-top: -10%;">Get Premium </button>
   <h5>Total Premium for 1 month :{{totalPremium/12}}</h5>
      <h5>Total Premium for {{year}} years :{{totalPremium*year}}</h5>
 
   
       
     
-      <button  class="submit" [disabled]="!propertyForm.form.valid" (click)="addProperty(property.custId, propertyForm)">Add property</button>
+      <button  class="submit" [disabled]="!propertyForm.form.valid" style="margin-top: 10%;" (click)="addProperty(property.custId, propertyForm)">Add property</button>
     </form>
     </div>
   </div>
+
+</div>
 
 
 
