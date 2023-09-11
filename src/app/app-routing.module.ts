@@ -12,6 +12,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
   {path : 'profile', component:ProfileComponent},
+  {path : 'payments', component:PolicyPaymentsComponent},
 
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path:'home',component:HomePageComponent},
