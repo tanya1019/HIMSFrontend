@@ -11,9 +11,11 @@ export class Property{
 	  country : string;
       address : string;
       propertyType : string;
-      
+      premiumAmount: number;
+      contentsCost: number;
+      state : string;  
 
-      constructor(propId:number,custId:number, areaInSquareFeet:number,costOfProperty:number,pincode: number, city:string, country:string, ageOfBuilding:number, address : string,propertyType:string){
+      constructor(propId:number,custId:number, areaInSquareFeet:number,costOfProperty:number,pincode: number, city:string, country:string, ageOfBuilding:number, address : string,propertyType:string,premiumAmount: number,contentsCost: number,state : string){
             this.propId = propId;
             this.custId = custId;
             this.areaInSquareFeet = areaInSquareFeet;
@@ -24,6 +26,9 @@ export class Property{
             this.ageOfBuilding = ageOfBuilding;
             this.address = address;
             this.propertyType=propertyType;
+            this.premiumAmount = premiumAmount;
+            this.contentsCost = contentsCost;
+            this.state = state
             
         }
 	
