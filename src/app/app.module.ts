@@ -42,7 +42,8 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
         ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
-        UserClaimComponent,
+        UserClaimComponent
+        
   ],
   imports: [
     BrowserModule,
