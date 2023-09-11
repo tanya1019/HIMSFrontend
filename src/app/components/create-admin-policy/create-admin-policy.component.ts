@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { BackendPolicyService } from '../../services/backend-policy.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-admin-policy',
@@ -23,7 +24,7 @@ export class CreateAdminPolicyComponent implements OnInit {
 
   message : string = "";
   errorMessage :string = "";
-  constructor(private backendPolicyService : BackendPolicyService) { }
+  constructor(private backendPolicyService : BackendPolicyService,private router:Router) { }
 
 
   ngOnInit(): void {}
@@ -36,6 +37,7 @@ export class CreateAdminPolicyComponent implements OnInit {
         console.log(data)
         this.message = "Policy added successfully"
         this.errorMessage = ""
+        this.router.navigate(["/admin/displaypolicy"]);
       },
       error:(err)=>{
         console.log(err)

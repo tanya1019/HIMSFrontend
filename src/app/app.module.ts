@@ -21,6 +21,8 @@ import { PolicyPaymentsComponent } from './components/policy-payments/policy-pay
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
+import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
+import { AdminGetAllCustomersComponent } from './components/admin-get-all-customers/admin-get-all-customers.component';
 
 
 
@@ -45,6 +47,8 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
         ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
+        AdminHomePageComponent,
+        AdminGetAllCustomersComponent,
   ],
   imports: [
     BrowserModule,
