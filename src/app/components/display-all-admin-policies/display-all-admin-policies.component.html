@@ -1,4 +1,5 @@
 <h1 class="title">All Policies</h1>
+<button (click)="backToHome()" >Back</button>
 <div *ngFor="let adminPolicy of adminPolicies" class = "card" >
     <p>Policy Name : {{adminPolicy.policyName}}</p>
     <p>Policy Description : {{adminPolicy.policyDescription}}</p>
