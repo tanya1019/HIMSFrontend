@@ -12,6 +12,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
 
 
@@ -31,9 +32,11 @@ const routes: Routes = [
 
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path:'home',component:HomePageComponent},
+  {path:'ownedPolicy', component:CreateOwnedPolicyComponent},
   {path : 'premium',component:PremiumCalculatorComponent},
   {path:'claim' ,component:UserClaimComponent},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

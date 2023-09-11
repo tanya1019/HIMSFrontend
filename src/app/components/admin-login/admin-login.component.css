@@ -1,11 +1,13 @@
 #page{
     margin-inline: 40%;
-    margin-top: 10%;
+    
     padding: 2%;
 }
 
 .card{
     align-items: center;
+    background: transparent;
+    border: none;
 }
 
 .mb-3{
@@ -13,9 +15,18 @@
 }
 
 button{
-    margin-inline: 35%;
+    margin-inline: 40%;
+    margin-top: 10%;
 }
 
 h2{
     padding-bottom: 25%;
+    padding-top: 10vw;
+}
+
+.outerDiv{
+    height: 55vw;
+    background: rgb(255,203,203);
+    background: linear-gradient(90deg, rgba(255,203,203,0.42482930672268904) 0%, rgba(255,197,118,0.1811318277310925) 50%, rgba(240,255,126,0.43043154761904767) 100%);
+
 }

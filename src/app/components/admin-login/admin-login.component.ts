@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Admin } from 'src/app/class/Admin';
 import { BackendLoginService } from 'src/app/services/backend-admin-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,18 +11,29 @@ import { BackendLoginService } from 'src/app/services/backend-admin-login.servic
 export class AdminLoginComponent implements OnInit {
 
   admin: Admin = new Admin("","");
-  constructor(private loginUserService: BackendLoginService) { }
+  message: string = "";
+  errorMessage: string = "";
+
+  constructor(private router: Router, private loginUserService: BackendLoginService) { }
 
   ngOnInit(): void {
   }
 
-  userLogin(){
+  adminLogin(){
     console.log(this.admin);
     this.loginUserService.loginUser(this.admin).subscribe({
       next:(data)=> {
-        console.log(data)
+        console.log("Login Successful" + JSON.stringify(data));
+        localStorage.setItem("user" , JSON.stringify(data))
+        this.message= "login Successful";
+        this.router.navigate(["/home"])
+        this.errorMessage= "";
       },
-      error: (err)=> {alert(err.error.text)}
+      error: (err)=> {
+        alert(err.error.text)
+        this.message= "";
+        this.errorMessage= "login Failed...Try again";
+      }
 
     })
 }

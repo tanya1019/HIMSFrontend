@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1 class="title">Custom Policy</h1>
+
+    <div class="alert alert-success alert-dismissible" *ngIf="message" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>{{message}}</strong>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>{{errorMessage}}</strong>
+    </div>
+
+    <div class="input-form" >
+      *nomineeName:
+      <input type="text" [(ngModel)]="ownedPolicy.nomineeName" name="nomineeName" #address="ngModel" required />
+      <!-- <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['required']" class="alert alert-danger ">
+          Enter a valid nominee Name!!
+        </div>
+      </div> -->
+
+      *nomineeAge:
+      <input type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" />
+      <!-- <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
+        <div *ngIf="nomineeAge.errors?.['required']" class="alert alert-danger ">
+          Enter a valid nominee age!!
+        </div>
+      </div> -->
+
+      *nomineeRelation:
+      <input type="text" [(ngModel)]="ownedPolicy.nomineeRelation" name="ownedPolicyNomineeRelation" />
+      <!-- <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+        <div *ngIf="nomineeRelation.errors?.['required']" class="alert alert-danger ">
+          Enter a valid Nominee Relation !!
+        </div>
+      </div> -->
+
+
+      
+      *Select Features:
+      <div *ngFor = "let fea of feat">
+        <input type="checkbox"  id="feature" name="feature" value="feature" >
+        <div [(ngModel)]="ownedPolicy.feature">
+          <label for="feature" > {{fea.featureName}}</label><br>
+        </div>
+        
+      </div>
+      
+
+      
+
+
+
+      
+      <button class="submit" (click)="addOwnedPolicy(ownedPolicy.custid)">Add Owned Policy</button>
+
+    </div>
+  </div>

@@ -1,4 +1,5 @@
 export class AdminPolicy{
+  
   id: number;
   policyName: string;
   policyDescription: string;
