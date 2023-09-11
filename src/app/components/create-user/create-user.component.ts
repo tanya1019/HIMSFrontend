@@ -11,7 +11,7 @@ import { BackendRegisterUserService } from 'src/app/services/backend-register-us
 })
 export class CreateUserComponent implements OnInit {
 
-  user: User = new User("","",0,"","");
+  user: User = new User("","123",0,"","");
   message: string = "";
   errorMessage: string = "";
 
@@ -20,12 +20,13 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {}
 
   userRegistration( userregistrationform: NgForm){
-    userregistrationform.form.reset();
+    
     this.registerUserService.registerUser(this.user).subscribe({
       next:()=> {
         console.log("Registration Successful");
         this.router.navigate([""])
         this.errorMessage= "";
+        userregistrationform.form.reset();
       },
       error: (err)=> {
         alert(err.error.text)

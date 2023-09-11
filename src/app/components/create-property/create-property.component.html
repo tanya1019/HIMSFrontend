@@ -25,18 +25,18 @@
           Enter a valid address!
         </div>
       </div><br>
-      City* :
-      <input type="text" [(ngModel)]="property.city" name="propertyPassword" #city="ngModel" required  />
-      <div *ngIf="city.invalid && (city.dirty || city.touched)">
-        <div *ngIf="city.errors?.['required']" class="alert alert-danger">
-          City is required!
-        </div>
-      </div><br>
       Country* :
       <input type="text" [(ngModel)]="property.country" name="country"  #country="ngModel" required/>
       <div *ngIf="country.invalid && (country.dirty || country.touched)" >
         <div *ngIf="country.errors?.['required']" class="alert alert-danger">
           Country is required!
+        </div>
+      </div><br>
+      City* :
+      <input type="text" [(ngModel)]="property.city" name="propertyPassword" #city="ngModel" required  />
+      <div *ngIf="city.invalid && (city.dirty || city.touched)">
+        <div *ngIf="city.errors?.['required']" class="alert alert-danger">
+          City is required!
         </div>
       </div><br>
       Pincode* :
@@ -46,6 +46,44 @@
         please enter valid pincode!
     </div>
   </div><br>
+     
+      
+     
+
+
+    <div>
+
+      Select Your Property Type:
+      
+        <select #ref (change)="getSelectedValue(ref.value)"  >
+              <option value="option1">  Select the Property Type   </option>
+              <option value="Owned">Owned</option>
+              <option value="Rented">Rented</option>
+        </select><br><br><br><br>
+       
+    </div>
+
+
+  <div *ngIf="isOwned">
+    For What Do You want the insaurance:<br><br>
+    Only for Building:
+    <input type="checkbox" (change)="getData1()"><br><br>
+    For Building and Contents:
+    <input type="checkbox" (change)="getData2()"><br><br>
+    For Contents Only:
+    <input type="checkbox" (change)="getData3()"><br><br>
+    
+
+
+      <div *ngIf="forBuilding">
+        Property cost* :
+        <input type="number"  [(ngModel)]="property.costOfProperty"  name="propertyCost" #cost="ngModel" required  />
+        <div  *ngIf="cost.invalid && (cost.dirty || cost.touched)">
+          <div *ngIf="cost.errors?.['required']" class="alert alert-danger">
+        Property cost is required!
+            </div>
+      </div><br>
+
       Area (in sq.ft)* :
       <input type="number"  [(ngModel)]="property.areaInSquareFeet"   name="Area"  #area="ngModel" required />
       <div  *ngIf="area.invalid && (area.dirty || area.touched)">
@@ -54,21 +92,106 @@
       </div>
     </div><br>
       
-      Property cost* :
-      <input type="number"  [(ngModel)]="property.costOfProperty"  name="propertyCost" #cost="ngModel" required  />
-      <div  *ngIf="cost.invalid && (cost.dirty || cost.touched)">
-        <div *ngIf="cost.errors?.['required']" class="alert alert-danger">
-      Property cost is required!
-          </div>
-    </div><br>
-      Property age* :
-      <input  type="number"  [(ngModel)]="property.ageOfBuilding"   name="propertyAge"  #age="ngModel" required   />
-      <div  *ngIf="age.invalid && (age.dirty || age.touched)">
-        <div *ngIf="age.errors?.['required']" class="alert alert-danger">
-      Property age is required!
+    Property age* :
+    <input  type="number"  [(ngModel)]="property.ageOfBuilding"   name="propertyAge"  #age="ngModel" required   />
+    <div  *ngIf="age.invalid && (age.dirty || age.touched)">
+      <div *ngIf="age.errors?.['required']" class="alert alert-danger">
+    Property age is required!
+    </div>
+  </div><br>
+
+         No of year for which you want policy:
+         <input
+          type="number"
+          [(ngModel)]="year"
+          name="year"
+         /><br><br>
+      </div>
+      <div *ngIf="forBuildingAndContents">
+       Property cost* :
+        <input type="number"  [(ngModel)]="property.costOfProperty"  name="propertyCost" #cost="ngModel" required  />
+        <div  *ngIf="cost.invalid && (cost.dirty || cost.touched)">
+          <div *ngIf="cost.errors?.['required']" class="alert alert-danger">
+        Property cost is required!
+            </div>
+      </div><br>
+      Area (in sq.ft)* :
+      <input type="number"  [(ngModel)]="property.areaInSquareFeet"   name="Area"  #area="ngModel" required />
+      <div  *ngIf="area.invalid && (area.dirty || area.touched)">
+        <div *ngIf="area.errors?.['required']" class="alert alert-danger">
+        Please enter valid  Area (in sq.ft)!
       </div>
     </div><br>
+    Property age* :
+    <input  type="number"  [(ngModel)]="property.ageOfBuilding"   name="propertyAge"  #age="ngModel" required   />
+    <div  *ngIf="age.invalid && (age.dirty || age.touched)">
+      <div *ngIf="age.errors?.['required']" class="alert alert-danger">
+    Property age is required!
+    </div>
+  </div><br>
+          Content Cost :
+          <input
+          type="number"
+          [(ngModel)]="contents"
+          name="contents" 
+          /><br><br>
+           No of year for which you want policy:
+          <input
+            type="number"
+            [(ngModel)]="year"
+           name="year"
+            /><br><br>
+          </div>
+          <div *ngIf="forContents">
+            Content Cost :
+                <input
+                  type="number"
+                  [(ngModel)]="contents"
+                  name="contents" 
+                /><br><br>
+                Area (in sq.ft) :
+                <input
+                 type="number"
+                 [(ngModel)]="property.areaInSquareFeet"
+                 name="propertyPassword"
+                /><br><br>
+                No of year for which you want policy:
+                <input
+                  type="number"
+                  [(ngModel)]="year"
+                  name="year"
+               /><br><br>
+          </div>
+
+  </div>
         
+  <div *ngIf="isRented">
+    You Can get insaurance for Contents !<br><br>
+            Content Cost :
+            <input
+              type="number"
+              [(ngModel)]="contents"
+              name="contents" 
+            /><br><br>
+            Area (in sq.ft) :
+            <input
+             type="number"
+             [(ngModel)]="property.areaInSquareFeet"
+             name="propertyPassword"
+            /><br><br>
+            No of year for which you want policy:
+            <input
+              type="number"
+              [(ngModel)]="year"
+              name="year"
+           /><br><br>
+
+  </div>
+
+  <button class="submit" (click)="getPremium()">Get Premium </button>
+  <h5>Total Premium for 1 month :{{totalPremium/12}}</h5>
+     <h5>Total Premium for {{year}} years :{{totalPremium*year}}</h5>
+
   
       
     
@@ -76,3 +199,19 @@
     </form>
     </div>
   </div>
+
+
+
+       
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
