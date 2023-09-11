@@ -13,25 +13,45 @@
 </div>
 <div id="page" class="card" style=" border: none; width: 40rem;">
     <h2>User Registration</h2>
-    <form>
+    <form #userregistrationform="ngForm" >
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe">
-      </div>
+        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe" #name="ngModel" required="">
+        <div  *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.errors?.['required']" class="alert alert-danger">
+        Name is mandetory!
+        </div>
+      </div><br>
   
       <div class="mb-3">
         <label for="contactNumber" class="form-label">Contact Number</label>
-        <input type="number" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" id="contactNumber" placeholder="91------00">
+        <input type="number" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" id="contactNumber" placeholder="91------00" #number="ngModel" required>
+        <div  *ngIf="number.invalid && (number.dirty || number.touched)">
+          <div *ngIf="number.errors?.['required']" class="alert alert-danger">
+       Enter contact number!
+        </div>
+      </div><br>
       </div>
 
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="John@gmail.com" aria-describedby="emailHelp">
+        <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="John@gmail.com" aria-describedby="emailHelp" #email="ngModel" required>
+        <div  *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors?.['required']" class="alert alert-danger">
+     Email is required!
+        </div>
+      </div><br>
       </div>
-
+ 
       <div class="mb-3">
         <label for="Password" class="form-label">Password</label>
-        <input type="Password" [(ngModel)]="user.password" class="form-control" name="Password" id="Password" placeholder="****">
+        <input type="Password" [(ngModel)]="user.password" class="form-control" name="Password" id="Password" placeholder="****" #pass="ngModel" required>
+        <div  *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+          <div *ngIf="pass.errors?.['required']" class="alert alert-danger">
+            You can not move forword without password!
+        </div>
+      </div><br>
+      </div>
       </div>
     
       <div class="form-check">
@@ -48,10 +68,10 @@
       </div>
 
   
-      <button (click)="userRegistration()" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
+      <button [disabled]="!userregistrationform.form.valid" (click)="userRegistration(userregistrationform)" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
       <p style="margin-left: 5%;"> Already have an account  ? <a routerLink=""><b>Login</b></a></p>
 
+  
     </form>
-
 
   </div>
