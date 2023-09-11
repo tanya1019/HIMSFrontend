@@ -13,6 +13,10 @@ export class DisplayAllFeaturesComponent implements OnInit {
   message: string = "";
   errorMessage: string = "";
   features:Feature[] = [];
+  isUpdate: boolean = false;
+  isUpdateSuccess: boolean = false;
+  featureUpdate: Feature = new Feature(0, "", 0);
+
   constructor(private backendFeatureService: BackendFeatureService ,private router:Router) {
 
    }
@@ -51,5 +55,30 @@ export class DisplayAllFeaturesComponent implements OnInit {
         );
     }
   }
+
+  updateFeature(feature: Feature) {
+    this.isUpdate = true;
+    this.featureUpdate = feature;
+  }
+
+  updateFeatureSubmit() {
+    console.log(this.featureUpdate);
+    this.backendFeatureService.updateFeature(this.featureUpdate).
+    subscribe({
+      next: (data) => {
+        console.log(data);
+        this.message = "Feature Updated.";
+        this.errorMessage = "";
+      },
+      error: (error) => {
+        console.log(error);
+        this.errorMessage = "Could not update Feature.";
+        this.message = "";
+      }
+    });
+    this.isUpdate = false;
+    this.isUpdateSuccess = true;
+  }
+
 
 }

@@ -1,3 +1,5 @@
+import { User } from "./User";
+
 export class Property{
      propId : number ;
 	 custId : number;
@@ -6,10 +8,12 @@ export class Property{
 	 ageOfBuilding : number;
      pincode : number;
       city : string;
-	  country : string
-      address : string
+	  country : string;
+      address : string;
+      propertyType : string;
+      
 
-      constructor(propId:number,custId:number, areaInSquareFeet:number,costOfProperty:number,pincode: number, city:string, country:string, ageOfBuilding:number, address : string){
+      constructor(propId:number,custId:number, areaInSquareFeet:number,costOfProperty:number,pincode: number, city:string, country:string, ageOfBuilding:number, address : string,propertyType:string){
             this.propId = propId;
             this.custId = custId;
             this.areaInSquareFeet = areaInSquareFeet;
@@ -18,7 +22,9 @@ export class Property{
             this.city = city;
             this.country = country;
             this.ageOfBuilding = ageOfBuilding;
-            this.address = address
+            this.address = address;
+            this.propertyType=propertyType;
+            
         }
 	
 }
