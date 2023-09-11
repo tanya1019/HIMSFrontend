@@ -1,3 +1,9 @@
+.outerMostDiv{
+  background: rgb(255,203,203);
+    background: linear-gradient(90deg, rgba(255,203,203,0.42482930672268904) 0%, rgba(255,197,118,0.1811318277310925) 50%, rgba(240,255,126,0.43043154761904767) 100%);
+
+}
+
 .container {
     display: flex; 
     flex-direction: column;
@@ -5,7 +11,7 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: #fff;
+    background:transparent;
    
   }
   
@@ -21,8 +27,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #f7fafc;
-    border: solid 1px #eee;
+    background: transparent;
+    border: none;
     font-size: 12px;
     color: #555;
     padding: 40px;
