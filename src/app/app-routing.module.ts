@@ -16,6 +16,7 @@ import { CreateOwnedPolicyComponent } from './components/create-owned-policy/cre
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
 import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
 import { AdminGetAllCustomersComponent} from './components/admin-get-all-customers/admin-get-all-customers.component';
+import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
  
 const routes: Routes = [
   {path:'home', component: HomePageComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:'ownedPolicy', component:CreateOwnedPolicyComponent},
   {path:'claim' ,component:UserClaimComponent},
   {path:'admin/home', component:AdminHomePageComponent},
-  {path:'admin/customers', component:AdminGetAllCustomersComponent}
+  {path:'admin/customers', component:AdminGetAllCustomersComponent},
+  {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent}
   
 ];
 

@@ -26,7 +26,7 @@ export class AdminLoginComponent implements OnInit {
         console.log("Login Successful" + JSON.stringify(data));
         localStorage.setItem("user" , JSON.stringify(data))
         this.message= "login Successful";
-        this.router.navigate(["/home"])
+        this.router.navigate(["/admin/home"])
         this.errorMessage= "";
       },
       error: (err)=> {

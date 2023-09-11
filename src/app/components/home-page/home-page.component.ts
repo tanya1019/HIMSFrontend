@@ -23,7 +23,7 @@ this.router.navigate(["/addproperty"])
   }
 
   viewAllPolicies(){
-    this.router.navigate(["admin/displaypolicy"])
+    this.router.navigate(["/displaypolicy"])
       }
 
 }

@@ -23,7 +23,8 @@ export class CreateUserComponent implements OnInit {
     
     this.registerUserService.registerUser(this.user).subscribe({
       next:()=> {
-        console.log("Registration Successful");
+        // console.log("Registration Successful");
+        this.message= "login Successful";
         this.router.navigate([""])
         this.errorMessage= "";
         userregistrationform.form.reset();
