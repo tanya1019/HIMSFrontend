@@ -38,9 +38,9 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     UserLoginComponent,
     CreateUserComponent,
     CreateOwnedPolicyComponent,
-  
+    PremiumCalculatorComponent,
     DisplayAllAdminPoliciesComponent,
-   
+    UserClaimComponent,
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
