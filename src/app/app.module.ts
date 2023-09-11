@@ -17,7 +17,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { UserClaimComponent } from './components/user-claim/user-claim.component';
+import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 
 
 
@@ -40,8 +40,7 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
-        UserClaimComponent
-        
+        PolicyPaymentsComponent,
   ],
   imports: [
     BrowserModule,
