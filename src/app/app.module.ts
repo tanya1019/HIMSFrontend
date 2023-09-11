@@ -17,11 +17,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-<<<<<<< HEAD
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
-=======
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
->>>>>>> ecb38290315b89972b0962e8fbfa177d02fbbb84
 
 
 
@@ -44,11 +41,8 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
-<<<<<<< HEAD
-        PremiumCalculatorComponent
-=======
+        PremiumCalculatorComponent,
         UserClaimComponent
->>>>>>> ecb38290315b89972b0962e8fbfa177d02fbbb84
   ],
   imports: [
     BrowserModule,
