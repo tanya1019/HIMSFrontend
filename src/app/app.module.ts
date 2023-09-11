@@ -16,6 +16,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 
 
 
@@ -37,6 +38,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
    
     CreateFeatureComponent,
         NavbarComponent,
+        PremiumCalculatorComponent
   ],
   imports: [
     BrowserModule,

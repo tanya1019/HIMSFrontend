@@ -47,6 +47,12 @@
         [(ngModel)]="property.ageOfBuilding"
         name="propertyPassword"
       />
-      <button class="submit" (click)="addProperty(property.custId)">Add property</button>
+      <select #ref (change)="getSelectedValue(ref.value)" >
+        <option value="option1">  Select the Property Type   </option>
+        <option value="Owned">Owned</option>
+        <option value="Rented">Rented</option>
+      </select>
+
+      <button class="submit" (click)="addProperty(property.custId)" >Add property</button>
     </div>
   </div>

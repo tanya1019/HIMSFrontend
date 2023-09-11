@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
 import { BackendPropertyService } from '../../services/backend-property';
+import { User } from 'src/app/class/User';
 
 @Component({
   selector: 'app-create-property',
@@ -19,7 +20,10 @@ export class CreatePropertyComponent implements OnInit {
     city: '',
     country: '',
     address: '',
+    propertyType: ''
   };
+
+  
 
   message : string = "";
   errorMessage :string = "";
@@ -43,6 +47,11 @@ export class CreatePropertyComponent implements OnInit {
       }
       
     })
-    this.property = new Property( 0,0,0,0,0,"","",0,"")
+    this.property = new Property( 0,0,0,0,0,"","",0,"","")
+  }
+
+  getSelectedValue(value:string){
+    console.log("Selected value",value);
+    this.property.propertyType = value;
   }
 }
