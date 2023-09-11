@@ -19,8 +19,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
-import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
+import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
+import { AdminGetAllCustomersComponent } from './components/admin-get-all-customers/admin-get-all-customers.component';
 
 
 
@@ -39,13 +40,14 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     UserLoginComponent,
     CreateUserComponent,
     CreateOwnedPolicyComponent,
-    PremiumCalculatorComponent,
     DisplayAllAdminPoliciesComponent,
     UserClaimComponent,
     CreateFeatureComponent,
         ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
+        AdminHomePageComponent,
+        AdminGetAllCustomersComponent,
   ],
   imports: [
     BrowserModule,

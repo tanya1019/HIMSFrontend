@@ -14,4 +14,8 @@ export class BackendLoginService {
     console.log(admin);
     return this.httpClient.post("http://localhost:8090/adminlogin",admin);
   }
+
+  getAllCustomers():Observable<any>{
+   return this.httpClient.get("http://localhost:8090/customers",{responseType: "json"});
+}
 }

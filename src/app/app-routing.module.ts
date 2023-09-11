@@ -10,13 +10,12 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
-import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
-
-
+import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
+import { AdminGetAllCustomersComponent} from './components/admin-get-all-customers/admin-get-all-customers.component';
  
 const routes: Routes = [
   {path:'home', component: HomePageComponent},
@@ -31,12 +30,12 @@ const routes: Routes = [
   {path : 'features', component:DisplayAllFeaturesComponent},
   {path : 'profile', component:ProfileComponent},
   {path : 'payments', component:PolicyPaymentsComponent},
-
-  {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path:'home',component:HomePageComponent},
   {path:'ownedPolicy', component:CreateOwnedPolicyComponent},
-  {path : 'premium',component:PremiumCalculatorComponent},
   {path:'claim' ,component:UserClaimComponent},
+  {path:'admin/home', component:AdminHomePageComponent},
+  {path:'admin/customers', component:AdminGetAllCustomersComponent}
+  
 ];
 
 

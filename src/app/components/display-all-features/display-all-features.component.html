@@ -1,7 +1,6 @@
-<app-navbar></app-navbar>
-<p>display-all-features works!</p>
 <div >
    <h3>Display all Features.</h3>
+   <button (click)="backToHome()" >Back</button>
    <table class="table">
     <tr>
         <th>Id</th>
@@ -12,8 +11,8 @@
         <td>{{feature.id}}</td>
         <td>{{feature.featureName}}</td>
         <td>{{feature.percent}}</td>
-        <td><button  (click)=deleteFeatureById(feature.id) class="btn btn-danger">Delete</button></td>
-        <td><button  class="btn btn-primary">Update</button></td>
+        <td><button  (click)="deleteFeatureById(feature.id)" class="btn btn-danger">Delete</button></td>
+        <td><button  (click)="updateFeature(feature)" class="btn btn-primary">Update</button></td>
     </tr>
    </table>
 </div>

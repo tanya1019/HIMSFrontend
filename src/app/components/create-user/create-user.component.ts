@@ -23,13 +23,13 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {}
 
   userRegistration( userregistrationform: NgForm){
+    
     this.registerUserService.registerUser(this.user).subscribe({
       next:()=> {
         console.log("Registration Successful");
         this.router.navigate([""])
         this.errorMessage= "";
         userregistrationform.form.reset();
-
       },
       error: (err)=> {
         alert(err.error.text)

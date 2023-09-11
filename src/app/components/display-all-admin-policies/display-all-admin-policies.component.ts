@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { BackendPolicyService } from 'src/app/services/backend-policy.service';
 
@@ -14,12 +15,14 @@ export class DisplayAllAdminPoliciesComponent implements OnInit {
   errorMessage : string = ""
   isLoaded : Boolean = false;
 
-  constructor(private backendPolicyService : BackendPolicyService) { }
+  constructor(private backendPolicyService : BackendPolicyService, private router:Router) { }
 
   ngOnInit(): void {
     this.loadPoliciesToComponent()
   }
-
+  backToHome(){
+    this.router.navigate(["/admin/home"]);
+  }
   loadPoliciesToComponent(){
     this.isLoaded = false;
     this.backendPolicyService.getAllAdminPolicies().subscribe(
