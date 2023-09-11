@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { PolicyPaymentsComponent } from './components/policy-payments/policy-pay
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
+
 
 
 
@@ -50,7 +51,9 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
