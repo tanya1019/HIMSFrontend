@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/class/User';
 import { BackendRegisterUserService } from 'src/app/services/backend-register-user.service';
@@ -18,7 +19,8 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  userRegistration(){
+  userRegistration( userregistrationform: NgForm){
+    userregistrationform.form.reset();
     this.registerUserService.registerUser(this.user).subscribe({
       next:()=> {
         console.log("Registration Successful");

@@ -18,6 +18,7 @@ import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
+import { UserClaimComponent } from './components/user-claim/user-claim.component';
 
 
 
@@ -41,6 +42,7 @@ import { PolicyPaymentsComponent } from './components/policy-payments/policy-pay
         ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
+        UserClaimComponent,
   ],
   imports: [
     BrowserModule,

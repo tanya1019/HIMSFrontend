@@ -50,9 +50,11 @@
     color: #fff;
     outline: none;
     border: none;
-    align-self: center;
+    align-items: center;
     margin-top: 20px;
     font-size: 14px;
+    margin-left: 40%;
+ 
   }
   
   p {
