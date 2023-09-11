@@ -24,20 +24,20 @@ export class CreateAdminPolicyComponent implements OnInit {
 
   message : string = "";
   errorMessage :string = "";
-  constructor(private backendPolicyService : BackendPolicyService,private router:Router) { }
+  constructor(private backendPolicyService : BackendPolicyService, private router : Router) { }
 
 
   ngOnInit(): void {}
 
   addAdminPolicy(policyForm: NgForm){
-    policyForm.form.reset();
+    
     this.backendPolicyService.postAdminPolicy(this.adminPolicy)
     .subscribe({
       next:(data)=>{
         console.log(data)
         this.message = "Policy added successfully"
+this.router.navigate(["/home"])
         this.errorMessage = ""
-        this.router.navigate(["/admin/displaypolicy"]);
       },
       error:(err)=>{
         console.log(err)

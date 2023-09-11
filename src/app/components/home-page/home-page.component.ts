@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -12,9 +13,17 @@ export class HomePageComponent implements OnInit {
   imgSrc3="../assets/img3.png";
   imgSrc4="../assets/img4.webp";
 center: any;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  addProperty(){
+this.router.navigate(["/addproperty"])
+  }
+
+  viewAllPolicies(){
+    this.router.navigate(["admin/displaypolicy"])
+      }
 
 }
