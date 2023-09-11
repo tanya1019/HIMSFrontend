@@ -1,3 +1,4 @@
+
 <div class="alert alert-success alert-dismissible" *ngIf="message" >
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -68,19 +69,16 @@
 
     <div id="page" class="card login">
       <h2 style="padding-bottom:3vw; margin-inline-start: 5vw;">User Login</h2>
-      <form>
+      <form >
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            [(ngModel)]="user.email"
-            class="form-control"
-            name="email"
-            id="email"
-            placeholder="abc@gmail.com"
-            aria-describedby="emailHelp"
-            style="width: 20vw;"
-          />
+          <input  type="email" [(ngModel)]="user.email" class="form-control"  name="email" id="email" placeholder="abc@gmail.com"   aria-describedby="emailHelp"    style="width: 20vw;"  #email="ngModel" required   />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']" class="alert alert-danger ">
+              Enter a valid Email Address!
+            </div>
+          </div><br>
+
         </div>
 
         <div class="mb-3">
@@ -93,8 +91,14 @@
             id="password"
             placeholder="**password**"
             style="width: 20vw;"
+            #password="ngModel" required
           />
         </div>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.errors?.['required']" class="alert alert-danger ">
+            Password is required !
+          </div>
+        </div><br>
 
         <button (click)="userLogin()" id="loginbtn" style="margin-bottom: 5%;" class="btn btn-primary">
           Login
@@ -104,7 +108,5 @@
     </div>
   </div>
 </div>
-
-
 
 <!-- *ngIf="message"  -->

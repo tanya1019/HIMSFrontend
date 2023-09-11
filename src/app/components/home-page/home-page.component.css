@@ -16,12 +16,15 @@ h1{
 }
 .card-title{
     margin-inline: 32%;
+    text-align: left;
 }
 
 #steps{
     margin-top: 5%;
 }
-
+.card-title{
+ text-align: right;
+}
 img{
     width: 60vw;
     height: 30vw;
@@ -31,7 +34,7 @@ img{
 }
 
 .text{
-    text-align: center;
+    text-align:right;
 }
 .card-deck{
     margin: 15px;

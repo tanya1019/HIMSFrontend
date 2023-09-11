@@ -11,10 +11,13 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
 import { PremiumCalculatorComponent } from './components/premium-calculator/premium-calculator.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UserClaimComponent } from './components/user-claim/user-claim.component';
 
 
  
 const routes: Routes = [
+  {path:'home', component: HomePageComponent},
   {path : 'addproperty', component:CreatePropertyComponent},
   {path : 'myProperty', component:MyPropertiesComponent},
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
@@ -24,10 +27,12 @@ const routes: Routes = [
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
+  {path : 'profile', component:ProfileComponent},
 
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
   {path:'home',component:HomePageComponent},
   {path : 'premium',component:PremiumCalculatorComponent},
+  {path:'claim' ,component:UserClaimComponent},
 ];
 
 @NgModule({

@@ -16,25 +16,61 @@
   
     <h1 class="title">Add Policy</h1>
     <div class="input-form">
-      Policy name : 
-      <input type="text" [(ngModel)]="adminPolicy.policyName" name="name" /> 
-      Policy Description :
-      <input type="text" [(ngModel)]="adminPolicy.policyDescription" name="description" />
-      Policy Duration (in years) :
-      <input type="text" [(ngModel)]="adminPolicy.policyDuration" name="propertyPassword" />
-      Policy Premiun Amount
+      <form #policyForm="ngForm"  >
+      Policy name*: 
+      <input type="text" [(ngModel)]="adminPolicy.policyName" name="name" #name="ngModel" required /> 
+      <div *ngIf="name.invalid  && (name.dirty || name.touched)"  >
+        <div *ngIf="name.errors?.['required']" class="alert alert-danger">
+          Name required!!
+        </div> 
+      </div><br>
+ 
+      Policy Descriptio*:
+      <input type="text" [(ngModel)]="adminPolicy.policyDescription" name="description" #description="ngModel" required />
+      <div *ngIf="description.invalid && (description.dirty || description.touched)"  >
+        <div *ngIf="description.errors?.['required']" class="alert alert-danger">
+          Description required
+        </div>
+        </div>
+        <br>
+
+
+      Policy Duration (in years)*:
+      <input type="text" [(ngModel)]="adminPolicy.policyDuration" name="propertyPassword" #duration="ngModel" required />
+      
+      <div *ngIf="duration.invalid && (duration.dirty || duration.touched)">
+      
+        <div *ngIf="duration.errors?.['required']" class="alert alert-danger">Enter valid duration</div>
+      </div>
+      <br>
+
+
+      Policy Premiun Amount*:
       <input
         type="number"
         [(ngModel)]="adminPolicy.premiumAmount"
-        name="propertyPassword"
+        name="premiumAmount" #premiumamount="ngModel" required
       />
-      Property Amount
+      <div *ngIf="premiumamount.invalid && (premiumamount.dirty || premiumamount.touched)">
+        <div *ngIf="premiumamount.errors?.['required']" class="alert alert-danger">
+          Enter amount
+        </div>
+      </div>
+        <br>
+
+      Property Amount*:
       <input
         type="number"
         [(ngModel)]="adminPolicy.propertyAmount"
-        name="propertyPassword"
-      />
+        name="propertyAmount" #propertyamount="ngModel" required/>
+      <div *ngIf="propertyamount.invalid && (propertyamount.dirty || propertyamount.touched)">
+        <div *ngIf="propertyamount.errors?.['required']" class="alert alert-danger"> Property Amount required !!
+        </div>
+      </div>
      
-      <button class="submit" (click)="addAdminPolicy()">Add Policy</button>
-    </div>
+      <button class="submit" [disabled]="!policyForm.form.valid"  (click)="addAdminPolicy(policyForm)">Add Policy</button>
+ 
+  
+    </form>
   </div>
+</div>
