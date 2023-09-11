@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { BackendPolicyService } from 'src/app/services/backend-policy.service';
 
 @Component({
-  selector: 'app-display-all-admin-policies',
-  templateUrl: './display-all-admin-policies.component.html',
-  styleUrls: ['./display-all-admin-policies.component.css']
+  selector: 'app-display-all-customer-policy',
+  templateUrl: './display-all-customer-policy.component.html',
+  styleUrls: ['./display-all-customer-policy.component.css']
 })
-export class DisplayAllAdminPoliciesComponent implements OnInit {
+export class DisplayAllCustomerPolicyComponent implements OnInit {
+
 
   adminPolicies : AdminPolicy[] = []
   message : string = ""
@@ -20,8 +21,9 @@ export class DisplayAllAdminPoliciesComponent implements OnInit {
   ngOnInit(): void {
     this.loadPoliciesToComponent()
   }
+
   backToHome(){
-    this.router.navigate(["/admin/home"]);
+    this.router.navigate(["/home"]);
   }
   loadPoliciesToComponent(){
     this.isLoaded = false;
