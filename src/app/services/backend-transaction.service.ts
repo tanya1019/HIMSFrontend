@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class BackendTransactionService {
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
+
+  createTransaction(amount:number){
+    return this.httpClient.get("http://localhost:8090/createtransaction/"+amount, { responseType:"json"})
+  }
+
 }

@@ -11,7 +11,7 @@ import { BackendPropertyService } from '../../services/backend-property';
 export class CreatePropertyComponent implements OnInit {
   property: Property = {
     propId: 0,
-    custId: 1,
+    custId: JSON.parse(String(localStorage.getItem("user"))).id,
     areaInSquareFeet: 0,
     costOfProperty: 0,
     ageOfBuilding: 0,

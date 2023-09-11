@@ -21,6 +21,7 @@ export class MyPropertiesComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadPropertiesToComponent(this.customerId);
+    console.log(this.customerId)
   }
 
 

@@ -1,0 +1,26 @@
+<p>policy-payments works!</p>
+
+            <div class="col-6">
+
+                <form #orderForm="ngForm">
+
+                    <div>
+                        <label>Full name</label>
+                        <input 
+                               placeholder="Full name"
+                               name="fullName">
+                    </div>
+                    <div>
+                        <label>Amount</label>
+                        <input type="number"
+                               placeholder="Amount"
+                               [(ngModel)]="transaction.amount"
+                               name="fullName">
+                    </div>
+                    <div align="right">
+                        <button type="submit" (click)="createTansactionAndBuyPolicy(orderForm)">Buy Policy</button>
+                    </div>
+                </form>
+
+            </div>
+     
