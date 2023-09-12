@@ -24,11 +24,13 @@ export class CreateFeatureComponent implements OnInit {
   }
 
   addFeature(featureForm:NgForm){
-    featureForm.form.reset();
+    
     this.backendFeatureService.postFeature(this.feature)
     .subscribe({
       next:(data)=>{
         console.log(data)
+        this.feature = data;
+        featureForm.form.reset();
       },
       error:(err)=>{console.log(err)}
       

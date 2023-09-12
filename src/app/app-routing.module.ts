@@ -10,7 +10,6 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
@@ -20,7 +19,7 @@ import { DisplayAllCustomerPolicyComponent } from './components/display-all-cust
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
  
 const routes: Routes = [
-  {path:'home', component: HomePageComponent},
+  {path:  'home', component: HomePageComponent},
   {path : 'addproperty', component:CreatePropertyComponent},
   {path : 'myProperty', component:MyPropertiesComponent},
   {path : 'admin/policy', component:CreateAdminPolicyComponent},
@@ -30,7 +29,6 @@ const routes: Routes = [
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
-  {path : 'profile', component:ProfileComponent},
   {path : 'payments', component:PolicyPaymentsComponent},
   {path:'home',component:HomePageComponent},
   {path:'ownedPolicy', component:CreateOwnedPolicyComponent},

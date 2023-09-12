@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
 import { BackendPropertyService } from '../../services/backend-property';
-import { User } from 'src/app/class/User';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../../services/data.service';
 

@@ -1,6 +1,6 @@
 <div *ngFor="let adminPolicy of adminPolicies" class = "card" >
 
-<div *ngIf="adminPolicy.premiumAmount <= property.premiumAmount"> 
+<div *ngIf = "adminPolicy.premiumAmount <= property.premiumAmount "> 
         <p>Policy Name : {{adminPolicy.policyName}}</p>
         <p>Policy Description : {{adminPolicy.policyDescription}}</p>
         <p>Policy Duration : {{adminPolicy.policyDuration}}</p>

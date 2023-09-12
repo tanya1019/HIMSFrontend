@@ -12,7 +12,9 @@ export class DisplayAllFeaturesComponent implements OnInit {
 
   message: string = "";
   errorMessage: string = "";
+
   features:Feature[] = [];
+
   isUpdate: boolean = false;
   isUpdateSuccess: boolean = false;
   featureUpdate: Feature = new Feature(0, "", 0);
@@ -80,6 +82,7 @@ export class DisplayAllFeaturesComponent implements OnInit {
     this.isUpdateSuccess = true;
   }
 
+  
   backToHome(){
     this.router.navigate(["/admin/home"]);
   }

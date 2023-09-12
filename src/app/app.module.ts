@@ -15,7 +15,6 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { DisplayAllAdminPoliciesComponent } from './components/display-all-admin-policies/display-all-admin-policies.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
@@ -24,6 +23,7 @@ import { AdminHomePageComponent } from './components/admin-home-page/admin-home-
 import { AdminGetAllCustomersComponent } from './components/admin-get-all-customers/admin-get-all-customers.component';
 import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
+
 
 
 
@@ -45,7 +45,6 @@ import { ApplicablePoliciesComponent } from './components/applicable-policies/ap
     DisplayAllAdminPoliciesComponent,
     UserClaimComponent,
     CreateFeatureComponent,
-        ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
         AdminHomePageComponent,
