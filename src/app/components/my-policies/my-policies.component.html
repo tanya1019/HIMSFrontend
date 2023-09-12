@@ -1,0 +1,18 @@
+<div class="outerMostDiv">
+    <app-navbar></app-navbar>
+    <h1 class="title">Policy Details</h1>
+    <div *ngFor="let policy of policies" class = "card" >
+    
+       <p >Address : {{policy.nomineeName}}</p>
+       <p>City : {{policy.nomineeAge}}</p>
+       <p>Country : {{policy.nomineeRelation}}</p>
+       <p>Pincode : {{policy.ownedPolicyId}}</p>
+       <p>Age of Building : {{policy.issueDate}}  years</p>
+       <p>Area (in sq.ft) : {{policy.expiryDate}} sq.ft</p>
+       <p>Cost of policy (in rupees) : ₹ {{policy.feature}}</p>
+       <button routerLink="/claim">Claim</button>
+       <button routerLink="/home">Back</button>
+    
+    </div>
+    </div>
+    

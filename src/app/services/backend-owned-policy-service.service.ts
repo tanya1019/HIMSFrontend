@@ -10,8 +10,8 @@ export class BackendOwnedPolicyServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postOwnedPolicyByCustomerId(newOwnedPolicy : OwnedPolicy, custid:number){
-    return this.httpClient.post("http://localhost:8090/ownedpolicy/"+custid, newOwnedPolicy )
+  postOwnedPolicyByCustomerId(newOwnedPolicy : OwnedPolicy, custid:number, adminPolicyId:number){
+    return this.httpClient.post("http://localhost:8090/ownedpolicy/"+custid+"/"+adminPolicyId, newOwnedPolicy )
   }
 
   getOwnedPoliciesByCustomerId(custid:number) : Observable<any>{

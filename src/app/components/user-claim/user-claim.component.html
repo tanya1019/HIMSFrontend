@@ -5,53 +5,223 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    <strong>{{message}}</strong>
+
+    <strong>{{ message }}</strong>
   </div>
 
   <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    <strong>{{errorMessage}}</strong>
+
+    <strong>{{ errorMessage }}</strong>
   </div>
-  <div class="input-form">
+
+  <!-- <div class="input-form">
+
     <form #claimForm="ngForm">
+
       <label>Select Cause of Claim:</label>
+
       <div *ngFor="let cause of claimCauses">
+
         <label>
+
           <input type="radio" [(ngModel)]="selectedCause" [value]="cause.value"> {{ cause.lable }}
+
         </label>
+
       </div>
 
-      <!-- <div class="form-group">
-                  <label for="causes">Select Cause of Claim:</label>
-                  <select id="causes" class="form-control" [(ngModel)]="selectedCause" name="selectedCause">
-                     <option *ngFor="let cause of claimCauses" [value]="cause">{{ cause }}</option>
-                  </select>
-                </div> -->
+ 
+
+ 
 
       <div class="form-group">
+
         <label for="claimableAmount">Claimable Amount:</label>
+
         <input type="number" id="claimableAmount" class="form-control" [(ngModel)]="claimableAmount"
+
           name="claimableAmount" />
+
       </div>
 
+ 
+
       <div class="form-group">
+
         <label for="claimRequestAmount">Claim Request Amount:</label>
+
         <input type="number" id="claimRequestAmount" class="form-control" [(ngModel)]="claimRequestAmount"
+
           name="claimRequestAmount" />
+
       </div>
 
+ 
+
       <div class="form-group">
+
         <label for="documentProof"> Upload Document Proof* :</label>
+
         <input type="file" id="documentProof" (change)="onFileSelected($event)" accept=".pdf,.jpg,.png" />
+
       </div>
+
+ 
 
       <button type="submit" class="btn btn-primary">Submit Claim</button>
+
     </form>
 
+ 
 
+  </div> -->
 
+  <form #claimForm="ngForm"  >
+    <div class="form-group">
+      <label for="documentProof"> Upload Document Proof* :</label>
 
+      <p>Adhar card:</p>
+      <input
+        type="file"
+        id="documentProof"
+        [(ngModel)]="claim.documentProof"
+        accept=".pdf,.jpg,.png"
+        [ngModelOptions]="{standalone :true}"
+      />
 
-  </div>
+      <p>Address Proof:</p>
+
+      <input
+        type="file"
+        id="documentProof"
+        [(ngModel)]="claim.documentProof"
+        accept=".pdf,.jpg,.png"
+      />
+
+      <p>Photo :</p>
+
+      <input
+        type="file"
+        id="documentProof"
+        [(ngModel)]="claim.documentProof"
+        accept=".pdf,.jpg,.png"
+        [ngModelOptions]="{standalone :true}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="claimedDate">Claimed Date:</label>
+
+      <input
+        type="date"
+        id="claimedDate"
+        [ngModelOptions]="{standalone :true}"
+        class="form-control"
+        [(ngModel)]="claim.claimedDate"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="causeOfClaim">Cause of Claim:</label>
+
+      <textarea
+        id="causeOfClaim"
+        [ngModelOptions]="{standalone :true}"
+        class="form-control"
+        [(ngModel)]="claim.causeOfClaim"
+        required
+      ></textarea>
+
+      <div class="form-group">
+        <label>Cause of Claim:</label>
+
+        <div>
+          <label>
+            <input
+              type="radio"
+              [ngModelOptions]="{standalone :true}"
+              [(ngModel)]="claim.causeOfClaim"
+              value="Flood"
+            />
+            Flood
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="radio"
+              [ngModelOptions]="{standalone :true}"
+              [(ngModel)]="claim.causeOfClaim"
+              value="Fire"
+            />
+            Fire
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="radio"
+              [ngModelOptions]="{standalone :true}"
+              [(ngModel)]="claim.causeOfClaim"
+              value="Earquake"
+            />
+            Earquake
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="claimableAmount">Claimable Amount:</label>
+
+      <input
+        type="number"
+        id="claimableAmount"
+        [ngModelOptions]="{standalone :true}"
+        class="form-control"
+        [(ngModel)]="claim.claimableAmount"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="claimRequestAmount">Claim Request Amount:</label>
+
+      <input
+        type="number"
+        id="claimRequestAmount"
+        [ngModelOptions]="{standalone :true}"
+        class="form-control"
+        [(ngModel)]="claim.claimRequestAmount"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="claimReviewed">Claim Reviewed:</label>
+
+      <select
+        disabled="true"
+        id="claimReviewed"
+        [ngModelOptions]="{standalone :true}"
+        class="form-control"
+        [(ngModel)]="claim.claimReviewed"
+        required
+      >
+        <!-- <option value="true">Yes</option> -->
+
+        <option value="false">No</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="addClaim(22,1)">
+      Submit
+    </button>
+  </form>
+</div>

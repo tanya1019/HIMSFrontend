@@ -1,10 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { Feature } from 'src/app/class/Feature';
 
 import { OwnedPolicy } from 'src/app/class/OwnedPolicy';
-import { BackendFeatureService } from 'src/app/services/backend-feature.service';
 import { BackendOwnedPolicyServiceService } from 'src/app/services/backend-owned-policy-service.service';
+import { BackendPolicyService } from 'src/app/services/backend-policy.service';
 
 @Component({
   selector: 'app-create-owned-policy',
@@ -13,10 +15,14 @@ import { BackendOwnedPolicyServiceService } from 'src/app/services/backend-owned
 })
 export class CreateOwnedPolicyComponent implements OnInit {
 
+  adminPolicyId:number =0;
+
+
   ownedPolicy : OwnedPolicy = 
   {
+    adminPolicyId:0,
     ownedPolicyId:0,
-    custid:1,
+    custid:JSON.parse(String(localStorage.getItem("user"))).id,
     issueDate:'',
     expiryDate:'',
     nomineeName:'',
@@ -26,32 +32,65 @@ export class CreateOwnedPolicyComponent implements OnInit {
     feature:[],
   }
 
+  adminPolicy:AdminPolicy = new AdminPolicy();
+
+  isLoaded : Boolean = false;
+
+  // adminPolicyId: number = JSON.parse(String(localStorage.getItem("adminpolicyid"))).id
+
+
   message : string = "";
   errorMessage :string = "";
-  feat:Feature[] = [];
+  features:Feature[] = [];
 
-  constructor(private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService) { }
+  constructor(private router : Router,private backendPolicyService:BackendPolicyService,private route : ActivatedRoute,private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService) { }
 
   ngOnInit(): void {
+    // console.log("customer id------>", this.ownedPolicy.custid);
+
     this.loadAllFeaturesToComponent();
+
+    this.route.params.subscribe(
+      {
+        next:(params)=>{
+            this.adminPolicyId = +params["adminpolicyid"];
+            this.backendPolicyService.getAdminPolicyById(this.adminPolicyId).subscribe(
+              {
+                  next: (data)=>{
+                    console.log("adminPolicy id------>",this.adminPolicyId);
+                    console.log("customer id2------>", this.ownedPolicy.custid);
+                  console.log(data)
+                  this.isLoaded = true;
+                  this.adminPolicy = data
+                },
+
+                complete: ()=>{
+                  console.log("loaded the data")
+                }
+              }
+            );
+        },
+        error:(err)=>{
+          console.log(err); 
+        }
+      }
+    )
   }
 
-  loadAllFeaturesToComponent(){
-    this.backendOwnedPolicyServiceService.getAllFeatures().subscribe({
-      
-      next:(response: any)=>{console.log(response);
-      this.feat=response;},
-      error:(e:any)=>{console.log(e)}
-    })
-  }
+  
 
   addOwnedPolicy(custid: number){
-    this.backendOwnedPolicyServiceService.postOwnedPolicyByCustomerId(this.ownedPolicy, custid)
+
+    this.backendOwnedPolicyServiceService.postOwnedPolicyByCustomerId(this.ownedPolicy, custid, this.adminPolicyId)
     .subscribe({
       next:(data)=>{
         console.log(data)
+        // console.log("adminPolicy id------>",this.adminPolicyId);
+        // console.log("customer id2------>", this.ownedPolicy.custid);
+        
         this.message = "OwnedPolicy created successfully"
         this.errorMessage = ""
+        this.router.navigate(["/payments"])
       },
       error:(err)=>{
         console.log(err)
@@ -60,14 +99,20 @@ export class CreateOwnedPolicyComponent implements OnInit {
       }
       
     })
-
-    this.ownedPolicy = new OwnedPolicy( 0,1,'','','',0,'',[])
+    this.ownedPolicy = new OwnedPolicy(this.adminPolicyId,0,1,'','','',0,'',[])
   }
-
   
 
-
-
-
+  loadAllFeaturesToComponent(){
+    this.backendOwnedPolicyServiceService.getAllFeatures().subscribe({
+      next:(response: any)=>{
+        console.log("arry of features:-------->",response);
+        this.features=response;
+      },
+      error:(e:any)=>{
+        console.log(e)
+      }
+    })
+  }
 
 }

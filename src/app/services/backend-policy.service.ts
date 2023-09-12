@@ -17,4 +17,8 @@ export class BackendPolicyService {
   getAllAdminPolicies() : Observable<any>{
     return this.httpClient.get("http://localhost:8090/policies", { responseType:"json"} )
   }
+  
+  getAdminPolicyById(adminpolicyid: number): Observable<any>{
+    return this.httpClient.get("http://localhost:8090/adminpolicy/" + adminpolicyid, { responseType:"json"} )
+  }
 }

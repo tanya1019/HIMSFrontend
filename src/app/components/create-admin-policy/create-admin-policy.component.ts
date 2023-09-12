@@ -3,6 +3,7 @@ import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { BackendPolicyService } from '../../services/backend-policy.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BackendOwnedPolicyServiceService } from 'src/app/services/backend-owned-policy-service.service';
 
 @Component({
   selector: 'app-create-admin-policy',
@@ -20,14 +21,17 @@ export class CreateAdminPolicyComponent implements OnInit {
   premiumAmount: 0,
   customPolicy: false,
   propertyAmount: 0,
+  features:[],
   }
 
   message : string = "";
   errorMessage :string = "";
-  constructor(private backendPolicyService : BackendPolicyService, private router : Router) { }
+  constructor(private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService, private backendPolicyService : BackendPolicyService, private router : Router) { }
 
 
   ngOnInit(): void {}
+
+  
 
   addAdminPolicy(policyForm: NgForm){
     
