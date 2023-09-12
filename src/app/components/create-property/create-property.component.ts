@@ -38,7 +38,7 @@ export class CreatePropertyComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  year : number = 0;
+  policyYear : number = 0;
   contents : number = 0;
   isOwned : boolean = false;
   isRented : boolean = false;
@@ -83,9 +83,11 @@ export class CreatePropertyComponent implements OnInit {
     }
   }
   getData1(){
+
     this.forBuilding = !this.forBuilding;
   }
   getData2(){
+  
     this.forBuildingAndContents = !this.forBuildingAndContents;
   }
   getData3(){
@@ -116,13 +118,13 @@ export class CreatePropertyComponent implements OnInit {
         this.totalPremium = ((this.property.costOfProperty+this.contents)/this.property.areaInSquareFeet)*this.riskFactor;
       }
       else{
-        this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.year;
+        this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.policyYear;
       }
 
 
     }
     else{
-      this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.year;
+      this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.policyYear;
     }
 
     this.property.premiumAmount = this.totalPremium ;
@@ -132,7 +134,7 @@ export class CreatePropertyComponent implements OnInit {
 
 
 }
-
+//step 1: 
 
  
 

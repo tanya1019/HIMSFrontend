@@ -4,7 +4,7 @@
 
 }
 
-.container {
+/* .container {
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -13,17 +13,17 @@
     width: 100vw;
     background:transparent;
    
-  }
+  } */
   
-  .title {
+  /* .title {
     font-weight: bold;
     font-size: 20px;
     text-shadow: 2px 2px 2px #0002;
     color: #0f6fde;
     margin-bottom: 40px;
   }
-  
-  .input-form {
+   */
+  /* .input-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,9 +34,9 @@
     padding: 40px;
     min-width: 30vw;
     border-radius: 8px;
-  }
+  } */
   
-  input {
+  /* input {
     outline: none;
     padding: 5px 10px;
     border-radius: 8px;
@@ -48,21 +48,15 @@
     font-size: 14px;
   }
   
-  .submit {
-    padding: 10px 20px;
+ */
+    .createPropertyFormBtns {
+
     background-color: #0f6fde;
-    border-radius: 8px;
-    display: flex;
-    color: #fff;
     outline: none;
     border: none;
-    align-items: center;
-    margin-top: 20px;
-    font-size: 14px;
-    margin-left: 40%;
- 
+    font-size: 18px;
+   
   }
-  
   p {
     font-size: 16px;
   }
