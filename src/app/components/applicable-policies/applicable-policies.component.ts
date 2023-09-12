@@ -11,6 +11,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./applicable-policies.component.css']
 })
 export class ApplicablePoliciesComponent implements OnInit {
+  
   adminPolicies:AdminPolicy[]=[];
 
   
@@ -49,7 +50,7 @@ export class ApplicablePoliciesComponent implements OnInit {
   loadPoliciesToComponent(){
     this.property = this.dataService.getData();
     console.log("customer premium",this.property.premiumAmount);
-    // this.property.policyYear = this.dataService.getyear();
+    //this.property.policyYear = this.dataService.getyear();
 
     this.isLoaded = false;
     this.backendPolicyService.getAllAdminPolicies().subscribe(
