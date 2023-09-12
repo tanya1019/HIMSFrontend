@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
 import { BackendPropertyService } from 'src/app/services/backend-property';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-my-properties',
@@ -9,7 +11,7 @@ import { BackendPropertyService } from 'src/app/services/backend-property';
 })
 export class MyPropertiesComponent implements OnInit {
 
-  constructor(private backendPropertyService: BackendPropertyService) { }
+  constructor(private backendPropertyService: BackendPropertyService,private router:Router,private dataService:DataService) { }
 
   properties: Property[] = []
   message : string = ""
@@ -19,7 +21,6 @@ export class MyPropertiesComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.loadPropertiesToComponent(this.customerId);
     console.log(this.customerId)
   }
@@ -47,6 +48,12 @@ export class MyPropertiesComponent implements OnInit {
         }
       }
     );
+  }
+
+  getPolicies(property:Property){
+
+    this.dataService.setData(property);
+    this.router.navigate(["/applicable"]);
   }
 
 }

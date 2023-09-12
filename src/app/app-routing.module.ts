@@ -17,6 +17,7 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
 import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
 import { AdminGetAllCustomersComponent} from './components/admin-get-all-customers/admin-get-all-customers.component';
 import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
+import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
  
 const routes: Routes = [
   {path:'home', component: HomePageComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path:'claim' ,component:UserClaimComponent},
   {path:'admin/home', component:AdminHomePageComponent},
   {path:'admin/customers', component:AdminGetAllCustomersComponent},
-  {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent}
+  {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent},
+  {path:'applicable', component:ApplicablePoliciesComponent}
   
 ];
 
