@@ -1,59 +1,57 @@
-
 <div class="container">
-    <h1 class="title">Apply for claim :</h1>
+  <h1 class="title">Apply for claim :</h1>
 
-    <div class="alert alert-success alert-dismissible" *ngIf="message" >
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <strong>{{message}}</strong>
-    </div>
+  <div class="alert alert-success alert-dismissible" *ngIf="message">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{message}}</strong>
+  </div>
 
-    <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage" >
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <strong>{{errorMessage}}</strong>
-    </div>
-    <div class="input-form">
-        <form #claimForm="ngForm">
-          
-            <label>Select Cause of Claim:</label>
+  <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{errorMessage}}</strong>
+  </div>
+  <div class="input-form">
+    <form #claimForm="ngForm">
+      <label>Select Cause of Claim:</label>
+      <div *ngFor="let cause of claimCauses">
+        <label>
+          <input type="radio" [(ngModel)]="selectedCause" [value]="cause.value"> {{ cause.lable }}
+        </label>
+      </div>
 
-    <div *ngFor="let cause of claimCauses">
-      <label>
-        <input type="radio" [(ngModel)]="selectedCause" [value]="cause.value"> {{ cause.lable }}
-      </label>
-    </div>
- 
-                <!-- <div class="form-group">
+      <!-- <div class="form-group">
                   <label for="causes">Select Cause of Claim:</label>
                   <select id="causes" class="form-control" [(ngModel)]="selectedCause">
                      <option *ngFor="let cause of claimCauses" [value]="cause">{{ cause }}</option>
                   </select>
                 </div> -->
-              
-                <div class="form-group">
-                  <label for="claimableAmount">Claimable Amount:</label>
-                  <input type="number" id="claimableAmount" class="form-control" [(ngModel)]="claimableAmount"  />
-                </div>
-              
-                <div class="form-group">
-                  <label for="claimRequestAmount">Claim Request Amount:</label>
-                  <input type="number" id="claimRequestAmount" class="form-control" [(ngModel)]="claimRequestAmount" />
-                </div>
-              
-                <div class="form-group">
-                    <label for="documentProof"> Upload Document Proof* :</label>
-                    <input type="file" id="documentProof" (change)="onFileSelected($event)" accept=".pdf,.jpg,.png" />
-                  </div> 
-                
-                <button type="submit" class="btn btn-primary">Submit Claim</button>
-              </form>
-              
+
+      <div class="form-group">
+        <label for="claimableAmount">Claimable Amount:</label>
+        <input type="number" id="claimableAmount" class="form-control" [(ngModel)]="claimableAmount"
+          name="claimableAmount" />
+      </div>
+
+      <div class="form-group">
+        <label for="claimRequestAmount">Claim Request Amount:</label>
+        <input type="number" id="claimRequestAmount" class="form-control" [(ngModel)]="claimRequestAmount"
+          name="claimRequestAmount" />
+      </div>
+
+      <div class="form-group">
+        <label for="documentProof"> Upload Document Proof* :</label>
+        <input type="file" id="documentProof" (change)="onFileSelected($event)" accept=".pdf,.jpg,.png" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Claim</button>
+    </form>
 
 
 
-       
-    </div>
 
+
+  </div>

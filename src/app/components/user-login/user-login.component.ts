@@ -12,7 +12,7 @@ export class UserLoginComponent implements OnInit {
   user: User = new User("","",0,"","");
   message: string = "";
   errorMessage: string = "";
-
+  
   constructor(private router: Router,private loginUserService: BackendUserLoginService) { }
 
   ngOnInit(): void {

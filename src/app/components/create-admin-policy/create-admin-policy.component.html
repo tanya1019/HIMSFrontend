@@ -24,7 +24,7 @@
           Name required!!
         </div>
       </div><br>
-      Policy Descriptio*:
+      Policy Description*:
       <input type="text" [(ngModel)]="adminPolicy.policyDescription" name="description" #description="ngModel" required />
       <div *ngIf="description.invalid && (description.dirty || description.touched)"  >
         <div *ngIf="description.errors?.['required']" class="alert alert-danger">
@@ -35,11 +35,19 @@
 
 
       Policy Duration (in years)*:
-      <input type="text" [(ngModel)]="adminPolicy.policyDuration" name="propertyPassword" #duration="ngModel" required />
-      
+      <input type="text" [(ngModel)]="adminPolicy.policyDuration" name="propertyPassword" #duration="ngModel" 
+      pattern="^[0-9]*$" required />
+
       <div *ngIf="duration.invalid && (duration.dirty || duration.touched)">
       
-        <div *ngIf="duration.errors?.['required']" class="alert alert-danger">Enter valid duration</div>
+        <div *ngIf="duration.errors?.['required']" class="alert alert-danger">Enter valid duration
+
+        </div>
+      </div>
+      <div *ngIf="duration.invalid && (duration.dirty || duration.touched)">
+        <div *ngIf="duration.errors?.['pattern']" class="alert alert-danger">Enter numaric value!
+          
+        </div>
       </div>
       <br>
 

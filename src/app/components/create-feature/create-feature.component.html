@@ -5,18 +5,22 @@
             Feature name:
             <input type="text" [(ngModel)]="feature.featureName" name="name" #name="ngModel" required/> 
             <div *ngIf="name.invalid && (name.dirty || name.touched)">
-                <div *ngIf="name.errors?.['required']" class ="alert alert-danger">
+                <div *ngIf="name.errors?.['required']" class ="text-danger">
                     Feature Name Required
                 </div>
             </div>
             Percent:
-            <input type="number" [(ngModel)]="feature.percent" name="percent" #percent="ngModel" required/> 
+            <input type="number" [(ngModel)]="feature.percent" name="percent" pattern="^\d+(\.\d{1,2})?%?$" #percent="ngModel" required/> 
             <div *ngIf="percent.invalid && (percent.dirty || percent.touched)">
-                <div *ngIf="percent.errors?.['required']" class ="alert alert-danger">
+                <div *ngIf="percent.errors?.['required']" class ="text-danger">
                     Feature Percent Required
                 </div>
             </div>
-
+            <div *ngIf="percent.invalid && (percent.dirty || percent.touched)">
+                <div *ngIf="percent.errors?.['pattern']" class ="text-danger">
+                    Feature Percent Required
+                </div>
+            </div>
             <button class="submit" [disabled]="!featureForm.form.valid" (click)="addFeature(featureForm)  ">Add Feature</button>
     
         </div>
