@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { Feature } from 'src/app/class/Feature';
 
@@ -43,7 +43,7 @@ export class CreateOwnedPolicyComponent implements OnInit {
   errorMessage :string = "";
   features:Feature[] = [];
 
-  constructor(private backendPolicyService:BackendPolicyService,private route : ActivatedRoute,private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService) { }
+  constructor(private router : Router,private backendPolicyService:BackendPolicyService,private route : ActivatedRoute,private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService) { }
 
   ngOnInit(): void {
     // console.log("customer id------>", this.ownedPolicy.custid);
@@ -57,8 +57,8 @@ export class CreateOwnedPolicyComponent implements OnInit {
             this.backendPolicyService.getAdminPolicyById(this.adminPolicyId).subscribe(
               {
                   next: (data)=>{
-                    // console.log("adminPolicy id------>",this.adminPolicyId);
-                    // console.log("customer id2------>", this.ownedPolicy.custid);
+                    console.log("adminPolicy id------>",this.adminPolicyId);
+                    console.log("customer id2------>", this.ownedPolicy.custid);
                   console.log(data)
                   this.isLoaded = true;
                   this.adminPolicy = data
@@ -90,6 +90,7 @@ export class CreateOwnedPolicyComponent implements OnInit {
         
         this.message = "OwnedPolicy created successfully"
         this.errorMessage = ""
+        this.router.navigate(["/payments"])
       },
       error:(err)=>{
         console.log(err)

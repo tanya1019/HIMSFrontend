@@ -7,7 +7,7 @@
         <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
         <p>Customised Policy ? {{adminPolicy.customPolicy}}</p>
         <p>Property Amount{{adminPolicy.propertyAmount}}</p>
-        <button>Apply for Policy</button>
+        <button (click)="goToOwnedPolicy(adminPolicy.id)" class="btn btn-lg btn-primary">Apply for Policy</button>
    
    </div>
  

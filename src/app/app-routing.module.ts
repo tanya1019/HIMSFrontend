@@ -17,6 +17,7 @@ import { AdminHomePageComponent } from './components/admin-home-page/admin-home-
 import { AdminGetAllCustomersComponent} from './components/admin-get-all-customers/admin-get-all-customers.component';
 import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
+import { MyPoliciesComponent } from './components/my-policies/my-policies.component';
  
 const routes: Routes = [
   {path:  'home', component: HomePageComponent},
@@ -31,12 +32,14 @@ const routes: Routes = [
   {path : 'features', component:DisplayAllFeaturesComponent},
   {path : 'payments', component:PolicyPaymentsComponent},
   {path:'home',component:HomePageComponent},
-  {path:'ownedPolicy', component:CreateOwnedPolicyComponent},
+  {path:'ownedPolicy/:adminpolicyid', component:CreateOwnedPolicyComponent},
   {path:'claim' ,component:UserClaimComponent},
   {path:'admin/home', component:AdminHomePageComponent},
   {path:'admin/customers', component:AdminGetAllCustomersComponent},
   {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent},
-  {path:'applicable', component:ApplicablePoliciesComponent}
+  {path:'applicable', component:ApplicablePoliciesComponent},
+  {path:'mypolicies', component:MyPoliciesComponent}
+
   
 ];
 

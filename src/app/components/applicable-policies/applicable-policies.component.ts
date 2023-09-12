@@ -4,6 +4,8 @@ import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { Property } from 'src/app/class/Property';
 import { BackendPolicyService } from 'src/app/services/backend-policy.service';
 import { DataService } from '../../services/data.service';
+import { BackendOwnedPolicyServiceService } from 'src/app/services/backend-owned-policy-service.service';
+import { Feature } from 'src/app/class/Feature';
 
 @Component({
   selector: 'app-applicable-policies',
@@ -19,7 +21,7 @@ export class ApplicablePoliciesComponent implements OnInit {
   errorMessage : string = ""
   isLoaded : Boolean = false;
   //adminPolicies:AdminPolicy[]=[];
-
+  features:Feature[]=[]
   property: Property = {
     propId: 0,
     custId: JSON.parse(String(localStorage.getItem("user"))).id,
@@ -39,10 +41,11 @@ export class ApplicablePoliciesComponent implements OnInit {
   };
 
 
-  constructor(private backendPolicyService : BackendPolicyService, private router:Router,private dataService:DataService) { }
+  constructor(private backendPolicyService : BackendPolicyService, private router:Router,private dataService:DataService ,private backendOwnedPolicyServiceService : BackendOwnedPolicyServiceService) { }
 
   ngOnInit(): void {
     this.loadPoliciesToComponent()
+    this.loadAllFeaturesToComponent()
   }
   backToHome(){
     this.router.navigate(["/admin/home"]);
@@ -72,5 +75,22 @@ export class ApplicablePoliciesComponent implements OnInit {
     console.log(this.adminPolicies);
   }
   
+  goToOwnedPolicy(adminpolicyid?:number){
+    console.log(adminpolicyid);
+    if(adminpolicyid!=undefined)
+    this.router.navigate(["/ownedPolicy/",adminpolicyid]);
+  }
+
+  loadAllFeaturesToComponent(){
+    this.backendOwnedPolicyServiceService.getAllFeatures().subscribe({
+      next:(response: any)=>{
+        console.log("arry of features:-------->",response);
+        this.features=response;
+      },
+      error:(e:any)=>{
+        console.log(e)
+      }
+    })
+  }
 
 }
