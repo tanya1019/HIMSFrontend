@@ -9,9 +9,12 @@ import { BackendClaimService } from 'src/app/services/backend-claim.service';
   styleUrls: ['./user-claim.component.css']
 })
 export class UserClaimComponent implements OnInit {
+
 onFileSelected($event: Event) {
-throw new Error('Method not implemented.');
+  throw new Error('Method not implemented.');
 }
+
+
   claim : Claim={
     id : 0,
     claimedDate: new Date(),
@@ -22,22 +25,34 @@ throw new Error('Method not implemented.');
     claimReviewed: false,
 
   }
+
+
 message: string="";
 errorMessage: string="";
-claimableAmount: any;
-claimRequestAmount: any;
+
+claimableAmount = "";
+claimRequestAmount= "";
+selectedCause= "";
+
+
 claimCauses: {lable:string, value:string}[] =[
   {lable:'fire',value:'fire'},
   {lable:'flood',value:'flood'},
 ]
+
+
 submitClaim(){
   console.log('selected claim:' ,this.selectedClaim)
 }
-  selectedClaim(arg0: string, selectedClaim: any) {
-    throw new Error('Method not implemented.');
-  };
-selectedCause: any;
+
+selectedClaim(arg0: string, selectedClaim: any) {
+  throw new Error('Method not implemented.');
+};
+
+
   constructor( private router: Router,private backendClaimService: BackendClaimService) {}
+
+  
   ngOnInit(): void {}
     addClaim(PolId: number ,PropId:number) {
     this.backendClaimService.createClaimByOwnedPolicyidAndPropertyId(this.claim ,PolId, PropId)

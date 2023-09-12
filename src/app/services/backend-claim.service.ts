@@ -8,14 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class BackendClaimService {
 
-  constructor(private httpClient : HttpClient) {
+  constructor(private httpClient : HttpClient) {}
 
-   }
-   createClaimByOwnedPolicyidAndPropertyId(newClaim :Claim ,PolId:number,PropId:number):Observable<any> {
-    return this.httpClient.post("http://localhost:8090/createOwnedPolicy/" +PolId , +PropId ,{ responseType:"json"} )
+createClaimByOwnedPolicyidAndPropertyId(newClaim :Claim ,PolId:number,PropId:number):Observable<any> {
+  return this.httpClient.post("http://localhost:8090//claim/"+PolId+PropId, { responseType:"json"})
 }
 getClaimsByOwnedPolicyidAndPropertyId(PolId:number,PropId:number):Observable<any> {
-  return this.httpClient.get("")
+  return this.httpClient.get("http://localhost:8090//claim/"+PropId+PolId)
 
 }
 }

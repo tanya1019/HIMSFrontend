@@ -30,7 +30,7 @@ export class UserLoginComponent implements OnInit {
       },
       error: (err)=> {
         // alert(err.error.text)
-        this.message= "Registration Failed";
+        // this.message= "Registration Failed";
         this.errorMessage= "Registration Failed...Try again";
       }
 

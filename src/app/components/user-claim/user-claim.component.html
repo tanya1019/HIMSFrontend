@@ -17,7 +17,9 @@
     </div>
     <div class="input-form">
         <form #claimForm="ngForm">
+          
             <label>Select Cause of Claim:</label>
+
     <div *ngFor="let cause of claimCauses">
       <label>
         <input type="radio" [(ngModel)]="selectedCause" [value]="cause.value"> {{ cause.lable }}
@@ -26,19 +28,19 @@
  
                 <!-- <div class="form-group">
                   <label for="causes">Select Cause of Claim:</label>
-                  <select id="causes" class="form-control" [(ngModel)]="selectedCause" name="selectedCause">
+                  <select id="causes" class="form-control" [(ngModel)]="selectedCause">
                      <option *ngFor="let cause of claimCauses" [value]="cause">{{ cause }}</option>
                   </select>
                 </div> -->
               
                 <div class="form-group">
                   <label for="claimableAmount">Claimable Amount:</label>
-                  <input type="number" id="claimableAmount" class="form-control" [(ngModel)]="claimableAmount" name="claimableAmount" />
+                  <input type="number" id="claimableAmount" class="form-control" [(ngModel)]="claimableAmount"  />
                 </div>
               
                 <div class="form-group">
                   <label for="claimRequestAmount">Claim Request Amount:</label>
-                  <input type="number" id="claimRequestAmount" class="form-control" [(ngModel)]="claimRequestAmount" name="claimRequestAmount" />
+                  <input type="number" id="claimRequestAmount" class="form-control" [(ngModel)]="claimRequestAmount" />
                 </div>
               
                 <div class="form-group">
