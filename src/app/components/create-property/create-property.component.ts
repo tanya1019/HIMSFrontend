@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Property } from 'src/app/class/Property';
 import { BackendPropertyService } from '../../services/backend-property';
 import { NgForm } from '@angular/forms';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-create-property',
@@ -23,7 +24,8 @@ export class CreatePropertyComponent implements OnInit {
     propertyType: 'Owned',
     premiumAmount: 0,
       contentsCost: 0,
-      state : '' 
+      state : '' ,
+      policyYear: 0
     
   };
 
@@ -33,7 +35,7 @@ export class CreatePropertyComponent implements OnInit {
   errorMessage :string = "";
 
 
-  constructor(private router: Router, private backendPropertyService: BackendPropertyService) {}
+  constructor(private router: Router, private backendPropertyService: BackendPropertyService,private dataService:DataService) {}
 
   ngOnInit(): void {}
 
@@ -57,7 +59,7 @@ export class CreatePropertyComponent implements OnInit {
       next:(data)=>{
         console.log(data)
         this.message = "Property created successfully"
-        this.router.navigate(["/home"])
+        this.router.navigate(["/myProperty"])
         this.errorMessage = ""
         propertyForm.form.reset();
       },
@@ -68,7 +70,7 @@ export class CreatePropertyComponent implements OnInit {
       }
       
     })
-    this.property = new Property( 0,0,0,0,0,"","",0,"","",0,0,"")
+    this.property = new Property( 0,0,0,0,0,"","",0,"","",0,0,"",0)
   }
 
   getSelectedValue(value:string){
@@ -126,10 +128,10 @@ export class CreatePropertyComponent implements OnInit {
       this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.policyYear;
     }
 
-    this.property.premiumAmount = this.totalPremium ;
-  }
- 
+    this.property.premiumAmount = this.totalPremium/12 ;
   
+ 
+  }
 
 
 }

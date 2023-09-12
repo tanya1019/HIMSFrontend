@@ -17,5 +17,9 @@ export class BackendPropertyService {
   getPropertyById(custId: number) : Observable<any>{
     return this.httpClient.get("http://localhost:8090/properties/" + custId, { responseType:"json"} )
   }
+  
+  getPremium(propertyId:number) : Observable<any>{
+    return this.httpClient.get("http://localhost:8090/premium/" + propertyId, { responseType:"json"} )
+  }
 
 }
