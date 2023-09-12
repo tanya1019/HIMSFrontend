@@ -80,5 +80,9 @@ export class DisplayAllFeaturesComponent implements OnInit {
     this.isUpdateSuccess = true;
   }
 
+  backToHome(){
+    this.router.navigate(["/admin/home"]);
+  }
+
 
 }

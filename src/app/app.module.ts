@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PolicyPaymentsComponent } from './components/policy-payments/policy-payments.component';
 import { CreateOwnedPolicyComponent } from './components/create-owned-policy/create-owned-policy.component';
 import { UserClaimComponent } from './components/user-claim/user-claim.component';
+import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
+import { AdminGetAllCustomersComponent } from './components/admin-get-all-customers/admin-get-all-customers.component';
+import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
+
 
 
 
@@ -43,12 +47,17 @@ import { UserClaimComponent } from './components/user-claim/user-claim.component
         ProfileComponent,
         NavbarComponent,
         PolicyPaymentsComponent,
+        AdminHomePageComponent,
+        AdminGetAllCustomersComponent,
+        DisplayAllCustomerPolicyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

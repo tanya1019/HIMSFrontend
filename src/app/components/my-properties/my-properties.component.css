@@ -1,10 +1,14 @@
+.outerMostDiv{
+    background: rgb(255,203,203);
+    background: linear-gradient(90deg, rgba(255,203,203,0.42482930672268904) 0%, rgba(255,197,118,0.1811318277310925) 50%, rgba(240,255,126,0.43043154761904767) 100%);
+}
 .card{
     width: 50%;
-    background-color:#fff;
+    background:transparent;
     padding: 20px;
     display: flex;
     margin: 10px;
-    border-radius: 10px;
+    border: 1px solid;
     
 
 }

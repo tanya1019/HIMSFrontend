@@ -24,7 +24,7 @@ export class CreateAdminPolicyComponent implements OnInit {
 
   message : string = "";
   errorMessage :string = "";
-  constructor(private backendPolicyService : BackendPolicyService, private router: Router) { }
+  constructor(private backendPolicyService : BackendPolicyService, private router : Router) { }
 
 
   ngOnInit(): void {}
@@ -38,7 +38,6 @@ export class CreateAdminPolicyComponent implements OnInit {
         this.message = "Policy added successfully"
 this.router.navigate(["/home"])
         this.errorMessage = ""
-        policyForm.form.reset();
       },
       error:(err)=>{
         console.log(err)

@@ -1,8 +1,7 @@
+<div class="outerMostDiv">
 <app-navbar></app-navbar>
 <h1 class="title">Property Details</h1>
 <div *ngFor="let property of properties" class = "card" >
-
-
 
    <p >Address : {{property.address}}</p>
    <p>City : {{property.city}}</p>
@@ -12,5 +11,6 @@
    <p>Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
    <p>Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
 
+</div>
 </div>
 

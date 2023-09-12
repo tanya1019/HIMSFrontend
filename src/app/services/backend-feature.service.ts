@@ -21,7 +21,7 @@ export class BackendFeatureService {
   deleteFeaturetById(id: number): Observable<any> {
     // console.log("Inside product service deleteby id:" + id);
     
-    return this.httpClient.delete("http://localhost:8090/delete/feature/" + id, { responseType: "json" });
+    return this.httpClient.delete("http://localhost:8090/feature/" + id, { responseType: "json" });
   }
 
   updateFeature(feature: Feature): Observable<any> {

@@ -1,6 +1,4 @@
 
-
-
 <div class="outerDiv">
 <div id="page" class="card" style="width: 18rem;">
 
@@ -23,12 +21,37 @@
     <form>
       <div class="mb-3">
         <label for="email" class="form-label">Enter Email</label>
-        <input style="width: 30vw;" type="email" [(ngModel)]="admin.email" class="form-control" name="email" id="email" placeholder="Enter admin's Email-ID" aria-describedby="emailHelp">
+        <input style="width: 30vw;" type="email" [(ngModel)]="admin.email" class="form-control" name="email" id="email" placeholder="Enter admin's Email-ID" aria-describedby="emailHelp" 
+       #email="ngModel" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+       <div  *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors?.['required']" class="text-danger">
+   Email is required!
+      </div>
+    </div>
+    <div  *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors?.['pattern']" class="text-danger">
+  Enter valid Email address!
+    </div>
+  </div>
       </div>
   
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" [(ngModel)]="admin.password" class="form-control" name="password" id="password" placeholder="**Password**">
+        <input type="password" [(ngModel)]="admin.password" class="form-control" name="password" id="password" placeholder="**Password**"
+        #pass="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
+        
+        
+        <div  *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+          <div *ngIf="pass.errors?.['required']" class="text-danger">
+              You can not move forword without password!
+        </div>
+      </div>
+      <div  *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+        <div *ngIf="pass.errors?.['pattern']" class="text-danger">
+           password should be min 8 char atleast 1 letter , 1 number and 1 spl char. 
+
+        </div>
+        </div>
       </div>
   
       <button (click)="adminLogin()" id="loginbtn" class="btn btn-lg btn-primary">Login</button>
