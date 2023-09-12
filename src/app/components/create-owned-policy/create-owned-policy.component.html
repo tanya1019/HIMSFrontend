@@ -17,29 +17,41 @@
 
     <div class="input-form" >
       *nomineeName:
-      <input type="text" [(ngModel)]="ownedPolicy.nomineeName" name="nomineeName" required />
-      <!-- <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
-        <div *ngIf="nomineeName.errors?.['required']" class="alert alert-danger ">
+      <input type="text" [(ngModel)]="ownedPolicy.nomineeName" #nomineeName="ngModel" name="nomineeName" pattern="^[A-Za-z]+$" required />
+       <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['required']" class="text-danger ">
+          Enter a nominee Name!!
+        </div>
+      </div> 
+
+ <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['pattern']" class="text-danger ">
           Enter a valid nominee Name!!
         </div>
-      </div> -->
+      </div> 
+      
 
       *nomineeAge:
-      <input type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" required  />
-      <!-- <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
-        <div *ngIf="nomineeAge.errors?.['required']" class="alert alert-danger ">
-          Enter a valid nominee age!!
+      <input type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" #nomineeAge="ngModel"  required  />
+      <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
+        <div *ngIf="nomineeAge.errors?.['required']" class="text-danger ">
+         Nominee age is required!
         </div>
-      </div> -->
+      </div> 
+     
 
       *nomineeRelation:
-      <input type="text" [(ngModel)]="ownedPolicy.nomineeRelation" name="ownedPolicyNomineeRelation" required  />
-      <!-- <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
-        <div *ngIf="nomineeRelation.errors?.['required']" class="alert alert-danger ">
+      <input type="text" [(ngModel)]="ownedPolicy.nomineeRelation" name="ownedPolicyNomineeRelation" #nomineeRelation="ngModel" pattern="^[A-Za-z]+$" required  />
+       <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+        <div *ngIf="nomineeRelation.errors?.['required']" class="text-danger ">
+          Enter a Nominee Relation !!
+        </div>
+      </div> 
+      <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+        <div *ngIf="nomineeRelation.errors?.['pattern']" class="text-danger ">
           Enter a valid Nominee Relation !!
         </div>
-      </div> -->
-
+      </div> 
 
       
       <!-- *Select Features:

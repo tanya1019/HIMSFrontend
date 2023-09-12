@@ -16,14 +16,15 @@
     <form #userregistrationform="ngForm" >
       <div class="mb-3">
         <label for="name" class="form-label">Name*:</label>
-        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe" #name="ngModel" pattern="^[A-Za-z]+$" required="">
+        <input type="text" [(ngModel)]="user.name" class="form-control" name="name" id="name" placeholder="John Doe" #name="ngModel"
+         pattern="^[A-Za-z]+$" required>
         <div  *ngIf="name.invalid && (name.dirty || name.touched)">
-          <div *ngIf="name.errors?.['required']" class="alert alert-danger">
+          <div *ngIf="name.errors?.['required']" class="text-danger">
         Name is mandetory!
         </div>
       </div>
       <div  *ngIf="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.errors?.['pattern']" class="alert alert-danger">
+        <div *ngIf="name.errors?.['pattern']" class="text-danger">
           enter the valid name!
            </div>
           </div>
@@ -32,13 +33,13 @@
       <div class="mb-3">
         <label for="contactNumber" class="form-label">Contact Number* :</label>
         <input type="number" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" id="contactNumber" placeholder="+91------00" #number="ngModel" pattern="^[0-9]{10}$" required>
-        <div  *ngIf="number.invalid && (number.dirty || number.touched)">
-          <div *ngIf="number.errors?.['required']" class="alert alert-danger">
+        <div  *ngIf="number.invalid && (number.dirty || number.touched)" >
+          <div *ngIf="number.errors?.['required']" class="text-danger">
        Enter contact number!
         </div>
       </div>
         <div  *ngIf="number.invalid && (number.dirty || number.touched)">
-        <div *ngIf="number.errors?.['pattern']" class="alert alert-danger">
+        <div *ngIf="number.errors?.['pattern']" class="text-danger">
           Enter 10 digits only!
            </div>
           </div> 
@@ -49,12 +50,12 @@
         <input type="email" [(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="John@gmail.com" aria-describedby="emailHelp" #email="ngModel"
          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
         <div  *ngIf="email.invalid && (email.dirty || email.touched)">
-          <div *ngIf="email.errors?.['required']" class="alert alert-danger">
+          <div *ngIf="email.errors?.['required']" class="text-danger">
      Email is required!
         </div>
       </div>
       <div  *ngIf="email.invalid && (email.dirty || email.touched)">
-        <div *ngIf="email.errors?.['pattern']" class="alert alert-danger">
+        <div *ngIf="email.errors?.['pattern']" class="text-danger">
     Enter valid Email address!
       </div>
     </div>
@@ -65,20 +66,20 @@
         <input type="Password" [(ngModel)]="user.password" class="form-control" name="Password" id="Password" placeholder="****" #pass="ngModel" 
         pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
         <div  *ngIf="pass.invalid && (pass.dirty || pass.touched)">
-          <div *ngIf="pass.errors?.['required']" class="alert alert-danger">
+          <div *ngIf="pass.errors?.['required']" class="text-danger">
               You can not move forword without password!
         </div>
       </div>
       <div  *ngIf="pass.invalid && (pass.dirty || pass.touched)">
-        <div *ngIf="pass.errors?.['pattern']" class="alert alert-danger">
-           password should be min 8 char atleast 1 letter , 1 number and 1 spl char. 
+        <div *ngIf="pass.errors?.['pattern']" class="text-danger">
+           password should be min 8 char atleast 1 letter , 1 number . 
 
         </div>
         </div>
        </div><br>
       
     
-      <div class="form-check">
+      <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
            Owner
@@ -89,7 +90,7 @@
         <label class="form-check-label" for="flexRadioDefault2">
           Rental
         </label>
-      </div>
+      </div> -->
 
   
       <button [disabled]="!userregistrationform.form.valid" (click)="userRegistration(userregistrationform)" id="RegistrationBtn" style="margin-bottom:5% ;" class="btn btn-primary">Register</button>
