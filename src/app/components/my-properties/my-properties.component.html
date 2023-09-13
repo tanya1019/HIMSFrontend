@@ -1,17 +1,25 @@
 <div class="outerMostDiv">
 <app-navbar></app-navbar>
 <h1 class="title">Property Details</h1>
-<div *ngFor="let property of properties" class = "card" >
+<div *ngIf="properties.length>0">
+   <div *ngFor="let property of properties" class = "card"  >
 
-   <p >Address : {{property.address}}</p>
-   <p>City : {{property.city}}</p>
-   <p>Country : {{property.country}}</p>
-   <p>Pincode : {{property.pincode}}</p>
-   <p>Age of Building : {{property.ageOfBuilding}}  years</p>
-   <p>Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
-   <p>Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
-   <button (click)="getPolicies(property)">Get Policies For This Property</button>
+      <p >Address : {{property.address}}</p>
+      <p>City : {{property.city}}</p>
+      <p>Country : {{property.country}}</p>
+      <p>Pincode : {{property.pincode}}</p>
+      <p>Age of Building : {{property.ageOfBuilding}}  years</p>
+      <p>Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
+      <p>Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
+      <button (click)="getPolicies(property)">Get Policies For This Property</button>
+   
+   </div>
 
+</div>
+
+<div *ngIf="properties.length == 0">
+   <h1 class="title">No Property Added</h1>
+   <button routerLink="/addproperty">Add property</button>
 </div>
 </div>
 

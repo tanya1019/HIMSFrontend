@@ -77,7 +77,7 @@ export class CreateOwnedPolicyComponent implements OnInit {
     )
   }
 
-  
+
 
   addOwnedPolicy(custid: number){
 
@@ -90,7 +90,8 @@ export class CreateOwnedPolicyComponent implements OnInit {
         
         this.message = "OwnedPolicy created successfully"
         this.errorMessage = ""
-        this.router.navigate(["/payments"])
+        console.log(this.adminPolicy.premiumAmount)
+        this.router.navigate(["/payments/",this.adminPolicy.premiumAmount])
       },
       error:(err)=>{
         console.log(err)
