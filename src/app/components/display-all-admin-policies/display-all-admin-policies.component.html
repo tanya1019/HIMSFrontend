@@ -1,3 +1,4 @@
+
 <h1 class="title">All Policies</h1>
 <button (click)="backToHome()" >Back</button>
 <div *ngFor="let adminPolicy of adminPolicies" class = "card" >
@@ -7,5 +8,6 @@
     <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
     <p>Customised Policy ? {{adminPolicy.customPolicy}}</p>
     <p>Property Amount{{adminPolicy.propertyAmount}}</p>
+ 
 </div>
 

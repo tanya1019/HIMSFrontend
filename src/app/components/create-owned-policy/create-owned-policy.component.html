@@ -1,31 +1,138 @@
-<div class="outerMostDiv" style="display: flex">
-  <div class="container">
-    <h1 class="title">Policy Details</h1>
-    <div
-      class="card"
-      style="
-        width: 29vw;
-        height: 45vh;
-        align-items: center;
-        border: none;
-        background: transparent;
-      "
-    >
-      <p style="margin-top: 10%">Name : {{ adminPolicy.policyName }}</p>
-      <p>Description : {{ adminPolicy.policyDescription }}</p>
-      <p>Duration : {{ adminPolicy.policyDuration }} YEARS</p>
-      <p>Premium Amount : {{ adminPolicy.premiumAmount }} .RS</p>
-      <p>Property Amount : {{ adminPolicy.propertyAmount }} .RS</p>
-      Features:
-      <div *ngFor="let feature of features" >
-        <p style="margin-left: 30%; margin-top: -5%;">{{feature.featureName}}.</p>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<div class="container my-4 col-lg-10">
+  <div class="row">
+   <div class="col-lg-4">
+  <div class="card border-secondary mb-3 p-3 rounded-md shadow shadow-sm">
+<div class="row mb-4">
+
+      <div class="col mb-5">
+       <h1 class="title" style="margin-bottom: 6%; color: rgb(0, 119, 255);">Policy Details</h1>
+        <p><b>Name :</b> {{ adminPolicy.policyName }}</p>
+        <p><b>Description :</b> {{ adminPolicy.policyDescription }}</p>
+        <p><b>Duration :</b> {{ adminPolicy.policyDuration }}YEARS</p>
+        <p><b>Premium Amount :</b> {{ adminPolicy.premiumAmount }}.RS</p>
+        <p><b>Property Amount :</b> {{ adminPolicy.propertyAmount }}.RS</p>
+        <b>Features :</b>
+        <div *ngFor="let feature of features">
+          <p>{{feature.featureName}}.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+<div class="col p-3 ">
+  <h2 class="title">Add Nominee</h2>
+  <div class="alert alert-success alert-dismissible" *ngIf="message">
+    <button type="button" class="close border-secondary border fs-5 rounded " data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{ message }}</strong>
+  </div>
+ <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
+    <button type="button" class="close border-secondary border fs-5 rounded" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{ errorMessage }}</strong>
+  </div>
+  <div class="input-form">
+    <form class="form my-4 col-lg-10">
+      <label for="nomineeName" class="form-label fw-bold">
+       *Nominee Name :
+      </label>
+      <input class="form-control" type="text" [(ngModel)]="ownedPolicy.nomineeName" name="nomineeName" pattern="[a-zA-Z\s]+" #nomineeName="ngModel" required />
+      <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['required']" class="text-danger ">
+          Nominee Name is required!!
+        </div>
+      </div>
+      <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['pattern']" class="text-danger ">
+          Enter a valid nominee Name !!
+        </div>
+      </div>
+      <label class="form-label fw-bold" for='ownedPolicyNomineeAge'> *nomineeAge:</label>
+      <input class="form-control" type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" #nomineeAge="ngModel" pattern="[0-9]+" required />
+      <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
+        <div *ngIf="nomineeName.errors?.['required']" class="text-danger ">
+          Nominee Name is required!!
+        </div>
+      </div>
+      <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
+        <div *ngIf="nomineeAge.errors?.['pattern']" class="text-danger ">
+          Enter a valid nominee Name !!
+        </div>
+      </div>
+      <label class="form-label fw-bold"> *nomineeRelation:</label>
+
+      <input  class="form-control"  type="text" [(ngModel)]="ownedPolicy.nomineeRelation" name="ownedPolicyNomineeRelation" #nomineeRelation="ngModel" pattern="[a-zA-Z\s]+" required />
+      <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+        <div *ngIf="nomineeRelation.errors?.['required']" class="text-danger ">
+           Nominee Relation required!!
+        </div>
+      </div>
+      <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+        <div *ngIf="nomineeRelation.errors?.['pattern']" class="text-danger ">
+          Enter a valid Nominee Relation !!
+        </div>
+      </div>
+
+      <button class="rounded my-3 submit px-4 py-2 text-light border-0" (click)="addOwnedPolicy(ownedPolicy.custid)" style="background-color:#198BF4">
+        Proceed to Pay
+      </button>
+    </form>
     </div>
     </div>
   </div>
+</div>
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<div class="outerMostDiv" style="display: flex">
+
+
+
+
+
+
+  <div class="container">
+    <div
+      class="card border-primary mb-3 col-lg-4 p-3  rounded-md shadow shadow-sm"
+      style="
+          /* width: 100vw; 
+        height: 45vh;  */
+        align-items: center;
+        border: 1;
+        background: transparent;
+      "
+      >
+      <div class="row mb-4" >
+      <div class="col mb-5">
+     <h1 class="title" >Policy Details</h1>
+
+      <p><b>Name :</b> {{ adminPolicy.policyName }}</p>
+      <p><b>Description :</b> {{ adminPolicy.policyDescription }}</p>
+      <p><b>Duration :</b> {{ adminPolicy.policyDuration }}YEARS</p>
+      <p><b>Premium Amount :</b> {{ adminPolicy.premiumAmount }}.RS</p>
+      <p><b>Property Amount :</b> {{ adminPolicy.propertyAmount }}.RS</p>
+      <b>Features :</b>
+      <div *ngFor="let feature of features" >
+        <p>{{feature.featureName}}.</p>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
 
   <div class="container">
     <h1 class="title">General Policy Details</h1>
-
     <div class="alert alert-success alert-dismissible" *ngIf="message">
       <button
         type="button"
@@ -51,61 +158,66 @@
     </div>
 
     <div class="input-form">
-      *nomineeName:
+      <form class="form my-4">
+      <label for="nomineeName" class="form-label"><h6>*Nominee Name :</h6></label> 
       <input
+      class="form-control"
         type="text"
         [(ngModel)]="ownedPolicy.nomineeName"
         name="nomineeName"
+        pattern="[a-zA-Z]+"
+        #nomineeName="ngModel"
         required
       />
-      <!-- <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
-        <div *ngIf="nomineeName.errors?.['required']" class="alert alert-danger ">
-          Enter a valid nominee Name!!
+      <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['required']" class="text-danger ">
+          Nominee Name is required!!
         </div>
-      </div> -->
-      
+      </div> 
+      <div *ngIf="nomineeName.invalid && (nomineeName.dirty || nomineeName.touched)">
+        <div *ngIf="nomineeName.errors?.['pattern']" class="text-danger ">
+          Enter a valid nominee Name !!
+        </div>
+      </div> 
 
-      *nomineeAge:
+      <label for="nomineeAge" class="form-label"><h6>*Nominee Age :</h6></label> 
       <input
+      class="form-control"
         type="number"
         [(ngModel)]="ownedPolicy.nomineeAge"
         name="ownedPolicyNomineeAge"
+        #nomineeAge="ngModel"
         required
       />
-      <!-- <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
-        <div *ngIf="nomineeAge.errors?.['required']" class="alert alert-danger ">
-          Enter a valid nominee age!!
-      <input type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" #nomineeAge="ngModel"  required  />
       <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
         <div *ngIf="nomineeAge.errors?.['required']" class="text-danger ">
-         Nominee age is required!
+          Nominee Age is required!!
         </div>
-      </div> -->
+      </div><br>
      
+    
 
-      *nomineeRelation:
+      <label for="nomineeRelation" class="form-label"><h6>*Nominee Relation :</h6></label> 
       <input
+      class="form-control"
         type="text"
         [(ngModel)]="ownedPolicy.nomineeRelation"
         name="ownedPolicyNomineeRelation"
+pattern="[a-zA-Z]+"
+#nomineeRelation="ngModel"
         required
       />
-      <!-- <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
-        <div *ngIf="nomineeRelation.errors?.['required']" class="alert alert-danger ">
-          Enter a valid Nominee Relation !!
-        </div>
-      <input type="text" [(ngModel)]="ownedPolicy.nomineeRelation" name="ownedPolicyNomineeRelation" #nomineeRelation="ngModel" pattern="^[A-Za-z]+$" required  />
-       <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
+      <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
         <div *ngIf="nomineeRelation.errors?.['required']" class="text-danger ">
-          Enter a Nominee Relation !!
+           Nominee Relation required!!
         </div>
-      </div> 
+      </div>
       <div *ngIf="nomineeRelation.invalid && (nomineeRelation.dirty || nomineeRelation.touched)">
         <div *ngIf="nomineeRelation.errors?.['pattern']" class="text-danger ">
           Enter a valid Nominee Relation !!
         </div>
-      </div> 
-
+      </div>
+      <!-- 
       
       *Select Features:
       <div *ngFor = "let fea of feat">
@@ -116,13 +228,10 @@
         
       </div> -->
       
-
-      
-
-
-      <button class="submit" (click)="addOwnedPolicy(ownedPolicy.custid)">
-          Add Owned Policy
+      <!-- <button class="submit" (click)="addOwnedPolicy(ownedPolicy.custid)">
+          Procced to pay
         </button>
+      </form>
     </div>
   </div>
-</div>
+</div> --> 
