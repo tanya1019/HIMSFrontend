@@ -1,4 +1,4 @@
-<div class="outerMostDiv">
+
   <app-navbar></app-navbar>
   <div class="container ">
 
@@ -29,7 +29,7 @@
   </form>
  
       <form #propertyForm="ngForm" class="form">
-        <label for="address" class="form-label">Address* :</label>
+        <label for="address" class="form-label">*Address :</label>
 
         <input class="form-control" type="text" [(ngModel)]="property.address" name="address" #address="ngModel"
           required />
@@ -62,7 +62,7 @@
         </div>
         <div *ngIf="city.invalid && (city.dirty || city.touched)">
           <div *ngIf="city.errors?.['pattern']" class="text-danger input-control">
-            City valid city!
+            Enter valid city!
           </div>
         </div>
         <br>
@@ -276,4 +276,3 @@
     
   </div>
 
-</div>

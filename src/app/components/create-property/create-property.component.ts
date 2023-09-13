@@ -59,6 +59,7 @@ export class CreatePropertyComponent implements OnInit {
       next:(data)=>{
         console.log(data)
         this.message = "Property created successfully"
+        
         this.router.navigate(["/myProperty"])
         this.errorMessage = ""
         propertyForm.form.reset();
@@ -67,7 +68,7 @@ export class CreatePropertyComponent implements OnInit {
         console.log(err)
         this.errorMessage = "Failed to create Property"
         this.message = ""
-      }
+      },
       
     })
     this.property = new Property( 0,0,0,0,0,"","",0,"","",0,0,"",0)

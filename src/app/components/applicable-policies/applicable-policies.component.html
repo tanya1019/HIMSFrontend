@@ -1,14 +1,26 @@
-<div *ngFor="let adminPolicy of adminPolicies" class = "card" >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-<div *ngIf = "adminPolicy.premiumAmount <= property.premiumAmount "> 
-        <p>Policy Name : {{adminPolicy.policyName}}</p>
-        <p>Policy Description : {{adminPolicy.policyDescription}}</p>
-        <p>Policy Duration : {{adminPolicy.policyDuration}}</p>
-        <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
-        <p>Customised Policy ? {{adminPolicy.customPolicy}}</p>
-        <p>Property Amount{{adminPolicy.propertyAmount}}</p>
-        <button (click)="goToOwnedPolicy(adminPolicy.id)" class="btn btn-lg btn-primary">Apply for Policy</button>
-   
-   </div>
- 
- </div>
+<div class="container py-4">
+  <h3 class="title my-3 ">Here are the best policies for you...</h3>
+  <div class="row mb-4">
+    <div *ngFor="let adminPolicy of adminPolicies" >
+
+      <div *ngIf="(adminPolicy.premiumAmount <= property.premiumAmount)" class="  col mb-4"
+      class="card col-lg-4 p-3  rounded-md shadow shadow-sm "
+      style="margin: 1%;">
+
+        <p><b>Policy Name :</b>{{adminPolicy.policyName}}</p>
+        <p><b>Policy Description :</b> {{adminPolicy.policyDescription}}</p>
+        <p><b>Policy Duration :</b> {{adminPolicy.policyDuration}}</p>
+        <p><b>Premium Amount :</b> {{adminPolicy.premiumAmount}}</p>
+        <p><b>Customised Policy? :</b> {{adminPolicy.customPolicy}}</p>
+        <p><b>Property Amount : </b>{{adminPolicy.propertyAmount}}</p>
+        <button (click)="goToOwnedPolicy(adminPolicy.id)" class="btn btn-lg btn-primary " >Apply</button>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
