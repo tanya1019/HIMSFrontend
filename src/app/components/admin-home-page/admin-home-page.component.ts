@@ -15,25 +15,25 @@ export class AdminHomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createPolicy(){
-    this.router.navigate(["/admin/policy"]);
-  }
+  // createPolicy(){
+  //   this.router.navigate(["/admin/policy"]);
+  // }
 
-  getAllPolicy(){
-    this.router.navigate(["/admin/displaypolicy"]);
-  }
+  // getAllPolicy(){
+  //   this.router.navigate(["/admin/displaypolicy"]);
+  // }
 
-  createFeature(){
-    this.router.navigate(["/feature"]);
-  }
+  // createFeature(){
+  //   this.router.navigate(["/feature"]);
+  // }
 
-  displayAllFeature(){
-    this.router.navigate(["/features"]);
-  }
+  // displayAllFeature(){
+  //   this.router.navigate(["/features"]);
+  // }
 
-  viewAllCustomers(){
-    this.router.navigate(["/admin/customers"]);
-  }
+  // viewAllCustomers(){
+  //   this.router.navigate(["/admin/customers"]);
+  // }
 
   
 

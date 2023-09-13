@@ -24,6 +24,8 @@ import { AdminGetAllCustomersComponent } from './components/admin-get-all-custom
 import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
 import { MyPoliciesComponent } from './components/my-policies/my-policies.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
 
 
 
@@ -53,6 +55,8 @@ import { MyPoliciesComponent } from './components/my-policies/my-policies.compon
         DisplayAllCustomerPolicyComponent,
         ApplicablePoliciesComponent,
         MyPoliciesComponent,
+        AdminNavbarComponent,
+        DisplayAllClaimsComponent,
         
   ],
   imports: [

@@ -40,7 +40,7 @@ export class CreateAdminPolicyComponent implements OnInit {
       next:(data)=>{
         console.log(data)
         this.message = "Policy added successfully"
-this.router.navigate(["/home"])
+this.router.navigate(["/admin/home"])
         this.errorMessage = ""
       },
       error:(err)=>{
