@@ -21,7 +21,7 @@ export class CreateOwnedPolicyComponent implements OnInit {
   ownedPolicy : OwnedPolicy = 
   {
     adminPolicyId:0,
-    ownedPolicyId:0,
+    id:0,
     custid:JSON.parse(String(localStorage.getItem("user"))).id,
     issueDate:'',
     expiryDate:'',
@@ -57,8 +57,8 @@ export class CreateOwnedPolicyComponent implements OnInit {
             this.backendPolicyService.getAdminPolicyById(this.adminPolicyId).subscribe(
               {
                   next: (data)=>{
-                    console.log("adminPolicy id------>",this.adminPolicyId);
-                    console.log("customer id2------>", this.ownedPolicy.custid);
+                    // console.log("adminPolicy id------>",this.adminPolicyId);
+                    // console.log("customer id2------>", this.ownedPolicy.custid);
                   console.log(data)
                   this.isLoaded = true;
                   this.adminPolicy = data
@@ -107,7 +107,7 @@ export class CreateOwnedPolicyComponent implements OnInit {
   loadAllFeaturesToComponent(){
     this.backendOwnedPolicyServiceService.getAllFeatures().subscribe({
       next:(response: any)=>{
-        console.log("arry of features:-------->",response);
+        // console.log("arry of features:-------->",response);
         this.features=response;
       },
       error:(e:any)=>{

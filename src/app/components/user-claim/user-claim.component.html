@@ -113,19 +113,6 @@
     </div>
 
     <div class="form-group">
-      <label for="claimedDate">Claimed Date:</label>
-
-      <input
-        type="date"
-        id="claimedDate"
-        [ngModelOptions]="{standalone :true}"
-        class="form-control"
-        [(ngModel)]="claim.claimedDate"
-        required
-      />
-    </div>
-
-    <div class="form-group">
       <label for="causeOfClaim">Cause of Claim:</label>
 
       <textarea
@@ -220,7 +207,7 @@
       </select>
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="addClaim(22,1)">
+    <button type="submit" class="btn btn-primary" (click)="addClaim()">
       Submit
     </button>
   </form>

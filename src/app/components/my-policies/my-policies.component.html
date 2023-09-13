@@ -2,25 +2,22 @@
     <div class="container py-4"> 
 
     <h1 class="title my-3 ">Policy Details</h1>
-    <div *ngFor="let policy of policies" class = "card" >
       <div class=" card-desk col mb-4">
-         <div *ngFor="let property of policies" class=" col-lg-4 p-3 card rounded-md shadow shadow-sm  ">
+         <div *ngFor="let policy of policies" class=" col-lg-4 p-3 card rounded-md shadow shadow-sm  ">
 
     
-       <p >Address : {{policy.nomineeName}}</p>
-       <p>City : {{policy.nomineeAge}}</p>
-       <p>Country : {{policy.nomineeRelation}}</p>
-       <p>Pincode : {{policy.ownedPolicyId}}</p>
-       <p>Age of Building : {{policy.issueDate}}  years</p>
-       <p>Area (in sq.ft) : {{policy.expiryDate}} sq.ft</p>
-       <p>Cost of policy (in rupees) : ₹ {{policy.feature}}</p>
+       <p >Nominee Name : {{policy.nomineeName}}</p>
+       <p>Nominee Age : {{policy.nomineeAge}}</p>
+       <p>Nominee Relation : {{policy.nomineeRelation}}</p>
+       <p>OwnedPolicyId : {{policy.id}}</p>
+       <p>IssueDate : {{policy.issueDate}}  years</p>
+       <p>ExpiryDate (in sq.ft) : {{policy.expiryDate}} sq.ft</p>
+       <p> feature : {{policy.feature}}</p>
 
        
-       <button routerLink="/claim">Claim</button>
+       <button (click)="goToClaim(policy.id)">Claim</button>
        <button routerLink="/home">Back</button>
       </div>
     
    </div>
     </div>
-    
-      </div>
