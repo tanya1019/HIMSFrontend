@@ -1,0 +1,19 @@
+<div>
+    <div *ngFor="let claim of claims" class = "card"  >
+        <div *ngIf ="claim.claimReviewed == false">
+            <p>claimedDate : {{claim.claimedDate}}</p>
+            <p>documentProof : {{claim.documentProof}}</p>
+            <p>causeOfClaim : {{claim.causeOfClaim}}</p>
+            <p>claimableAmount : {{claim.claimableAmount}}</p>
+            <p>claimRequestAmount : {{claim.claimRequestAmount}}</p>
+            <p>claimReviewed : {{claim.claimReviewed}}</p>
+            <button (click)="updateClaimById(claim.id)" class="btn btn-lg btn-primary"> Reviewed Claim</button>
+        </div>
+     </div>
+     </div>
+    
+    
+    
+    
+    
+    
