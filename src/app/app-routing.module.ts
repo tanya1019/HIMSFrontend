@@ -34,7 +34,7 @@ const routes: Routes = [
   {path : 'payments/:premiumamount', component:PolicyPaymentsComponent},
   {path:'home',component:HomePageComponent},
   {path:'ownedPolicy/:adminpolicyid', component:CreateOwnedPolicyComponent},
-  {path:'claim' ,component:UserClaimComponent},
+  {path:'claim/:ownedpolicyid' ,component:UserClaimComponent},
   {path:'admin/home', component:AdminHomePageComponent},
   {path:'admin/customers', component:AdminGetAllCustomersComponent},
   {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent},

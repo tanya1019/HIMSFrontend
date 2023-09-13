@@ -1,7 +1,7 @@
 export class Claim {
   id?: number;
 
-  claimedDate?: Date;
+  claimedDate?: string;
 
   documentProof?: [];
 
@@ -15,7 +15,7 @@ export class Claim {
 
   constructor(
     id: number,
-    claimedDate: Date,
+    claimedDate: string,
     documentProof: [],
     causeOfClaim: string,
     claimableAmount: number,

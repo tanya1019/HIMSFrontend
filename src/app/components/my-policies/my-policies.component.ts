@@ -30,6 +30,7 @@ export class MyPoliciesComponent implements OnInit {
           // console.log("------->" + JSON.parse(localStorage.getItem("user")))
           this.isLoaded = true;
           this.policies = data
+          console.log(this.policies);
 
         },
           error : (err)=>{
@@ -42,6 +43,12 @@ export class MyPoliciesComponent implements OnInit {
     );
   }
 
+
+  goToClaim(ownedpolicyid:number){
+    console.log(ownedpolicyid)
+    this.router.navigate(["claim/",ownedpolicyid]);
+    
+  }
 
 
 

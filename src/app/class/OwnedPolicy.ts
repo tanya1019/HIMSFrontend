@@ -1,7 +1,7 @@
 export class OwnedPolicy{
    
     adminPolicyId:number
-    ownedPolicyId:number;
+    id:number;
     custid:number;
     issueDate: string;
     expiryDate: string;
@@ -11,10 +11,10 @@ export class OwnedPolicy{
     customePolicy:boolean;
     feature:[];
 
-    constructor(adminPolicyId:number,ownedPolicyId:number, custid:number, issueDate: string, expiryDate: string, nomineeName: string, nomineeAge: number, nomineeRelation: string, feature:[])
+    constructor(adminPolicyId:number,id:number, custid:number, issueDate: string, expiryDate: string, nomineeName: string, nomineeAge: number, nomineeRelation: string, feature:[])
     {     
         this.adminPolicyId = adminPolicyId;
-        this.ownedPolicyId = ownedPolicyId;
+        this.id = id;
         this.custid = custid
         this.issueDate = issueDate;
         this.expiryDate =  expiryDate;

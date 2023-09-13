@@ -18,7 +18,7 @@ export class DisplayAllClaimsComponent implements OnInit {
   
   claims:Claim[] = [];
 
-  claimUpdate: Claim = new Claim(0,new Date(),[],"",0,0,false);
+  claimUpdate: Claim = new Claim(0,"",[],"",0,0,false);
 
   isLoaded:boolean = true;
 
