@@ -1,25 +1,45 @@
-<div class="outerMostDiv">
-<app-navbar></app-navbar>
-<h1 class="title">Property Details</h1>
-<div *ngIf="properties.length>0">
-   <div *ngFor="let property of properties" class = "card"  >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-      <p >Address : {{property.address}}</p>
-      <p>City : {{property.city}}</p>
-      <p>Country : {{property.country}}</p>
-      <p>Pincode : {{property.pincode}}</p>
-      <p>Age of Building : {{property.ageOfBuilding}}  years</p>
-      <p>Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
-      <p>Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
-      <button (click)="getPolicies(property)">Get Policies For This Property</button>
+<app-navbar></app-navbar>
+<div class="container py-4 ">
+   <h1 class="title my-3">My Properties</h1>
+   <div class="row mb-4">
    
-   </div>
+         <div *ngFor="let property of properties" class="  card border-primary col-lg-4 p-3  rounded-md shadow shadow-sm  " style="margin: 1%;">
+            <div class="col mb-4">
+               
+            <p class="fs-5" ><b>Address :</b> {{property.address}}</p>
+            <p class="fs-5"><b>City :</b> {{property.city}}</p>
+            <p class="fs-5"><b>Country :</b> {{property.country}}</p>
+            <p class="fs-5"><b>Pincode :</b> {{property.pincode}}</p>
+            <p class="fs-5"><b>Age of Building :</b> {{property.ageOfBuilding}} years</p>
+            <p class="fs-5"><b>Area (in sq.ft) :</b> {{property.areaInSquareFeet}} sq.ft</p>
+            <p class="fs-5"><b>Cost of Property (in rupees) :</b> ₹ {{property.costOfProperty}}</p>
+            <button class=" text-light border-0 rounded btn btn-lg btn-primary "
+               style="background-color: rgb(61, 121, 251);  " (click)="getPolicies(property)">View Policy</button>
+         </div>
 
 </div>
-
 <div *ngIf="properties.length == 0">
    <h1 class="title">No Property Added</h1>
    <button routerLink="/addproperty">Add property</button>
 </div>
-</div>
+      </div>
+   </div>
+      <!-- <div class="col">
+         <div *ngFor="let property of properties" class=" col-lg-4 p-3 card rounded-md shadow shadow-sm  ">
 
+            <p class="fs-5">Address : {{property.address}}</p>
+            <p class="fs-5">City : {{property.city}}</p>
+            <p class="fs-5">Country : {{property.country}}</p>
+            <p class="fs-5">Pincode : {{property.pincode}}</p>
+            <p class="fs-5">Age of Building : {{property.ageOfBuilding}} years</p>
+            <p class="fs-5">Area (in sq.ft) : {{property.areaInSquareFeet}} sq.ft</p>
+            <p class="fs-5">Cost of Property (in rupees) : ₹ {{property.costOfProperty}}</p>
+            <button class="px-4 py-3 text-light border-0 rounded "
+               style="background-color: rgb(61, 121, 251); height: 50px;" (click)="getPolicies(property)">Get
+               Policies For This Property</button>
+         </div>
+      </div> -->
+  
