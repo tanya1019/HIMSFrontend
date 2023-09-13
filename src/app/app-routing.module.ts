@@ -18,6 +18,7 @@ import { AdminGetAllCustomersComponent} from './components/admin-get-all-custome
 import { DisplayAllCustomerPolicyComponent } from './components/display-all-customer-policy/display-all-customer-policy.component';
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
 import { MyPoliciesComponent } from './components/my-policies/my-policies.component';
+import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
  
 const routes: Routes = [
   {path:  'home', component: HomePageComponent},
@@ -38,8 +39,8 @@ const routes: Routes = [
   {path:'admin/customers', component:AdminGetAllCustomersComponent},
   {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent},
   {path:'applicable', component:ApplicablePoliciesComponent},
-  {path:'mypolicies', component:MyPoliciesComponent}
-
+  {path:'mypolicies', component:MyPoliciesComponent},
+  {path:'admin/claims', component:DisplayAllClaimsComponent}
   
 ];
 

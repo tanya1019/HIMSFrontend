@@ -17,4 +17,17 @@ getClaimsByOwnedPolicyidAndPropertyId(PolId:number,PropId:number):Observable<any
   return this.httpClient.get("http://localhost:8090//claim/"+PropId+"/"+PolId)
 
 }
+
+getAllClaims():Observable<any> {
+  return this.httpClient.get("http://localhost:8090/claims",{ responseType:"json"})
+}
+
+updateClaim(newClaim :Claim):Observable<any> {
+  return this.httpClient.put("http://localhost:8090/claim",{ responseType:"json"})
+}
+
+updateClaimByCustomerId(custId: number):Observable<any>{
+  return this.httpClient.put("http://localhost:8090/claim/approve/" + custId, {responseType:"json"})
+}
+
 }
