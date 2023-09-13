@@ -10,15 +10,12 @@ export class BackendClaimService {
 
   constructor(private httpClient : HttpClient) {}
 
-createClaimByOwnedPolicyid(newClaim :Claim ,PolId:number):Observable<any> {
-  return this.httpClient.post("http://localhost:8090/claim/"+PolId,newClaim,{ responseType:"json"})
+createClaimByOwnedPolicyidAndCustomerId(newClaim :Claim ,PolId:number,custId:number):Observable<any> {
+  return this.httpClient.post("http://localhost:8090/claim/"+PolId+"/"+custId,newClaim,{ responseType:"json"})
 }
 
-
-
-
-getClaimsByOwnedPolicyidAndPropertyId(PolId:number):Observable<any> {
-  return this.httpClient.get("http://localhost:8090//claim/"+PolId)
+getClaimsByCustomerId(custId:number):Observable<any> {
+  return this.httpClient.get("http://localhost:8090/claim/"+custId)
 }
 
 getAllClaims():Observable<any> {
