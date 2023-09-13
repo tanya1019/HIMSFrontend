@@ -21,7 +21,10 @@
          </div>
 
 </div>
-
+<div *ngIf="properties.length == 0">
+   <h1 class="title">No Property Added</h1>
+   <button routerLink="/addproperty">Add property</button>
+</div>
       </div>
    </div>
       <!-- <div class="col">
