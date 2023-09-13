@@ -30,7 +30,7 @@ const routes: Routes = [
   {path : 'admin/displaypolicy', component:DisplayAllAdminPoliciesComponent},
   {path : 'feature', component:CreateFeatureComponent},
   {path : 'features', component:DisplayAllFeaturesComponent},
-  {path : 'payments', component:PolicyPaymentsComponent},
+  {path : 'payments/:premiumamount', component:PolicyPaymentsComponent},
   {path:'home',component:HomePageComponent},
   {path:'ownedPolicy/:adminpolicyid', component:CreateOwnedPolicyComponent},
   {path:'claim' ,component:UserClaimComponent},

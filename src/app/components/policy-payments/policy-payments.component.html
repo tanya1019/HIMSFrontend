@@ -5,17 +5,24 @@
                 <form #orderForm="ngForm">
 
                     <div>
-                        <label>Full name</label>
+                        <label>Name of Customer : </label>
+                        <b>
                         <input 
                                placeholder="Full name"
-                               name="fullName">
+                               name="fullName"
+                               
+                               value="{{Name}}"
+
+                               disabled></b>
                     </div>
                     <div>
-                        <label>Amount</label>
-                        <input type="number"
+                        <label>Amount to Pay : </label>
+                        <input type="text"
                                placeholder="Amount"
+                               value
                                [(ngModel)]="transaction.amount"
-                               name="fullName">
+                               name="fullName"
+                               disabled>
                     </div>
                     <div align="right">
                         <button type="submit" (click)="createTansactionAndBuyPolicy(orderForm)">Place Order</button>
