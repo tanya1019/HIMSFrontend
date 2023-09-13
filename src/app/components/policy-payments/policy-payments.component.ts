@@ -15,6 +15,7 @@ declare var Razorpay: any
 })
 export class PolicyPaymentsComponent implements OnInit {
 
+  transactionSuccess = false;
 
   premiumAmount :number = 0;
 
@@ -32,7 +33,9 @@ export class PolicyPaymentsComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+setTimeout(() => {
+      this.transactionSuccess = true;
+    }, 30000); 
     this.route.params.subscribe(
       {
         next:(params)=>{

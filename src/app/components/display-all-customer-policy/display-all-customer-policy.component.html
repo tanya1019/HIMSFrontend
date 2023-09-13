@@ -1,3 +1,60 @@
+<div class="container">
+    <button
+    (click)="backToHome()"
+    class="btn btn-secondarys px-3 py-2 border-secondary mt-3 float-right " 
+  >
+    Back
+  </button>
+    <h1 class="title text-center mt-4" style="color: rgb(0, 123, 255);" >All Policies</h1>
+  
+  
+  
+    <div class="row my-3 gap-4"  >
+      <div class="col">
+        <div
+          *ngFor="let adminPolicy of adminPolicies"
+          class="card rounded border border-secondary rounded-md shadow shadow-sm p-3" style="margin: 3%;"
+        >
+          <p style="text-align: center;"><b>Policy Name:</b> {{ adminPolicy.policyName }}</p>
+          <p><b>Description:</b> {{ adminPolicy.policyDescription }}</p>
+          <p><b>Policy Duration:</b> {{ adminPolicy.policyDuration }}</p>
+          <p><b>Premium Amount:</b> {{ adminPolicy.premiumAmount }}</p>
+          <p><b>Customised Policy:</b> {{ adminPolicy.customPolicy }}</p>
+          <p><b>Property Amount:</b> {{ adminPolicy.propertyAmount }}</p>
+          <a
+            class="btn btn-link text-primary text-start d-flex"
+            data-toggle="collapse"
+            [attr.href]="'#policyFeatures-' + adminPolicy.id"
+          >
+            Feature Details:
+          </a>
+          <div
+            class="collapse"
+            [id]="'policyFeatures-' + adminPolicy.id"
+          >
+            <ul class="list-group">
+              <li
+                *ngFor="let feature of features"
+                class="list-group-item"
+              >
+                {{ feature.featureName }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<!-- <h1 class="title">All Policies</h1>
+
+<div>
+    <div>
+         <button type="button" class="btn btn-primary" (click)="backToHome()" ><span class="bi bi-arrow-90deg-left"></span> Sample Button</button> -->
+        <!-- <button (click)="backToHome()" class="btn  btn-secondary" style="margin-left: 90%;" >Back</button>
 <h1 class="title">All Policies</h1>
 <button (click)="backToHome()" class="btn btn-lg btn-primary" >Back</button>
 <div>
@@ -10,12 +67,13 @@
             <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
             <p>Customised Policy : {{adminPolicy.customPolicy}}</p>
             <p>Property Amount{{adminPolicy.propertyAmount}}</p>
+
             <p>Feature Name :</p> 
             <div *ngFor="let feature of features" >
                 <p style="margin-left: 30%; margin-top: -5%;">{{feature.featureName}}.</p>
-            </div>
+            </div> -->
             <!-- <button (click)="goToOwnedPolicy(adminPolicy.id)" class="btn btn-lg btn-primary" >Apply for Policy</button> -->
-        </div>
+        <!-- </div>
     </div>
 
-</div>
+</div> --> 

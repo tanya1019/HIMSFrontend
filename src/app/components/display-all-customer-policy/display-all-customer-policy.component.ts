@@ -21,6 +21,7 @@ export class DisplayAllCustomerPolicyComponent implements OnInit {
 
   features:Feature[]=[]
 
+
   constructor(private backendOwnedPolicyServiceService: BackendOwnedPolicyServiceService,private backendPolicyService : BackendPolicyService, private router:Router) { }
 
   ngOnInit(): void {

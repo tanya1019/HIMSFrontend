@@ -1,33 +1,49 @@
-<p>policy-payments works!</p>
+<div class="container py-4 card border-primary col-lg-4 p-3  rounded-md shadow shadow-sm border-secondary " style="margin-top: 10%;">
+<div class="col-mb-6 col-mb-12 " >
+    <form #orderForm="ngForm">
+      <div class="form-group ">
+        <label for="fullName">Name of Customer:</label>
+        <input
+        value="{{Name}}"
+          type="text"
+          class="form-control"
+          id="fullName"
+          placeholder="Full name"
+          [(ngModel)]="Name"
+          name="fullName"
+          disabled
+        />
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount to Pay:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="amount"
+          placeholder="Amount"
+          [(ngModel)]="transaction.amount"
+          name="amount"
+          disabled
+        />
+      </div>
+      <div class="text-center">
+        <button
+          type="button"
+          class="btn btn-primary "
+          
+          (click)="createTansactionAndBuyPolicy(orderForm)"
+        >
+          Place Order
+        </button>
+      </div>
+    </form>
+  
+    <div
+      class="alert alert-success mt-3"
+      *ngIf="transactionSuccess" style="align-items: center;"
+    >
+      Transaction successful! Thank you for your payment.
+    </div>
+  </div>
+</div>
 
-            <div class="col-6">
-
-                <form #orderForm="ngForm">
-
-                    <div>
-                        <label>Name of Customer : </label>
-                        <b>
-                        <input 
-                               placeholder="Full name"
-                               name="fullName"
-                               
-                               value="{{Name}}"
-
-                               disabled></b>
-                    </div>
-                    <div>
-                        <label>Amount to Pay : </label>
-                        <input type="text"
-                               placeholder="Amount"
-                               value
-                               [(ngModel)]="transaction.amount"
-                               name="fullName"
-                               disabled>
-                    </div>
-                    <div align="right">
-                        <button type="submit" (click)="createTansactionAndBuyPolicy(orderForm)">Place Order</button>
-                    </div>
-                </form>
-
-            </div>
-     

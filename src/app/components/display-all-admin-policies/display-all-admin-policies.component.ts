@@ -14,6 +14,7 @@ export class DisplayAllAdminPoliciesComponent implements OnInit {
   message : string = ""
   errorMessage : string = ""
   isLoaded : Boolean = false;
+features: any;
 
   constructor(private backendPolicyService : BackendPolicyService, private router:Router) { }
 
