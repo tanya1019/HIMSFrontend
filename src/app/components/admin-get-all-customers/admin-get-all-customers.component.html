@@ -1,7 +1,11 @@
-<h1 class="title">Customer Details</h1>
-<div *ngFor="let customer of user" class = "card" >
+<div class="container py-4">
+
+<h1 class="title text-primary my-3">Customer Details</h1>
+<div class="row">
+<div *ngFor="let customer of user" class = "card my-3 p-3 mx-2 col-lg-3" >
    <p><b>Email:</b>{{customer.email}}</p>
    <p><b>Name:</b>{{customer.name}}</p>
    <p><b>ContactNumber:</b> {{customer.contactNumber}}</p>
 </div>
-
+</div>
+</div>
