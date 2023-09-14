@@ -49,6 +49,7 @@ export class MyPoliciesComponent implements OnInit {
     this.router.navigate(["claim/",ownedpolicyid]);
     
   }
+  
 
 
 

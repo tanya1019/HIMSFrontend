@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminPolicy } from 'src/app/class/AdminPolicy';
 import { Claim } from 'src/app/class/Claim';
 import { Feature } from 'src/app/class/Feature';
 import { User } from 'src/app/class/User';
 import { BackendLoginService } from 'src/app/services/backend-admin-login.service';
 import { BackendClaimService } from 'src/app/services/backend-claim.service';
 import { BackendFeatureService } from 'src/app/services/backend-feature.service';
+import { BackendPolicyService } from 'src/app/services/backend-policy.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -31,14 +33,20 @@ export class AdminDashboardComponent implements OnInit {
   totalFeatures: number = 0; 
 
 
+  totalPolicies: number = 0;
+  adminPolicies : AdminPolicy[] = []
 
 
-  constructor(private backendFeatureService: BackendFeatureService,private backendLoginService:BackendLoginService, private router: Router, private backendClaimService: BackendClaimService) { }
+
+
+
+  constructor(private backendPolicyService: BackendPolicyService, private backendFeatureService: BackendFeatureService, private backendLoginService:BackendLoginService, private router: Router, private backendClaimService: BackendClaimService) { }
 
   ngOnInit(): void {
     this.ViewAllCustomers();
     this.loadPoliciesToComponent();
-    this.loadAllFeaturesToComponent()
+    this.loadAllFeaturesToComponent();
+    this.loadPoliciesToComponent1();
   }
 
   ViewAllCustomers(){
@@ -91,6 +99,27 @@ export class AdminDashboardComponent implements OnInit {
 
   backToHome(){
     this.router.navigate(['/admin/home']);
+  }
+
+  loadPoliciesToComponent1(){
+    this.isLoaded = false;
+    this.backendPolicyService.getAllAdminPolicies().subscribe(
+      {
+          next: (data)=>{
+          console.log(data)
+          this.isLoaded = true;
+          this.adminPolicies = data;
+          this.totalPolicies = this.adminPolicies.length;
+
+        },
+          error : (err)=>{
+          console.log(err)
+        },
+        complete: ()=>{
+          console.log("loaded the data")
+        }
+      }
+    );
   }
 
 }
