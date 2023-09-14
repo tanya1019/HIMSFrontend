@@ -2,8 +2,10 @@
     <div class="container py-4"> 
 
     <h1 class="title my-3 ">Policy Details</h1>
-      <div class=" card-desk col mb-4">
-         <div *ngFor="let policy of policies" class=" col-lg-4 p-3 card rounded-md shadow shadow-sm  ">
+    <button routerLink="/home" class="border-0 rounded btn-primary mb-3 py-2 px-4">Back</button>
+    <div class="row">
+    
+         <div *ngFor="let policy of policies" class="m-3  p-3 card rounded-md border">
 
     
        <p >Nominee Name : {{policy.nomineeName}}</p>
@@ -15,9 +17,9 @@
        <p> feature : {{policy.feature}}</p>
 
        
-       <button (click)="goToClaim(policy.id)">Claim</button>
-       <button routerLink="/home">Back</button>
+       <button (click)="goToClaim(policy.id)" class="border-0 rounded btn-primary my-2 py-2">Claim</button>
+     
       </div>
-    
-   </div>
     </div>
+   </div>
+  

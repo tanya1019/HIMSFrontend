@@ -2,14 +2,15 @@
     <h1 class="title">Add Feature</h1>
     <form #featureForm="ngForm" >
          <div class="input-form">
-            Feature name:
+            <label for="" class="form-label"> *Feature name:</label>
+           
             <input type="text" [(ngModel)]="feature.featureName" name="name" #name="ngModel" required/> 
             <div *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div *ngIf="name.errors?.['required']" class ="text-danger">
                     Feature Name Required
                 </div>
             </div>
-            Percent:
+           <label for="" class="form-label">*Percent:</label> 
             <input type="number" [(ngModel)]="feature.percent" name="percent" pattern="^\d+(\.\d{1,2})?%?$" #percent="ngModel" required/> 
             <div *ngIf="percent.invalid && (percent.dirty || percent.touched)">
                 <div *ngIf="percent.errors?.['required']" class ="text-danger">

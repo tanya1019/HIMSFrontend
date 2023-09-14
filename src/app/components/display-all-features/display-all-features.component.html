@@ -1,11 +1,13 @@
-<div >
-   <h3>Display all Features.</h3>
-   <button (click)="backToHome()" >Back</button>
+<div class="container my-5">
+   <h3 class="my-3">Display all Features.</h3>
+   <button (click)="backToHome()" class="btn btn-primary mb-3 px-4 py-2 rounded border-0">Back</button>
    <table class="table">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Percent</th>
+        <th>Action</th>
+        <th>Action</th>
     </tr>
     <tr *ngFor="let feature of features">
         <td>{{feature.id}}</td>

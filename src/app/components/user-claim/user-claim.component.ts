@@ -18,6 +18,7 @@ export class UserClaimComponent implements OnInit {
   claim: Claim = {
     id: 0,
     documentProof: [],
+    
     causeOfClaim: '',
     claimableAmount: 0,
     claimRequestAmount: 0,

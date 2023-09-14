@@ -62,7 +62,7 @@
           </div>
         </div>
         <br />
-        <label for="country" class="form-label">Country* :</label>
+        <label for="country" class="form-label">*Country :</label>
         <input
           type="text"
           class="form-control"
@@ -91,7 +91,7 @@
         
 
         <br />
-        <label for="state" class="form-label">State* :</label>
+        <label for="state" class="form-label">*State :</label>
         <input
           type="text"
           class="form-control"
@@ -125,7 +125,7 @@
 
 
         <br />
-        City* :
+        *City :
         <input
           type="text"
           [(ngModel)]="property.city"
@@ -145,11 +145,11 @@
         </div>
         <div *ngIf="city.invalid && (city.dirty || city.touched)">
           <div *ngIf="city.errors?.['pattern']" class="text-danger input-control">
-            City valid city!
+           Enter valid city!
           </div>
         </div>
         <br />
-        <label for="pincode" class="form-label"> Pincode* :</label>
+        <label for="pincode" class="form-label"> *Pincode :</label>
 
         <input
           class="form-control"
@@ -242,7 +242,7 @@
           <!-- <input class="form-control"  type="checkbox" (change)="getData3()"><br><br> -->
 
           <div *ngIf="forBuilding" class="my-4">
-            Property cost* :
+            *Property cost :
             <input
               class="form-control"
               type="number"
@@ -258,7 +258,7 @@
             </div>
             <br />
 
-            Area (in sq.ft)* :
+            *Area (in sq.ft)* :
             <input
               class="form-control"
               type="number"
@@ -274,7 +274,7 @@
             </div>
             <br />
 
-            Property age* :
+            *Property age* :
             <input
               class="form-control"
               type="number"
@@ -289,7 +289,7 @@
               </div>
             </div>
             <br />
-            No of year for which you want policy:
+            *No of year for which you want policy:
             <input
               class="form-control"
               type="number"
@@ -298,7 +298,7 @@
             /><br /><br />
           </div>
           <div *ngIf="forBuildingAndContents">
-            Property cost*:
+            *Property cost*:
             <input
               class="form-control"
               type="number"
@@ -313,7 +313,7 @@
               </div>
             </div>
             <br />
-            Area (in sq.ft)* :
+            *Area (in sq.ft)* :
             <input
               class="form-control"
               type="number"
@@ -328,7 +328,7 @@
               </div>
             </div>
             <br />
-            Property age* :
+            *Property age* :
             <input
               class="form-control"
               type="number"
@@ -344,7 +344,7 @@
             </div>
             <br />
 
-            Content Cost :
+            *Content Cost :
             <input
               class="form-control"
               type="number"
@@ -365,7 +365,7 @@
             </div>
 
             <br /><br />
-            No of year for which you want policy:
+            *No of year for which you want policy:
             <input
               class="form-control"
               type="number"
@@ -382,7 +382,7 @@
             <br /><br />
           </div>
           <div *ngIf="forContents">
-            Content Cost :
+            *Content Cost :
             <input
               class="form-control"
               type="number"
@@ -398,11 +398,11 @@
               "
             >
               <div *ngIf="contentCost.errors?.['required']" class="text-danger">
-                Content Cost is required!
+                *Content Cost is required!
               </div>
             </div>
             <br /><br />
-            Area (in sq.ft) :
+            *Area (in sq.ft) :
             <input
               class="form-control"
               type="number"
@@ -417,7 +417,7 @@
               </div>
             </div>
             <br /><br /><br />
-            No of year for which you want policy:
+            *No of year for which you want policy:
             <input
               class="form-control"
               type="number"
@@ -436,7 +436,7 @@
 
         <div *ngIf="isRented" class="my-4">
           You Can get insaurance for Contents !<br /><br />
-          Content Cost :
+          *Content Cost :
           <input
             class="form-control"
             type="number"
@@ -455,7 +455,7 @@
             </div>
           </div>
           <br /><br /><br /><br />
-          Area (in sq.ft) :
+          *Area (in sq.ft) :
           <input
             class="form-control"
             type="number"
@@ -470,7 +470,7 @@
             </div>
           </div>
           <br /><br /><br /><br /><br />
-          No of year for which you want policy:
+          *No of year for which you want policy:
           <input
             class="form-control"
             type="number"

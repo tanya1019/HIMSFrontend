@@ -1,6 +1,7 @@
 <div class="container py-4 card border-primary col-lg-4 p-3  rounded-md shadow shadow-sm border-secondary " style="margin-top: 10%;">
 <div class="col-mb-6 col-mb-12 " >
     <form #orderForm="ngForm">
+      <h3>Payment Summary</h3>
       <div class="form-group ">
         <label for="fullName">Name of Customer:</label>
         <input
@@ -15,7 +16,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="amount">Amount to Pay:</label>
+        <label for="amount">Payable Amount:</label>
         <input
           type="number"
           class="form-control"
@@ -29,21 +30,16 @@
       <div class="text-center">
         <button
           type="button"
-          class="btn btn-primary "
+          class="btn btn-primary float-left px-5 py-2 "
           
           (click)="createTansactionAndBuyPolicy(orderForm)"
         >
-          Place Order
+          Pay Now
         </button>
       </div>
     </form>
   
-    <div
-      class="alert alert-success mt-3"
-      *ngIf="transactionSuccess" style="align-items: center;"
-    >
-      Transaction successful! Thank you for your payment.
-    </div>
+  
   </div>
 </div>
 
