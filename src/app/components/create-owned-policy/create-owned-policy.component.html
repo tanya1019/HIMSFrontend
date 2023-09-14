@@ -52,15 +52,15 @@
         </div>
       </div>
       <label class="form-label fw-bold" for='ownedPolicyNomineeAge'> *nomineeAge:</label>
-      <input class="form-control" type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" #nomineeAge="ngModel" pattern="[0-9]+" required />
-      <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
+      <input class="form-control" type="number" [(ngModel)]="ownedPolicy.nomineeAge" name="ownedPolicyNomineeAge" #nomineeAge="ngModel" pattern="^([0-9]|[1-9][0-9])$" required />
+      <!-- <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
         <div *ngIf="nomineeName.errors?.['required']" class="text-danger ">
-          Nominee Name is required!!
+          Nominee Age is required!!
         </div>
-      </div>
+      </div> -->
       <div *ngIf="nomineeAge.invalid && (nomineeAge.dirty || nomineeAge.touched)">
         <div *ngIf="nomineeAge.errors?.['pattern']" class="text-danger ">
-          Enter a valid nominee Name !!
+          Age should less than 100!!
         </div>
       </div>
       <label class="form-label fw-bold"> *nomineeRelation:</label>
