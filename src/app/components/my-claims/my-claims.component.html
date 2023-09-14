@@ -11,8 +11,11 @@
         <p>Claimable Amount : {{claim.claimableAmount}} </p>
         <p>Claim Request Amount : {{claim.claimRequestAmount}}  </p>
         <p>Claim Reviewed : {{claim.claimReviewed}} </p>
-        
-   <button class="btn btn-block btn-primary" routerLink="/home">Back</button>
+
+        <button class="btn btn-success" *ngIf="claim.claimReviewed == true">Claim Reviewed</button>
+        <button class="btn btn-danger" *ngIf="claim.claimReviewed == false">Claim Review Pending</button>
+ 
+      <button style="margin-top: 3%;" class="btn btn-block btn-primary" routerLink="/home">Back</button>
   </div>
 
 </div>
