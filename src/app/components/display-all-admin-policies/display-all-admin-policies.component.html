@@ -5,12 +5,12 @@
 <button (click)="backToHome()" class="px-4 py-2 btn-primary rounded border-0 mb-3">Back</button>
  <div class="row">
 <div *ngFor="let adminPolicy of adminPolicies" class = "card rounded border-secondary col-lg-4 p-3 m-2 " >
-    <p>Policy Name : {{adminPolicy.policyName}}</p>
-    <p>Policy Description : {{adminPolicy.policyDescription}}</p>
-    <p>Policy Duration : {{adminPolicy.policyDuration}}</p>
-    <p>Premium Amount : {{adminPolicy.premiumAmount}}</p>
-    <p>Customised Policy ? {{adminPolicy.customPolicy}}</p>
-    <p>Property Amount{{adminPolicy.propertyAmount}}</p>
+    <p><b>Policy Name :</b> {{adminPolicy.policyName}}</p>
+    <p><b>Policy Description :</b> {{adminPolicy.policyDescription}} </p>
+    <p><b>Policy Duration :</b> {{adminPolicy.policyDuration}} .YEAR</p>
+    <p><b>Premium Amount :</b> {{adminPolicy.premiumAmount}} .RS</p>
+    <p><b>Customised Policy :</b> {{adminPolicy.customPolicy}}</p>
+    <p><b>Property Amount :</b>{{adminPolicy.propertyAmount}} .RS</p>
   <!-- <button class="rounded border-0 btn-primary py-2">Apply for Policy</button>  -->
  
 </div> 

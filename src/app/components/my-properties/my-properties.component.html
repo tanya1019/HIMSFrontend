@@ -3,7 +3,9 @@
 
 <app-navbar></app-navbar>
 <div class="container py-4 ">
-   <h1 class="title my-3">My Properties</h1>
+   <button routerLink="/home" class="border-0 rounded btn-primary mb-3 py-2 px-4">Back</button>
+
+   <h1 class="title my-3" style="color: rgb(41, 113, 228);">My Properties</h1>
    <div class="row mb-4">
    
          <div *ngFor="let property of properties" class="  card border-secondary  p-3  rounded-md shadow shadow-sm  " style="margin: 1%;">

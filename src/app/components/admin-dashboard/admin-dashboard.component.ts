@@ -88,4 +88,9 @@ export class AdminDashboardComponent implements OnInit {
     })
   }
 
+
+  backToHome(){
+    this.router.navigate(['/admin/home']);
+  }
+
 }
