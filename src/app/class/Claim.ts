@@ -2,11 +2,8 @@ export class Claim {
   id?: number;
 
   claimedDate?: string;
-
   documentProof?: [];
-
   causeOfClaim?: string;
-
   claimableAmount?: number;
 
   claimRequestAmount?: number;

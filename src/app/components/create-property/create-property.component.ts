@@ -129,7 +129,7 @@ export class CreatePropertyComponent implements OnInit {
       this.totalPremium = (this.contents/this.property.areaInSquareFeet)*0.05*this.policyYear;
     }
 
-    this.property.premiumAmount = this.totalPremium/12 ;
+    this.property.premiumAmount = Math.round(this.totalPremium) ;
   
  
   }
