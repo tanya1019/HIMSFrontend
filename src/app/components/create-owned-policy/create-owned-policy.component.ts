@@ -32,7 +32,13 @@ export class CreateOwnedPolicyComponent implements OnInit {
     feature:[],
   }
 
+ 
+
   adminPolicy:AdminPolicy = new AdminPolicy();
+
+
+  // totalPremiumAmount:number = this.adminPolicy.premiumAmount;
+
 
   isLoaded : Boolean = false;
 
