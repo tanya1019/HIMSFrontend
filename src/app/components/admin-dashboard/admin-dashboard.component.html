@@ -1,10 +1,18 @@
+<div class="container">
 
-<div class="card">
+<button (click)="backToHome()" class="px-4 py-2 my-4 mx-4 btn-primary rounded border-0 mb-3">Back</button>
+
+ <h1 class="title my-4 mx-4 mb-4">
+    Admin Dashboard
+ </h1>
+    
+<div class="card rounded border-secondary col-lg-6 p-3 m-3">
     <h1>Total Customers: {{totalUsers}}</h1>
 </div>
-<div class="card">
+<div class="card rounded border-secondary col-lg-6 p-3 m-3">
     <h1>Total Claims: {{totalClaims}}</h1>
 </div>
-<div class="card">
+<div class="card rounded border-secondary col-lg-6 p-3 m-3">
     <h1>Total Features: {{totalFeatures}}</h1>
+</div>
 </div>

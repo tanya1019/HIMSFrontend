@@ -1,19 +1,17 @@
     <app-navbar></app-navbar>
     <div class="container py-4"> 
 
-    <h1 class="title my-3 ">Policy Details</h1>
+    <h1 class="title my-3" style="color: rgb(41, 113, 228);">Policy Details</h1>
     <button routerLink="/home" class="border-0 rounded btn-primary mb-3 py-2 px-4">Back</button>
     <div class="row">
     
          <div *ngFor="let policy of policies" class="m-3  p-3 card rounded-md border">
-
-    
        <p >Nominee Name : {{policy.nomineeName}}</p>
        <p>Nominee Age : {{policy.nomineeAge}}</p>
        <p>Nominee Relation : {{policy.nomineeRelation}}</p>
        <p>OwnedPolicyId : {{policy.id}}</p>
-       <p>IssueDate : {{policy.issueDate}}  years</p>
-       <p>ExpiryDate (in sq.ft) : {{policy.expiryDate}} sq.ft</p>
+       <p>IssueDate : {{policy.issueDate}}</p>
+       <p>ExpiryDate : {{policy.expiryDate}}</p>
        <p> feature : {{policy.feature}}</p>
 
        
