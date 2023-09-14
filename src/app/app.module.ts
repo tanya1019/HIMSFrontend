@@ -28,6 +28,7 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
 import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
 import { MyClaimsComponent } from './components/my-claims/my-claims.component';
 import { DisplayAllReviewedClaimComponent } from './components/display-all-reviewed-claim/display-all-reviewed-claim.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 
 
@@ -61,6 +62,7 @@ import { DisplayAllReviewedClaimComponent } from './components/display-all-revie
         DisplayAllClaimsComponent,
         MyClaimsComponent,
         DisplayAllReviewedClaimComponent,
+        AdminDashboardComponent,
         
   ],
   imports: [

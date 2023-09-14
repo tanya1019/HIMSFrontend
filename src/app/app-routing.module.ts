@@ -21,6 +21,7 @@ import { MyPoliciesComponent } from './components/my-policies/my-policies.compon
 import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
 import { MyClaimsComponent } from './components/my-claims/my-claims.component';
 import { DisplayAllReviewedClaimComponent } from './components/display-all-reviewed-claim/display-all-reviewed-claim.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
  
 const routes: Routes = [
   {path:  'home', component: HomePageComponent},
@@ -44,7 +45,9 @@ const routes: Routes = [
   {path:'mypolicies', component:MyPoliciesComponent},
   {path:'admin/allclaims', component:DisplayAllClaimsComponent},
   {path:'myclaims', component:MyClaimsComponent},
-  {path:'admin/reviewedclaims', component:DisplayAllReviewedClaimComponent}
+  {path:'admin/reviewedclaims', component:DisplayAllReviewedClaimComponent},
+  {path:'admin/dashboard', component:AdminDashboardComponent}
+
 ];
 
 
