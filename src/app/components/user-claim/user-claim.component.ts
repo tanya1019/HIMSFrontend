@@ -15,6 +15,8 @@ export class UserClaimComponent implements OnInit {
     //throw new Error('Method not implemented.');
   }
 
+  custId : number = JSON.parse(String(localStorage.getItem("user"))).id;
+
   claim: Claim = {
     id: 0,
     documentProof: [],
@@ -62,13 +64,14 @@ export class UserClaimComponent implements OnInit {
 
   addClaim() {
     this.backendClaimService
-      .createClaimByOwnedPolicyid(this.claim, this.PolId)
-
+      .createClaimByOwnedPolicyidAndCustomerId(this.claim, this.PolId, this.custId)
       .subscribe({
         next: (data) => {
           console.log(data);
           this.claim = data;
           this.message = 'Claim applied successfully';
+          console.log("policyID:===>",this.PolId, "CustomerId:===>",this.custId);
+          this.router.navigate(['/myclaims']);
           this.errorMessage = '';
         },
         error: (err) => {

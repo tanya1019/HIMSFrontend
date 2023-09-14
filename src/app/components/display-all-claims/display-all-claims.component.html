@@ -1,19 +1,5 @@
-<div class="container">
-    <h1 class="text-primary fs-3 my-3">Customer Claims</h1>
-<div *ngFor="let claim of claims"   >
-    <div *ngIf ="claim.claimReviewed == false " class = "card col-lg-4 p-3 m-3 rounded">
-        <p>claimedDate : {{claim.claimedDate}}</p>
-        <p>documentProof : {{claim.documentProof}}</p>
-        <p>causeOfClaim : {{claim.causeOfClaim}}</p>
-        <p>claimableAmount : {{claim.claimableAmount}}</p>
-        <p>claimRequestAmount : {{claim.claimRequestAmount}}</p>
-        <p>claimReviewed : {{claim.claimReviewed}}</p>
-        <button (click)="updateClaimById(claim.id)" class="btn btn-lg btn-primary"> Review This Claim </button>
-    </div>
- </div>
-
- <div *ngFor="let claim of claims"  >
-    <div *ngIf ="claim.claimReviewed == true" class = "card col-lg-4 p-3 m-3 rounded" >
+<div *ngFor="let claim of claims" class = "card"  >
+    <div *ngIf ="claim.claimReviewed == true">
         <p>claimedDate : {{claim.claimedDate}}</p>
         <p>documentProof : {{claim.documentProof}}</p>
         <p>causeOfClaim : {{claim.causeOfClaim}}</p>
@@ -21,8 +7,7 @@
         <p>claimRequestAmount : {{claim.claimRequestAmount}}</p>
         <p>claimReviewed : {{claim.claimReviewed}}</p>
     </div>
-    </div>
- </div>
+</div>
 
 
 

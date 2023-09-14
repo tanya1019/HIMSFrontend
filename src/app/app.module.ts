@@ -26,6 +26,8 @@ import { ApplicablePoliciesComponent } from './components/applicable-policies/ap
 import { MyPoliciesComponent } from './components/my-policies/my-policies.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
+import { MyClaimsComponent } from './components/my-claims/my-claims.component';
+import { DisplayAllReviewedClaimComponent } from './components/display-all-reviewed-claim/display-all-reviewed-claim.component';
 
 
 
@@ -57,6 +59,8 @@ import { DisplayAllClaimsComponent } from './components/display-all-claims/displ
         MyPoliciesComponent,
         AdminNavbarComponent,
         DisplayAllClaimsComponent,
+        MyClaimsComponent,
+        DisplayAllReviewedClaimComponent,
         
   ],
   imports: [

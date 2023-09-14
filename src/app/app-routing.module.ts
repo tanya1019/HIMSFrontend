@@ -19,6 +19,8 @@ import { DisplayAllCustomerPolicyComponent } from './components/display-all-cust
 import { ApplicablePoliciesComponent } from './components/applicable-policies/applicable-policies.component';
 import { MyPoliciesComponent } from './components/my-policies/my-policies.component';
 import { DisplayAllClaimsComponent } from './components/display-all-claims/display-all-claims.component';
+import { MyClaimsComponent } from './components/my-claims/my-claims.component';
+import { DisplayAllReviewedClaimComponent } from './components/display-all-reviewed-claim/display-all-reviewed-claim.component';
  
 const routes: Routes = [
   {path:  'home', component: HomePageComponent},
@@ -40,8 +42,9 @@ const routes: Routes = [
   {path :'displaypolicy', component:DisplayAllCustomerPolicyComponent},
   {path:'applicable', component:ApplicablePoliciesComponent},
   {path:'mypolicies', component:MyPoliciesComponent},
-  {path:'admin/claims', component:DisplayAllClaimsComponent}
-  
+  {path:'admin/allclaims', component:DisplayAllClaimsComponent},
+  {path:'myclaims', component:MyClaimsComponent},
+  {path:'admin/reviewedclaims', component:DisplayAllReviewedClaimComponent}
 ];
 
 
