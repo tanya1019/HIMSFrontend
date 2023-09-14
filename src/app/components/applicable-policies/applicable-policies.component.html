@@ -6,7 +6,7 @@
   <div class="row mb-4">
     <div *ngFor="let adminPolicy of adminPolicies" >
 
-      <div *ngIf="(adminPolicy.premiumAmount <= property.premiumAmount)" class="  col mb-4"
+      <div *ngIf="(adminPolicy.premiumAmount <= property.premiumAmount )" class="  col mb-4"
       class="card col-lg-4 p-3  rounded-md shadow shadow-sm "
       style="margin: 1%;">
 
@@ -14,8 +14,8 @@
         <p><b>Policy Description :</b> {{adminPolicy.policyDescription}}</p>
         <p><b>Policy Duration :</b> {{adminPolicy.policyDuration}}</p>
         <p><b>Premium Amount :</b> {{adminPolicy.premiumAmount}}</p>
-        <p><b>Customised Policy? :</b> {{adminPolicy.customPolicy}}</p>
-        <p><b>Property Amount : </b>{{adminPolicy.propertyAmount}}</p>
+        <!-- <p><b>Customised Policy? :</b> {{adminPolicy.customPolicy}}</p> -->
+        <!-- <p><b>Property Amount : </b>{{adminPolicy.propertyAmount}}</p> -->
         <button (click)="goToOwnedPolicy(adminPolicy.id)" class="btn btn-lg btn-primary " >Apply</button>
       </div>
     </div>

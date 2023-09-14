@@ -15,9 +15,9 @@
             <p class="fs-5"><b>City :</b> {{property.city}}</p>
             <p class="fs-5"><b>Country :</b> {{property.country}}</p>
             <p class="fs-5"><b>Pincode :</b> {{property.pincode}}</p>
-            <p class="fs-5"><b>Age of Building :</b> {{property.ageOfBuilding}} years</p>
+            <p  *ngIf="property.propertyType == 'Owned'" class="fs-5"><b>Age of Building :</b> {{property.ageOfBuilding}} years</p>
             <p class="fs-5"><b>Area (in sq.ft) :</b> {{property.areaInSquareFeet}} sq.ft</p>
-            <p class="fs-5"><b>Cost of Property (in rupees) :</b> ₹ {{property.costOfProperty}}</p>
+            <p *ngIf="property.propertyType == 'Owned'" class="fs-5"><b>Cost of Property (in rupees) :</b> ₹ {{property.costOfProperty}}</p>
             <button class=" text-light border-0 rounded btn btn-lg btn-primary "
                style="background-color: rgb(61, 121, 251);  " (click)="getPolicies(property)">View Policy</button>
          </div>
@@ -25,7 +25,7 @@
 </div>
 <div *ngIf="properties.length == 0">
    <h1 class="title">No Property Added</h1>
-   <button routerLink="/addproperty">Add property</button>
+   <button class = "btn btn-primary" routerLink="/addproperty">Add property</button>
 </div>
       </div>
    </div>
