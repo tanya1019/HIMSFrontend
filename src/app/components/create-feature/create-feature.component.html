@@ -11,7 +11,7 @@
                     Feature Name Required
                 </div>
             </div>
-           <label for="" class="form-label">*Percent:</label> 
+           <!-- <label for="" class="form-label">*Percent:</label> 
             <input type="number" [(ngModel)]="feature.percent" name="percent" pattern="^\d+(\.\d{1,2})?%?$" #percent="ngModel" required/> 
             <div *ngIf="percent.invalid && (percent.dirty || percent.touched)">
                 <div *ngIf="percent.errors?.['required']" class ="text-danger">
@@ -22,7 +22,7 @@
                 <div *ngIf="percent.errors?.['pattern']" class ="text-danger">
                     Feature Percent Required
                 </div>
-            </div>
+            </div> -->
             <button class="submit" [disabled]="!featureForm.form.valid" (click)="addFeature(featureForm)" routerLink="/features">Add Feature</button>
     
         </div>

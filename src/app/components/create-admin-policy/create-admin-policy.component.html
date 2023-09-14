@@ -54,7 +54,7 @@
       </div>
       <br>
 
-      <label for="description" class="form-label">   *Policy Premiun Amount: </label>
+      <label for="description" class="form-label">   *Policy Premiun Amount (per month): </label>
    
       <input class="form-control" 
         type="number"
@@ -67,7 +67,7 @@
         </div>
       </div>
         <br>
-        <label for="description" class="form-label">       *Property Amount:</label>
+        <!-- <label for="description" class="form-label">       *Property Amount:</label>
  
       <input class="form-control" 
         type="number"
@@ -76,7 +76,7 @@
       <div *ngIf="propertyamount.invalid && (propertyamount.dirty || propertyamount.touched)">
         <div *ngIf="propertyamount.errors?.['required']" class="alert alert-danger"> Property Amount required !!
         </div>
-      </div>
+      </div> -->
      
       <button class="submit btn-primary px-4 py-2 border-0 rounded mt-4" [disabled]="!policyForm.form.valid"  (click)="addAdminPolicy(policyForm)">Add Policy</button>
  
