@@ -2,6 +2,8 @@
 <div class="container py-4"> 
 
 <h1 class="title my-3 mx-4" style="color: rgb(41, 113, 228);">Claim Details</h1>
+<button  class="btn btn-primary px-2 py-2 border-0 mb-3" routerLink="/home">Back</button>
+
   <div class=" card-desk col mb-4">
      <div *ngFor="let claim of claims" class=" col-lg-4 p-3 card rounded-md shadow shadow-sm  ">
 
@@ -15,8 +17,11 @@
         <button class="btn btn-success" *ngIf="claim.claimReviewed == true">Claim Reviewed</button>
         <button class="btn btn-danger" *ngIf="claim.claimReviewed == false">Claim Review Pending</button>
  
-      <button style="margin-top: 3%;" class="btn btn-block btn-primary" routerLink="/home">Back</button>
   </div>
+  
+  <div *ngIf="claims.length == 0">
+    <h1 class="title" style="color: rgb(41, 113, 228);" >No Claims Added</h1>
+ </div>
 
 </div>
 </div>
