@@ -30,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
         this.errorMessage= "";
       },
       error: (err)=> {
-        alert(err.error.text)
+        // alert(err.error.text)
         this.message= "";
         this.errorMessage= "login Failed...Try again";
       }
